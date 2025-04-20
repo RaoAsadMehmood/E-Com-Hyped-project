@@ -1,0 +1,199 @@
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import ImageCarousel from '../components/ImageCarousel';
+import { MdOutlineArrowRight } from 'react-icons/md';
+import FeatureCard from '../components/FeatureCard';
+import { motion } from 'framer-motion';
+
+const Home = () => {
+    return (
+        <>
+            <div
+                className='w-full min-h-screen flex justify-center items-center relative'
+                style={{
+                    backgroundImage: 'url("/Images/HeroCover.png")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                }}
+            >
+                {/* Optional Grid Overlay */}
+                {/* <div className='absolute inset-0 bg-[url("/path-to-grid-pattern.png")] bg-cover opacity-20'></div> */}
+
+                {/* Main Content */}
+                <div className='relative flex flex-col items-start px-4 sm:px-6 md:px-0 max-w-[1200px] w-full'>
+
+                    {/* Animated Heading */}
+                    <motion.h1
+                        initial={{ opacity: 0, y: 60 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                        className='text-[50px] sm:text-[70px] md:text-[87px] font-semibold text-white leading-tight text-left text-shadow-lg/40'
+                    >
+                        <span className='text-[#f7a51e]'>One-Stop</span> Shop for ALL
+                        <span className='inline-flex items-center ml-2 relative'>
+                            <ImageCarousel />
+                        </span>
+                        <br />
+                        Automation <span className='text-[#f7a51e]'>Needs</span>
+                    </motion.h1>
+
+                    {/* Description + Button */}
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        variants={{
+                            hidden: {},
+                            visible: {
+                                transition: {
+                                    staggerChildren: 0.3
+                                }
+                            }
+                        }}
+                        className='flex flex-col md:flex-row w-full mt-6 gap-6'
+                    >
+                        {/* Description */}
+                        <motion.p
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className='text-[24px] font-semibold sm:text-base md:text-lg text-[#cdd8dd] max-w-[600px] text-left leading-relaxed'
+                        >
+                            Welcome to EcomHyped, where we offer a range of services to help you take your Amazon Automation Store to the next level.
+                        </motion.p>
+
+                        {/* Schedule Button */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.6, delay: 0.5 }}
+                            className="md:ml-auto md:mt-auto relative"
+                        >
+                            <div className="relative flex flex-col items-center">
+                                <div className="px-1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full flex justify-center items-center">
+                                    <span className="flex justify-center items-center text-lg sm:text-xl md:text-2xl text-black font-semibold">
+                                        Schedule A Call
+                                        <MdOutlineArrowRight size={24} className="sm:w-[30px] sm:h-[30px] md:w-[40px] md:h-[40px]" color="#026F72" />
+                                    </span>
+                                </div>
+
+                                {/* Rotating Image */}
+                                <div className="rotating-image">
+                                    <Image
+                                        src={'/Images/btn get started.png'}
+                                        alt={'Schedule a call button'}
+                                        width={230}
+                                        height={230}
+                                        className="w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] md:w-[230px] md:h-[230px]"
+                                    />
+                                </div>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                </div>
+
+                {/* Rotating Animation CSS */}
+                <style>
+                    {`
+                    @keyframes rotation {
+                        from {
+                            transform: rotate(0deg);
+                        }
+                        to {
+                            transform: rotate(360deg);
+                        }
+                    }
+
+                    .rotating-image {
+                        animation: rotation 3s linear infinite;
+                    }
+                `}
+                </style>
+            </div>
+
+            {/* Featured Cards Section started*/}
+            <section className="w-full px-4 py-16 mt-[80px] min-h-screen">
+                <motion.div
+                    className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10 items-center lg:items-start"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    viewport={{ once: true, amount: 0.3 }}
+                >
+                    {/* Left Column: Text */}
+                    <motion.div
+                        className="col-span-1 flex flex-col gap-3 text-center lg:text-left items-center lg:items-start"
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.3, duration: 0.6, ease: 'easeOut' }}
+                        viewport={{ once: true }}
+                    >
+                        <h3 className="text-[20px] sm:text-[24px] bg-gradient-to-r from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide">
+                            FEATURES
+                        </h3>
+                        <p className="text-[36px] sm:text-[46px] text-[#334047] font-semibold leading-tight">
+                            Best Value <br /> For You
+                        </p>
+                        <p className="text-[16px] sm:text-[18px] text-[#45565F] mt-2">
+                            We provide services with <br className="sm:hidden" /> the best results
+                        </p>
+                    </motion.div>
+
+                    {/* Right Column: Feature Cards */}
+                    <motion.div
+                        className="col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.5, duration: 0.8, ease: 'easeOut' }}
+                        viewport={{ once: true }}
+                    >
+                        <FeatureCard
+                            imageSrc="/Images/Frame 29.png"
+                            heading="Transparency"
+                            description="Onboarding with clear, genuine and realistic expectations."
+                        />
+                        <FeatureCard
+                            imageSrc="/Images/Frame 28.png"
+                            heading="Accountability"
+                            description="On-time Reporting, Analytics and Top-notch Customer Service"
+                        />
+                        <FeatureCard
+                            imageSrc="/Images/Frame 27.png"
+                            heading="Collecting Profits"
+                            description="With our proven and proprietary FBA formula our investors see steady sales growth and results."
+                        />
+                    </motion.div>
+                </motion.div>
+            </section>
+            {/* Featured Cards Section ending*/}
+
+
+            {/* Video Section started */}
+            <section className="w-full flex justify-center items-center  px-4">
+                <div className="w-full max-w-[1200px] h-[400px] sm:h-[666px] rounded-[40px] box-border" style={{ border: '7px solid #F7A51E' }}>
+                    {/* Video Background */}
+                    <video
+                        src="/Videos/Promotional-Video.mp4" 
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                        controls
+                        className="w-full h-full object-cover rounded-[40px]"
+                    >
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+
+            {/* Video Section ended */}
+
+
+
+        </>
+    );
+};
+
+export default Home;
