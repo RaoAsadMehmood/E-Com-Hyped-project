@@ -11,43 +11,14 @@ import AnimatedStats from '../components/AnimatedStats';
 
 const Home = () => {
     const automationSlides = [
-        {
-          id: 1,
-          imageSrc: '/images/AmazonFBAAutomation.png',
-          title: 'Amazon FBA Automation'
-        },
-        {
-          id: 2,
-          imageSrc: '/images/WalmartAutomation.png',
-          title: 'Walmart Automation'
-        },
-        {
-          id: 3,
-          imageSrc: '/images/TiktokAutomation.png',
-          title: 'TikTok Automation'
-        },
-        {
-          id: 4,
-          imageSrc: '/images/ShopifyAutomation.png',
-          title: 'Shopify Automation'
-        },
-        {
-          id: 5,
-          imageSrc: '/images/YoutubaAutomation.png',
-          title: 'YouTube Automation'
-        },
-        {
-          id: 6,
-          imageSrc: '/images/TiktokAutomation.png',
-          title: 'Etsy Automation'
-        },
-        {
-          id: 7,
-          imageSrc: '/images/YoutubaAutomation.png',
-          title: 'Amazon Automation'
-        }
+        { id: 1, imageSrc: '/images/AmazonFBAAutomation.png', title: 'Amazon FBA Automation' },
+        { id: 2, imageSrc: '/images/WalmartAutomation.png', title: 'Walmart Automation' },
+        { id: 3, imageSrc: '/images/TikTokAutomation.png', title: 'TikTok Automation' },
+        { id: 4, imageSrc: '/images/ShopifyAutomation.png', title: 'Shopify Automation' },
+        { id: 5, imageSrc: '/images/YouTubeAutomation.png', title: 'YouTube Automation' },
+        { id: 6, imageSrc: '/images/EtsyAutomation.png', title: 'Etsy Automation' },
+        { id: 7, imageSrc: '/images/AmazonAutomation.png', title: 'Amazon Automation' },
       ];
-      
 
     return (
         <>

@@ -12,7 +12,6 @@ interface SlideItem {
 interface AutomationSliderProps {
   slides: SlideItem[];
   autoSlideInterval?: number;
-  // visibleSlides?: number;
 }
 
 const AutomationSlider = ({
@@ -24,21 +23,21 @@ const AutomationSlider = ({
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? slides.length - 1 : prevIndex - 1
     );
-  };
+  }, [slides.length]); // Dependency: slides.length
 
-  const goToPrevious = () => {
+  const goToPrevious = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       prevIndex === slides.length - 1 ? 0 : prevIndex + 1
     );
-  };
+  }, [slides.length]); // Dependency: slides.length
 
-  const goToSlide = (slideIndex: number) => {
+  const goToSlide = useCallback((slideIndex: number) => {
     setCurrentIndex(slideIndex);
-  };
+  }, []);
 
   const resetAutoSlideTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -46,14 +45,14 @@ const AutomationSlider = ({
     if (isAutoPlaying) {
       timerRef.current = setInterval(goToNext, autoSlideInterval);
     }
-  }, [isAutoPlaying, autoSlideInterval, goToNext]); // Dependencies added
+  }, [isAutoPlaying, autoSlideInterval, goToNext]); // Dependencies are stable now
 
   useEffect(() => {
     resetAutoSlideTimer();
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [resetAutoSlideTimer]); // Dependency fixed
+  }, [resetAutoSlideTimer]);
 
   const getOrderedSlides = () => {
     return [...Array(slides.length)].map((_, i) => {
@@ -117,6 +116,11 @@ const AutomationSlider = ({
                     alt={slide.title}
                     fill
                     className="object-cover transition-opacity duration-500"
+                    priority={index === 0}
+                    onError={(e) => {
+                      console.error(`Failed to load image: ${slide.imageSrc}`);
+                      e.currentTarget.src = '/images/placeholder.png';
+                    }}
                   />
                 </div>
                 <div className="mt-2 text-left w-full px-1">
@@ -132,9 +136,11 @@ const AutomationSlider = ({
                       )
                     )}
                   </h3>
-                  <div className="w-[33px] border-[1.5px] border-[#026F72] my-2"></div>
+                  <div className="w-[33px] border-[1.5px] border-[#334047] my-2"></div>
                   <div className="flex items-center mt-1">
-                    <span className="text-[18px] text-[#45565F]">More for this</span>
+                    <span className="text-[18px] text-[#45565F] font-medium">
+                      More for this
+                    </span>
                     <div className="ml-2 w-6 h-6 flex items-center justify-center rounded-sm border-2 border-amber-400 text-[#F7A51E]">
                       <FaArrowUpRightFromSquare size={16} />
                     </div>
