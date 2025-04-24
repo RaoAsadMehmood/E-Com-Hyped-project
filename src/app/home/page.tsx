@@ -182,17 +182,17 @@ const Home = () => {
                     >
                         {[ // wrap cards in map to reuse animation
                             {
-                                imageSrc: "/Images/Frame 29.png",
+                                imageSrc: "/images/frame-29.png",
                                 heading: "Transparency",
                                 description: "Onboarding with clear, genuine and realistic expectations.",
                             },
                             {
-                                imageSrc: "/Images/Frame 28.png",
+                                imageSrc: "/images/frame-28.png",
                                 heading: "Accountability",
                                 description: "On-time Reporting, Analytics and Top-notch Customer Service",
                             },
                             {
-                                imageSrc: "/Images/Frame 27.png",
+                                imageSrc: "/images/frame-27.png",
                                 heading: "Collecting Profits",
                                 description: "With our proven and proprietary FBA formula our investors see steady sales growth and results.",
                             },
