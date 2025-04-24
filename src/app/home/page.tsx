@@ -29,14 +29,12 @@ const Home = () => {
             <div
                 className='w-full min-h-screen flex justify-center items-center relative'
                 style={{
-                    backgroundImage: 'url("/Images/hero-cover.png")',
+                    backgroundImage: 'url("/images/hero-cover.png")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
                 }}
             >
-                {/* Optional Grid Overlay */}
-                {/* <div className='absolute inset-0 bg-[url("/path-to-grid-pattern.png")] bg-cover opacity-20'></div> */}
 
                 {/* Main Content */}
                 <div className='relative flex flex-col items-start px-4 sm:px-6 md:px-0 max-w-[1200px] w-full'>
@@ -380,22 +378,22 @@ const Home = () => {
                         {[...Array(4)].map((_, index) => {
                             const cardContent = [
                                 {
-                                    img: "/images/Frame 29.png",
+                                    img: "/images/frame-29.png",
                                     title: "Account Creation and Listing Setup",
                                     desc: "Simplify Amazon setup for new sellers with our account and listing creation services. Create listings successfully."
                                 },
                                 {
-                                    img: "/images/Frame 30.png",
+                                    img: "/images/frame-30.png",
                                     title: "Store Launch and Amazon Wholesale",
                                     desc: "Simplify Amazon setup for new sellers with our account and listing creation services. Create listings successfully."
                                 },
                                 {
-                                    img: "/images/Frame 31.png",
+                                    img: "/images/frame-31.png",
                                     title: "Brand Management and PPC Advertising",
                                     desc: "Boost Amazon presence with Brand Management and PPC Services. Optimize Listings, Reach Target Audience, Stand Out."
                                 },
                                 {
-                                    img: "/images/Frame 28.png",
+                                    img: "/images/frame-29.png",
                                     title: "Content and Listing Optimization",
                                     desc: "Optimize content and listings for FBA success. Rank higher, increase visibility, and drive sales."
                                 }
@@ -494,7 +492,7 @@ const Home = () => {
                     transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
                 >
                     <Image
-                        src="/images/Frame.png"
+                        src="/images/illustration.png"
                         alt="Illustration"
                         width={588}
                         height={607}
