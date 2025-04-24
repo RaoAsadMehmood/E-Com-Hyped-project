@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 
 interface SlideItem {
@@ -20,32 +19,41 @@ const AutomationSlider = ({
 }: AutomationSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(slides.length - 1);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [progress, setProgress] = useState(0); // Track progress of the bar
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
 
   const goToNext = useCallback(() => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
-    );
-  }, [slides.length]); // Dependency: slides.length
+    setCurrentIndex((prevIndex) => {
+      const nextIndex = prevIndex === 0 ? slides.length - 1 : prevIndex - 1;
+      return nextIndex;
+    });
+  }, [slides.length]);
 
   const goToPrevious = useCallback(() => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-    );
-  }, [slides.length]); // Dependency: slides.length
+    setCurrentIndex((prevIndex) => {
+      const prevIndexValue = prevIndex === slides.length - 1 ? 0 : prevIndex + 1;
+      return prevIndexValue;
+    });
+  }, [slides.length]);
 
   const goToSlide = useCallback((slideIndex: number) => {
     setCurrentIndex(slideIndex);
-  }, []);
+    // Reset progress whenever you go to a specific slide manually
+    setProgress((slideIndex + 1) * (100 / slides.length));
+  }, [slides.length]);
 
   const resetAutoSlideTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
 
     if (isAutoPlaying) {
-      timerRef.current = setInterval(goToNext, autoSlideInterval);
+      timerRef.current = setInterval(() => {
+        goToNext();
+        // Calculate the progress for the next slide transition
+        setProgress((prev) => (prev + 100 / slides.length) % 100);
+      }, autoSlideInterval);
     }
-  }, [isAutoPlaying, autoSlideInterval, goToNext]); // Dependencies are stable now
+  }, [isAutoPlaying, autoSlideInterval, goToNext, slides.length]);
 
   useEffect(() => {
     resetAutoSlideTimer();
@@ -80,8 +88,7 @@ const AutomationSlider = ({
   };
 
   const orderedSlides = getOrderedSlides();
-  const progressWidth = 100 / slides.length;
-  const progressPosition = (slides.length - 1 - currentIndex) * progressWidth;
+  // const progressWidth = 100 / slides.length;
 
   return (
     <div
@@ -92,6 +99,7 @@ const AutomationSlider = ({
       onTouchEnd={handleTouchEnd}
       ref={sliderRef}
     >
+      {/* Slide Items */}
       <div className="flex justify-center relative">
         <div className="flex gap-4 overflow-x-hidden transition-transform duration-500 ease-in-out px-4 sm:px-2 xs:px-1">
           {orderedSlides.map((slide, index) => {
@@ -152,39 +160,40 @@ const AutomationSlider = ({
         </div>
       </div>
 
-      {/* Navigation arrows */}
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          goToPrevious();
-        }}
-        className="absolute left-4 sm:left-2 top-1/2 -translate-y-1/2 bg-yellow-400 w-8 h-8 sm:w-7 sm:h-7 xs:w-6 xs:h-6 flex items-center justify-center rounded-sm z-10"
-        aria-label="Previous slide"
-      >
-        <MdChevronLeft size={20} />
-      </button>
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          goToNext();
-        }}
-        className="absolute right-4 sm:right-2 top-1/2 -translate-y-1/2 bg-yellow-400 w-8 h-8 sm:w-7 sm:h-7 xs:w-6 xs:h-6 flex items-center justify-center rounded-sm z-10"
-        aria-label="Next slide"
-      >
-        <MdChevronRight size={20} />
-      </button>
+      {/* Updated Progress Bar Section */}
+      <div className="relative flex items-center justify-center mt-8 px-6 gap-4 max-w-3xl mx-auto">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            goToPrevious();
+            setProgress(0); // Reset progress when going back manually
+          }}
+          className="bg-[#F7A51E] w-10 h-10 flex items-center justify-center rounded text-white text-lg font-bold"
+          aria-label="Previous Slide"
+        >
+          ←
+        </button>
 
-      {/* Progress indicator */}
-      <div className="relative flex justify-center mt-6 px-4">
-        <div className="h-1 w-full max-w-2xl sm:max-w-md xs:max-w-xs">
+        <div className="flex-1 h-1 rounded-full bg-gray-300 relative overflow-hidden">
           <div
-            className="h-1 bg-yellow-400 rounded-full transition-transform duration-500 ease-in-out"
+            className="h-full bg-[#F7A51E] transition-all duration-500 ease-in-out"
             style={{
-              width: `${progressWidth}%`,
-              transform: `translateX(${progressPosition}%)`,
+              width: `${progress}%`, // Adjust progress based on the current value
             }}
-          />
+          ></div>
         </div>
+
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            goToNext();
+            setProgress(0); // Reset progress when going forward manually
+          }}
+          className="bg-[#F7A51E] w-10 h-10 flex items-center justify-center rounded text-white text-lg font-bold"
+          aria-label="Next Slide"
+        >
+          →
+        </button>
       </div>
     </div>
   );
