@@ -711,14 +711,14 @@ const Home = () => {
             </section>
 
 
-            {/* Companies Logo Slider */}
+            {/* Companies Logo  */}
             <div className="flex flex-wrap justify-around items-center gap-6 sm:gap-10 py-[55px] px-4 bg-[#ecf9f9]">
                 {[
-                    '/images/Trustpilot Stars 1.png',
-                    '/images/reviews-io-vector-logo 1.png',
-                    '/images/image 2.png',
-                    '/images/Clutch 5 Star 1.png',
-                    '/images/image 1.png',
+                    '/images/company-logo1.png',
+                    '/images/company-logo2.png',
+                    '/images/company-logo3.png',
+                    '/images/company-logo4.png',
+                    '/images/company-logo5.png',
                 ].map((src, index) => (
                     <motion.div
                         key={index}
@@ -737,7 +737,7 @@ const Home = () => {
                 ))}
             </div>
 
-            {/* Companies Logo Slider */}
+            {/* Companies Logo  */}
 
            
 
