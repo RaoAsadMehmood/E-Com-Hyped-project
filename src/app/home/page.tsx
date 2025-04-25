@@ -9,7 +9,9 @@ import AutomationSlider from '../components/AutomationSlider';
 import AnimatedStats from '../components/AnimatedStats';
 import AmazonCarousel from '../components/AmazonCarousel';
 import Link from 'next/link';
-// import ProgressBar from '../components/ProgressBar';
+import TestimonialSlider from '../components/TestimonialSlider';
+
+
 
 
 const Home = () => {
@@ -26,6 +28,7 @@ const Home = () => {
 
     return (
         <>
+
             <div
                 className='w-full min-h-screen flex justify-center items-center relative'
                 style={{
@@ -572,38 +575,173 @@ const Home = () => {
 
 
             {/* Testimonials Section Started */}
-            {/* <section>
-                <div className='w-full min-h-screen flex justify-around items-center'
-                    style={{
-                        backgroundImage: 'url("/images/Union.png")',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat',
-                    }}>
-                    <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug mb-4">
+            <section
+                className="w-full min-h-screen px-6 py-10 lg:py-20"
+                style={{
+                    backgroundImage: 'url("/images/Union.png")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                }}
+            >
+                <div className="flex flex-col lg:flex-row justify-around items-center gap-10 lg:gap-0 mt-[60px] sm:mt-[80px] md:mt-[100px]">
+                    {/* Left Text */}
+                    <p className="text-[#334047] text-[46px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug text-center lg:text-left mt-2 lg:mt-[10px]">
                         They Satisfied With <br />
                         Our Service
                     </p>
-                    <div>
-                        <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
-                            TESTIMONIALS
-                        </h2>
-                        <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-                            How they respond to the results of the work we do for them, let’s we know
-                        </p>
+
+                    {/* Right Block */}
+                    <div className="flex flex-col sm:flex-row items-center justify-center relative">
+                        <div className="text-center sm:text-left max-w-[400px]">
+                            <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
+                                TESTIMONIALS
+                            </h2>
+                            <p className="text-[#151515] text-[18px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
+                                How they respond to the results of the work we do for them,
+                                <br className="block sm:hidden" />
+                                <span className="hidden sm:inline"> </span>
+                                lets we know
+                            </p>
+                        </div>
+
+                        {/* Quotation Image */}
+                        <Image
+                            src="/images/inverted-comma.png"
+                            alt=""
+                            width={204}
+                            height={183}
+                            className="sm:ml-[-60px] ml-0 mt-4 sm:mt-0 w-[100px] sm:w-[140px] md:w-[180px]"
+                        />
                     </div>
-                    <Image
-                    src={'/images/inverted-comma.png'}
-                    alt= {''}
-                    width={'204'}
-                    height={'183'}
-                    />
-
-
                 </div>
-            </section> */}
 
+                {/* 👇 Slider now inside same section and aligned properly */}
+                <div className="mt-16">
+                    <TestimonialSlider />
+                </div>
+            </section>
             {/* Testimonials Section Ended */}
+
+
+
+            <section className='w-full'>
+                <div
+                    className='w-full h-[458px] flex flex-col justify-center items-center px-4 sm:px-8 md:px-16 lg:px-24 text-center relative'
+                    style={{
+                        backgroundImage: 'url("/images/stats-cover.png")',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                    }}
+                >
+                    <div className="max-w-4xl mx-auto flex flex-col items-center gap-4">
+
+                        <motion.h1
+                            className='text-3xl md:text-4xl lg:text-[46px] text-white font-semibold leading-tight'
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
+                            viewport={{ once: true }}
+                        >
+                            Level up with Amazon Automation Experts
+                        </motion.h1>
+
+                        <motion.p
+                            className='text-base md:text-lg text-white max-w-3xl mx-auto'
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4, duration: 0.6, ease: 'easeOut' }}
+                            viewport={{ once: true }}
+                        >
+                            Are you tired of manual Amazon business tasks? Let EcomHyped experts automate it for you.
+                            From setup to launch, we will handle the details. Automate your store, reach your target audience, and more.
+                            Grow your business with our cutting-edge technology and expertise.
+                        </motion.p>
+
+                        <div className="mt-6">
+                            <motion.div
+                                className="flex justify-center lg:justify-start"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.6, duration: 0.4, ease: 'easeOut' }}
+                                viewport={{ once: true }}
+                            >
+                                <Link href="">
+                                    <button className="px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
+              hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
+              active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
+              transition-all duration-300 ease-out">
+                                        Schedule a Call
+                                    </button>
+                                </Link>
+                            </motion.div>
+                        </div>
+                    </div>
+
+                    {/* Decorative Stars with Animations */}
+                    <motion.div
+                        className="absolute top-24 left-24 text-white opacity-70"
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.8, duration: 0.6, ease: 'easeOut' }}
+                        viewport={{ once: true }}
+                    >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z"
+                                fill="white" stroke="white" strokeWidth="0.5" />
+                        </svg>
+                    </motion.div>
+
+                    <motion.div
+                        className="absolute bottom-24 right-24 text-white opacity-70"
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 1, duration: 0.6, ease: 'easeOut' }}
+                        viewport={{ once: true }}
+                    >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15 8L21 9L16.5 14L18 20L12 17L6 20L7.5 14L3 9L9 8L12 2Z"
+                                fill="white" stroke="white" strokeWidth="0.5" />
+                        </svg>
+                    </motion.div>
+                </div>
+            </section>
+
+
+            {/* Companies Logo Slider */}
+            <div className="flex flex-wrap justify-around items-center gap-6 sm:gap-10 py-[55px] px-4 bg-[#ecf9f9]">
+                {[
+                    '/images/Trustpilot Stars 1.png',
+                    '/images/reviews-io-vector-logo 1.png',
+                    '/images/image 2.png',
+                    '/images/Clutch 5 Star 1.png',
+                    '/images/image 1.png',
+                ].map((src, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                        <Image
+                            src={src}
+                            alt={`Review logo ${index + 1}`}
+                            width={168}
+                            height={64}
+                            className="object-contain w-[120px] sm:w-[150px] md:w-[168px] h-auto"
+                        />
+                    </motion.div>
+                ))}
+            </div>
+
+            {/* Companies Logo Slider */}
+
+           
+
+
 
         </>
     );

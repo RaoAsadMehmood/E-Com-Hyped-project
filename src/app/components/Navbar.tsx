@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const pathname = usePathname(); // To detect current route
+    const pathname = usePathname();
 
     const toggleMenu = (): void => {
         setIsOpen(!isOpen);
@@ -28,7 +28,10 @@ const Navbar: React.FC = () => {
             initial={{ y: -80, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            className='relative flex flex-wrap justify-evenly items-center gap-12 py-4 bg-[#026f72] z-50'
+            className='relative flex flex-wrap justify-evenly items-center gap-12 py-4 z-50'
+            style={{
+                backgroundImage: 'linear-gradient(to right, #03a6aa, #026f72, #026f72, #026f72)',
+            }}
         >
             {/* Hamburger Icon - Right on mobile, hidden on desktop */}
             <div className='absolute right-4 md:hidden flex items-center'>
@@ -55,7 +58,7 @@ const Navbar: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
-                className={`${isOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row gap-6 md:gap-10 absolute md:static top-16 left-0 w-full md:w-auto bg-[#026f72] md:bg-transparent p-4 md:p-0 transition-all duration-300 z-10`}
+                className={`${isOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row gap-6 md:gap-10 absolute md:static top-16 left-0 w-full md:w-auto p-4 md:p-0 transition-all duration-300 z-10`}
             >
                 {navLinks.slice(0, 3).map((link) => (
                     <Link
@@ -91,7 +94,7 @@ const Navbar: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className={`${isOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row gap-6 md:gap-10 absolute md:static top-48 left-0 w-full md:w-auto bg-[#026f72] md:bg-transparent p-4 md:p-0 transition-all duration-300 z-10`}
+                className={`${isOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row gap-6 md:gap-10 absolute md:static top-48 left-0 w-full md:w-auto p-4 md:p-0 transition-all duration-300 z-10`}
             >
                 {navLinks.slice(3).map((link) => (
                     <Link
@@ -109,7 +112,7 @@ const Navbar: React.FC = () => {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className='py-2 px-6 bg-transparent border border-white text-white text-lg font-light rounded hover:bg-white hover:text-teal-600 transition'
+                        className='py-2 px-6 border border-white text-white text-lg font-light rounded hover:bg-white hover:text-teal-600 transition'
                     >
                         Contact
                     </motion.button>
