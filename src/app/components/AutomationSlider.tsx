@@ -19,7 +19,7 @@ const AutomationSlider = ({
 }: AutomationSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(slides.length - 1);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [progress, setProgress] = useState(0); // Track progress of the bar
+  const [progress, setProgress] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
 
@@ -37,11 +37,13 @@ const AutomationSlider = ({
     });
   }, [slides.length]);
 
-  const goToSlide = useCallback((slideIndex: number) => {
-    setCurrentIndex(slideIndex);
-    // Reset progress whenever you go to a specific slide manually
-    setProgress((slideIndex + 1) * (100 / slides.length));
-  }, [slides.length]);
+  const goToSlide = useCallback(
+    (slideIndex: number) => {
+      setCurrentIndex(slideIndex);
+      setProgress((slideIndex + 1) * (100 / slides.length));
+    },
+    [slides.length]
+  );
 
   const resetAutoSlideTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -49,7 +51,6 @@ const AutomationSlider = ({
     if (isAutoPlaying) {
       timerRef.current = setInterval(() => {
         goToNext();
-        // Calculate the progress for the next slide transition
         setProgress((prev) => (prev + 100 / slides.length) % 100);
       }, autoSlideInterval);
     }
@@ -88,7 +89,6 @@ const AutomationSlider = ({
   };
 
   const orderedSlides = getOrderedSlides();
-  // const progressWidth = 100 / slides.length;
 
   return (
     <div
@@ -118,7 +118,7 @@ const AutomationSlider = ({
                   goToSlide((currentIndex - index + slides.length) % slides.length)
                 }
               >
-                <div className="relative w-[clamp(160px,30vw,270px)] h-[clamp(120px,24vw,219px)] overflow-hidden rounded-t-[160px]">
+                <div className="relative w-[clamp(140px,60vw,270px)] h-[clamp(100px,45vw,219px)] sm:w-[clamp(160px,30vw,270px)] sm:h-[clamp(120px,24vw,219px)] overflow-hidden rounded-t-[100px] sm:rounded-t-[160px]">
                   <Image
                     src={slide.imageSrc}
                     alt={slide.title}
@@ -132,7 +132,7 @@ const AutomationSlider = ({
                   />
                 </div>
                 <div className="mt-2 text-left w-full px-1">
-                  <h3 className="text-[26px] text-[#334047] font-semibold leading-snug">
+                  <h3 className="text-[20px] sm:text-[26px] text-[#334047] font-semibold leading-snug">
                     {slide.title.split(' ').map((word, i) =>
                       i === 0 ? (
                         <span key={i}>
@@ -144,9 +144,9 @@ const AutomationSlider = ({
                       )
                     )}
                   </h3>
-                  <div className="w-[33px] border-[1.5px] border-[#334047] my-2"></div>
+                  <div className="w-[28px] sm:w-[33px] border-[1.5px] border-[#334047] my-2"></div>
                   <div className="flex items-center mt-1">
-                    <span className="text-[18px] text-[#45565F] font-medium">
+                    <span className="text-[16px] sm:text-[18px] text-[#45565F] font-medium">
                       More for this
                     </span>
                     <div className="ml-2 w-6 h-6 flex items-center justify-center rounded-sm border-2 border-amber-400 text-[#F7A51E]">
@@ -160,15 +160,15 @@ const AutomationSlider = ({
         </div>
       </div>
 
-      {/* Updated Progress Bar Section */}
-      <div className="relative flex items-center justify-center mt-8 px-6 gap-4 max-w-3xl mx-auto">
+      {/* Progress Bar + Arrows */}
+      <div className="relative flex items-center justify-center mt-8 px-4 sm:px-6 gap-2 sm:gap-4 max-w-xl mx-auto">
         <button
           onClick={(e) => {
             e.stopPropagation();
             goToPrevious();
-            setProgress(0); // Reset progress when going back manually
+            setProgress(0);
           }}
-          className="bg-[#F7A51E] w-10 h-10 flex items-center justify-center rounded text-white text-lg font-bold"
+          className="bg-[#F7A51E] w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded text-white text-base sm:text-lg font-bold"
           aria-label="Previous Slide"
         >
           ←
@@ -178,7 +178,7 @@ const AutomationSlider = ({
           <div
             className="h-full bg-[#F7A51E] transition-all duration-500 ease-in-out"
             style={{
-              width: `${progress}%`, // Adjust progress based on the current value
+              width: `${progress}%`,
             }}
           ></div>
         </div>
@@ -187,9 +187,9 @@ const AutomationSlider = ({
           onClick={(e) => {
             e.stopPropagation();
             goToNext();
-            setProgress(0); // Reset progress when going forward manually
+            setProgress(0);
           }}
-          className="bg-[#F7A51E] w-10 h-10 flex items-center justify-center rounded text-white text-lg font-bold"
+          className="bg-[#F7A51E] w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded text-white text-base sm:text-lg font-bold"
           aria-label="Next Slide"
         >
           →

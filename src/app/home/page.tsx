@@ -40,7 +40,7 @@ const Home = () => {
             >
 
                 {/* Main Content */}
-                <div className='relative flex flex-col items-start px-4 sm:px-6 md:px-0 max-w-[1200px] w-full'>
+                <div className='relative flex flex-col items-start px-4 sm:px-6 md:px-0 max-w-[1200px] w-full '>
 
                     {/* Animated Heading */}
                     <motion.h1

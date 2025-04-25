@@ -70,12 +70,13 @@ const AnimatedStat = ({ endValue, label, duration = 2000, suffix = '' }: Animate
             viewport={{ once: true }}
             className="flex flex-col items-center text-center px-4"
         >
-            <h2 className="font-bold text-white" style={{ fontSize: '66px' }}>
-                {count.toLocaleString()}{suffix}
-            </h2>
-            <p className="text-white mt-1" style={{ fontSize: '18px' }}>
-                {label}
-            </p>
+            <h2 className="font-bold text-white text-[40px] md:text-[66px] leading-tight">
+    {count.toLocaleString()}{suffix}
+</h2>
+<p className="text-white mt-1 text-[16px] md:text-[18px]">
+    {label}
+</p>
+
         </motion.div>
     );
 };
@@ -83,15 +84,15 @@ const AnimatedStat = ({ endValue, label, duration = 2000, suffix = '' }: Animate
 const AnimatedStatsRow = ({ stats }: AnimatedStatsRowProps) => {
     return (
         <div className="w-full py-8">
-            <div className="container mx-auto">
-                <div className="flex justify-between items-center flex-wrap">
+            <div className="container mx-auto px-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4">
                     {stats.map((stat, index) => (
                         <AnimatedStat
                             key={index}
                             endValue={stat.endValue}
                             label={stat.label}
                             suffix={stat.suffix}
-                            duration={2500} // Optional per-item speed control
+                            duration={2500}
                         />
                     ))}
                 </div>
@@ -99,6 +100,7 @@ const AnimatedStatsRow = ({ stats }: AnimatedStatsRowProps) => {
         </div>
     );
 };
+
 
 export default function Stats() {
     const statsData = [
