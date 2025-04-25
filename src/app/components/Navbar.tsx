@@ -81,8 +81,8 @@ const Navbar: React.FC = () => {
                 className='flex gap-6 order-first md:order-none'
             >
                 <Image
-                    src={'/Images/logo.png'}
-                    alt={'Brand Logo'}
+                    src={'/images/ecomhyped-logo.png'}
+                    alt={'Ecom Hyped-logo'}
                     width={70}
                     height={52}
                     className='w-[70px] h-[52px] md:w-[53px] md:h-[40px]'

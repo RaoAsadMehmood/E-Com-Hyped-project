@@ -97,7 +97,7 @@ const Footer = () => {
                     <div className="flex items-center mb-4 md:mb-0">
                         <Link href="/">
                             <Image
-                                src="/images/logo.png"
+                                src="/images/ecomhyped-logo.png"
                                 alt="Ecom Hyped Logo"
                                 width={53}
                                 height={40}
