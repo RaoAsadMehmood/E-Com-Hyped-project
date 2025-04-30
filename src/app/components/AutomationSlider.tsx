@@ -118,7 +118,8 @@ const AutomationSlider = ({
                   goToSlide((currentIndex - index + slides.length) % slides.length)
                 }
               >
-                <div className="relative w-[clamp(140px,60vw,270px)] h-[clamp(100px,45vw,219px)] sm:w-[clamp(160px,30vw,270px)] sm:h-[clamp(120px,24vw,219px)] overflow-hidden rounded-t-[100px] sm:rounded-t-[160px]">
+                <div className="relative w-[clamp(140px,60vw,270px)] h-[clamp(100px,45vw,219px)] sm:w-[clamp(160px,30vw,270px)]
+                 sm:h-[clamp(120px,24vw,219px)] overflow-hidden rounded-t-[100px] sm:rounded-t-[160px]">
                   <Image
                     src={slide.imageSrc}
                     alt={slide.title}

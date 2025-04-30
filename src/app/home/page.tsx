@@ -473,17 +473,22 @@ const Home = () => {
                         selling your products on Amazon in no time.
                     </p>
 
-                    <div className="mt-6 flex justify-center lg:justify-start">
+                    <motion.div
+                        className="flex justify-center lg:justify-start"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.6, duration: 0.4, ease: 'easeOut' }}
+                        viewport={{ once: true }}
+                    >
                         <Link href="">
                             <button className="px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
-  hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
-  active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
-  transition-all duration-300 ease-out">
+        hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
+        active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
+        transition-all duration-300 ease-out">
                                 Schedule a Call
                             </button>
-
                         </Link>
-                    </div>
+                    </motion.div>
                 </motion.div>
 
                 {/* Image Section */}
@@ -586,13 +591,25 @@ const Home = () => {
             >
                 <div className="flex flex-col lg:flex-row justify-around items-center gap-10 lg:gap-0 mt-[60px] sm:mt-[80px] md:mt-[100px]">
                     {/* Left Text */}
-                    <p className="text-[#334047] text-[46px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug text-center lg:text-left mt-2 lg:mt-[10px]">
+                    <motion.p
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        className="text-[#334047] text-[46px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug text-center lg:text-left mt-2 lg:mt-[10px]"
+                    >
                         They Satisfied With <br />
                         Our Service
-                    </p>
+                    </motion.p>
 
                     {/* Right Block */}
-                    <div className="flex flex-col sm:flex-row items-center justify-center relative">
+                    <motion.div
+                        initial={{ opacity: 0, x: 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="flex flex-col sm:flex-row items-center justify-center relative"
+                    >
                         <div className="text-center sm:text-left max-w-[400px]">
                             <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
                                 TESTIMONIALS
@@ -606,21 +623,34 @@ const Home = () => {
                         </div>
 
                         {/* Quotation Image */}
-                        <Image
-                            src="/images/inverted-comma.png"
-                            alt=""
-                            width={204}
-                            height={183}
-                            className="sm:ml-[-60px] ml-0 mt-4 sm:mt-0 w-[100px] sm:w-[140px] md:w-[180px]"
-                        />
-                    </div>
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+                            viewport={{ once: true }}
+                        >
+                            <Image
+                                src="/images/inverted-comma.png"
+                                alt=""
+                                width={204}
+                                height={183}
+                                className="sm:ml-[-60px] ml-0 mt-4 sm:mt-0 w-[100px] sm:w-[140px] md:w-[180px]"
+                            />
+                        </motion.div>
+                    </motion.div>
                 </div>
 
-                {/* 👇 Slider now inside same section and aligned properly */}
-                <div className="mt-16">
+                <motion.div
+                    className="mt-16"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    viewport={{ once: true }}
+                >
                     <TestimonialSlider />
-                </div>
+                </motion.div>
             </section>
+
             {/* Testimonials Section Ended */}
 
 
@@ -722,9 +752,14 @@ const Home = () => {
                 ].map((src, index) => (
                     <motion.div
                         key={index}
-                        initial={{ scale: 0.9, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        transition={{
+                            duration: 0.5,
+                            ease: 'easeOut',
+                            delay: index * 0.15,
+                        }}
+                        viewport={{ once: true, amount: 0.3 }}
                     >
                         <Image
                             src={src}
@@ -737,9 +772,10 @@ const Home = () => {
                 ))}
             </div>
 
+
             {/* Companies Logo  */}
 
-           
+
 
 
 
