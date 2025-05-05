@@ -220,7 +220,7 @@ const About = () => {
           viewport={{ once: true }}
         >
           <Image
-            src="/images/portfolio-image.png"
+            src="/images/portfolio-illustration.png"
             alt="illustration"
             width={588}
             height={607}
@@ -376,7 +376,7 @@ const About = () => {
             {/* Static Image */}
             <div className="relative w-full max-w-[500px] h-[300px] sm:h-[552px]">
               <Image
-                src="/images/image-4.png"
+                src="/images/amazon-stats.png"
                 alt="Static Amazon Image"
                 fill
                 className="object-contain rounded-lg"
@@ -415,7 +415,7 @@ const About = () => {
             {/* Static Image */}
             <div className="relative w-full max-w-[500px] h-[300px] sm:h-[552px]">
               <Image
-                src="/images/image-4.png"
+                src="/images/amazon-stats.png"
                 alt="Static Amazon Image"
                 fill
                 className="object-contain rounded-lg"

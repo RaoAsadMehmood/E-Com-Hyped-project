@@ -139,7 +139,7 @@ const OurStory = () => {
           viewport={{ once: true }}
         >
           <Image
-            src="/images/portfolio-image.png"
+            src="/images/portfolio-illustration.png"
             alt="illustration"
             width={588}
             height={607}
