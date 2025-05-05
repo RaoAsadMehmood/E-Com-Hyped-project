@@ -276,7 +276,7 @@ const Home = () => {
                             SERVICES
                         </p>
                         <p className="text-[#45565F] text-[16px] sm:text-[18px] font-semibold leading-relaxed">
-                            We present many films from various main categories, lets{" "}
+                            We present many films from various main categories, lets
                             <br className="hidden sm:block" />
                             choose and
                         </p>
@@ -481,7 +481,7 @@ const Home = () => {
                         viewport={{ once: true }}
                     >
                         <Link href="">
-                            <button className="px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
+                            <button className="px-[48px] py-[14px] sm:px-[56px] mt-[20px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
         hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
         active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
         transition-all duration-300 ease-out">

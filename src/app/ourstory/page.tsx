@@ -11,7 +11,7 @@ const OurStory = () => {
 
     <>
 
-      <div
+<div
         className="w-full min-h-screen flex items-center justify-center relative px-4"
         style={{
           backgroundImage: 'url("/images/hero-cover.png")',
@@ -34,13 +34,14 @@ const OurStory = () => {
               </span>{" "}
               Story
             </h1>
-            <p className="mt-4 text-[#cdd8dd] font-medium text-left text-[18px] sm:text-[20px] md:text-[22px] max-w-xl leading-relaxed">
-              Welcome to EcomHyped, where we offer a range of services to help you 
+            <p className="mt-4 text-[#cdd8dd] font-medium text-left text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-relaxed max-w-full sm:max-w-[500px] md:max-w-[580px] lg:max-w-[650px] xl:max-w-[700px]">
+              Welcome to EcomHyped, where we offer a range of services to help you
               take your Amazon Automation Store to the next level.
             </p>
           </motion.div>
         </div>
       </div>
+      {/* Hero Section Ended */}
 
 
 
@@ -54,7 +55,7 @@ const OurStory = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <Image
-            src="/images/Target Frame.png"
+            src="/images/target-frame.png"
             alt="Target-frame"
             width={104}
             height={104}
@@ -77,7 +78,7 @@ const OurStory = () => {
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
         >
           <Image
-            src="/images/Vision Frame.png"
+            src="/images/vision-frame.png"
             alt="Vision-frame"
             width={104}
             height={104}
@@ -138,7 +139,7 @@ const OurStory = () => {
           viewport={{ once: true }}
         >
           <Image
-            src="/images/illustration-2.png"
+            src="/images/portfolio-image.png"
             alt="illustration"
             width={588}
             height={607}
@@ -148,9 +149,9 @@ const OurStory = () => {
       </section>
 
 
-      {/* Testimonial section started */}
+      {/* Testimonials Section Started */}
       <section
-        className="w-full min-h-screen px-6 py-10 lg:py-16"
+        className="w-full min-h-screen px-6 py-10 lg:py-20"
         style={{
           backgroundImage: 'url("/images/Union.png")',
           backgroundSize: 'cover',
@@ -158,15 +159,27 @@ const OurStory = () => {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <div className="flex flex-col lg:flex-row justify-around items-center gap-10 lg:gap-0 mt-[40px] sm:mt-[80px] md:mt-[100px]">
+        <div className="flex flex-col lg:flex-row justify-around items-center gap-10 lg:gap-0 mt-[60px] sm:mt-[80px] md:mt-[100px]">
           {/* Left Text */}
-          <p className="text-[#334047] text-[46px] sm:text-[30px] md:text-[40px] lg:text-[46px] font-semibold leading-snug text-center lg:text-left mt-2 lg:mt-[10px]">
-            They Satisfied With
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="text-[#334047] text-[46px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug text-center lg:text-left mt-2 lg:mt-[10px]"
+          >
+            They Satisfied With <br />
             Our Service
-          </p>
+          </motion.p>
 
           {/* Right Block */}
-          <div className="flex flex-col sm:flex-row items-center justify-center relative">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row items-center justify-center relative"
+          >
             <div className="text-center sm:text-left max-w-[400px]">
               <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
                 TESTIMONIALS
@@ -180,22 +193,35 @@ const OurStory = () => {
             </div>
 
             {/* Quotation Image */}
-            <Image
-              src="/images/inverted-comma.png"
-              alt=""
-              width={204}
-              height={183}
-              className="sm:ml-[-60px] ml-0 mt-4 sm:mt-0 w-[100px] sm:w-[140px] md:w-[180px]"
-            />
-          </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <Image
+                src="/images/inverted-comma.png"
+                alt=""
+                width={204}
+                height={183}
+                className="sm:ml-[-60px] ml-0 mt-4 sm:mt-0 w-[100px] sm:w-[140px] md:w-[180px]"
+              />
+            </motion.div>
+          </motion.div>
         </div>
 
-        <div className="mt-16">
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
           <TestimonialSlider />
-        </div>
+        </motion.div>
       </section>
 
-      {/* Testimonial section ended */}
+      {/* Testimonials Section Ended */}
 
 
 
