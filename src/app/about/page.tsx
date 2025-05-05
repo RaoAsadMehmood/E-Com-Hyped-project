@@ -481,15 +481,16 @@ const About = () => {
           <div className="max-w-4xl mx-auto flex flex-col items-center gap-4">
 
             <motion.h1
-              className='text-3xl md:text-4xl lg:text-[46px] text-white font-semibold leading-tight'
+              className="text-3xl md:text-4xl lg:text-[46px] text-white font-semibold leading-tight"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
-         Let's Connect - Get in Touch  <br />
-         Ecom Hyped!
+              {`Let's Connect - Get in Touch`} <br />
+              Ecom Hyped!
             </motion.h1>
+
 
             <motion.p
               className='text-base md:text-lg text-white max-w-3xl mx-auto'
@@ -556,37 +557,37 @@ const About = () => {
       </section>
 
       <div className="flex flex-wrap justify-around items-center gap-6 sm:gap-10 py-[55px] px-4 bg-[#ecf9f9]">
-                {[
-                    '/images/company-logo1.png',
-                    '/images/company-logo2.png',
-                    '/images/company-logo3.png',
-                    '/images/company-logo4.png',
-                    '/images/company-logo5.png',
-                ].map((src, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        whileInView={{ scale: 1, opacity: 1 }}
-                        transition={{
-                            duration: 0.5,
-                            ease: 'easeOut',
-                            delay: index * 0.15,
-                        }}
-                        viewport={{ once: true, amount: 0.3 }}
-                    >
-                        <Image
-                            src={src}
-                            alt={`Review logo ${index + 1}`}
-                            width={168}
-                            height={64}
-                            className="object-contain w-[120px] sm:w-[150px] md:w-[168px] h-auto"
-                        />
-                    </motion.div>
-                ))}
-            </div>
+        {[
+          '/images/company-logo1.png',
+          '/images/company-logo2.png',
+          '/images/company-logo3.png',
+          '/images/company-logo4.png',
+          '/images/company-logo5.png',
+        ].map((src, index) => (
+          <motion.div
+            key={index}
+            initial={{ scale: 0.8, opacity: 0 }}
+            whileInView={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              ease: 'easeOut',
+              delay: index * 0.15,
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <Image
+              src={src}
+              alt={`Review logo ${index + 1}`}
+              width={168}
+              height={64}
+              className="object-contain w-[120px] sm:w-[150px] md:w-[168px] h-auto"
+            />
+          </motion.div>
+        ))}
+      </div>
 
 
-            {/* Companies Logo  */}
+      {/* Companies Logo  */}
 
 
 
