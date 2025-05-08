@@ -10,6 +10,7 @@ import AnimatedStats from '../components/AnimatedStats';
 import AmazonCarousel from '../components/AmazonCarousel';
 import Link from 'next/link';
 import TestimonialSlider from '../components/TestimonialSlider';
+import Navbar from '../components/Navbar';
 
 
 
@@ -28,6 +29,7 @@ const Home = () => {
 
     return (
         <>
+        <Navbar />
             <div className='overflow-x-hidden'>
                 <div
                     className='w-full min-h-screen flex justify-center items-center relative'
@@ -47,7 +49,7 @@ const Home = () => {
                             initial={{ opacity: 0, y: 60 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: 'easeOut' }}
-                            className="text-[50px] sm:text-[70px] md:text-[87px] font-semibold text-white leading-tight text-left text-shadow-lg/40"
+                            className="text-[50px] sm:text-[70px] md:text-[87px] font-semibold text-white leading-tight text-left "
                         >
                             <span
                                 className="text-[#f7a51e] inline-block relative z-10 px-6 py-2"

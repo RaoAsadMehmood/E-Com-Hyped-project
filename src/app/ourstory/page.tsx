@@ -5,11 +5,13 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link';
 import TestimonialSlider from '../components/TestimonialSlider';
+import Navbar from '../components/Navbar';
 
 const OurStory = () => {
   return (
 
     <>
+    <Navbar />
       <div className='overflow-x-hidden'>
         <div
           className="w-full min-h-screen flex items-center justify-center relative px-4"

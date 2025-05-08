@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Sora } from "next/font/google";
 import './globals.css';
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 
@@ -38,7 +38,7 @@ export default function RootLayout({
           antialiased
         `}
       >
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
         <Footer />
       </body>

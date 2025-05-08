@@ -6,11 +6,13 @@ import ImageCarousel from '../components/ImageCarousel';
 import FeatureCard from '../components/FeatureCard';
 import Link from 'next/link';
 import { StatsHeroSection } from '../components/StatsSection';
+import Navbar from '../components/Navbar';
 
 const About = () => {
 
   return (
     <>
+    <Navbar />
       <div className=' overflow-x-hidden'>
         {/* Hero Section Started */}
 
