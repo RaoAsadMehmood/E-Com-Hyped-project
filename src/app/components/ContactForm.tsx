@@ -181,13 +181,17 @@ const ContactForm: React.FC = () => {
               name="service"
               value={formData.service}
               onChange={handleInputChange}
-              className="w-full h-[60px] border border-gray-300 rounded-md px-4 bg-white focus:outline-none focus:ring-2 focus:ring-[#F7A51E]"
+              className="w-full h-[60px] border border-gray-300 rounded-md px-4 bg-white focus:outline-none focus:ring-2 focus:ring-[#F7A51E] "
             >
               <option value="">Select a service</option>
-              <option value="web-dev">Web Development</option>
-              <option value="ui-ux">UI/UX Design</option>
-              <option value="consulting">Consulting</option>
-              <option value="other">Other</option>
+              <option value="online-arbitrage">Online Arbitrage</option>
+              <option value="fba-wholesale">FBA WholeSale</option>
+              <option value="supllier-directory">Supplier Directory</option>
+              <option value="product-research-sourcing">Product-Research/Sourcing</option>
+              <option value="seller-central-managment">Seller Central Managment</option>
+              <option value="amazon-listing-optimization">Amazon Listing Optimization</option>
+              <option value="ppc-optimization">PPC Optimization</option>
+
             </select>
             {errors.service && <p className="text-sm text-red-600 mt-1">{errors.service}</p>}
           </div>

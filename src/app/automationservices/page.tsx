@@ -1,14 +1,9 @@
 import React from 'react'
-import UnderDevelopment from '../components/UnderDevelopment'
 
-const AutomationServieces = () => {
+const AutomationServices = () => {
   return (
-    
-    <>
-    <UnderDevelopment />
-    
-    </>
+    <div>AutomationServices</div>
   )
 }
 
-export default AutomationServieces
+export default AutomationServices
