@@ -118,7 +118,7 @@ const Services = () => {
             <p className="mt-8 text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed max-w-[700px] text-left">
               Online arbitrage is a proven method for buying products at a low cost and reselling them for a profit on Amazon.
               This process involves finding products on other online marketplaces or retailers, purchasing them at a lower price,
-              and then selling them on Amazon for a higher price. With Ecomhypeds online arbitrage services, we take care of the entire
+              and then selling them on Amazon for a higher price. With Ecomhypeds online arbitrage services, we take care of the entiref
               process for you, from sourcing products to shipping them to customers.
             </p>
           </motion.div>
@@ -167,7 +167,7 @@ const Services = () => {
             viewport={{ once: true }}
           >
             <Image
-              src="/images/frame-32.png" // replace with your image path
+              src="/images/wrench-illustration.png" // replace with your image path
               alt="illustration"
               width={588}
               height={607}
@@ -247,7 +247,7 @@ const Services = () => {
               {/* Static Image */}
               <div className="relative w-full max-w-[500px] h-[300px] sm:h-[552px]">
                 <Image
-                  src="/images/frame-33.png"
+                  src="/images/static-amazon-frame.png"
                   alt="Static Amazon Image"
                   fill
                   className="object-contain rounded-lg"
@@ -313,7 +313,7 @@ const Services = () => {
               {/* Static Image */}
               <div className="relative w-full max-w-[500px] h-[300px] sm:h-[552px]">
                 <Image
-                  src="/images/frame-33.png"
+                  src="/images/static-amazon-frame.png"
                   alt="Static Amazon Image"
                   fill
                   className="object-contain rounded-lg"
