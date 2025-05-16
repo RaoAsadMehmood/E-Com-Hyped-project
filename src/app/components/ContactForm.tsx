@@ -73,49 +73,50 @@ const ContactForm: React.FC = () => {
   const [errors, setErrors] = useState(initialErrors);
   const [isFormValid, setIsFormValid] = useState(false);
 
+  // Define validateForm inside useEffect to avoid the unused variable warning
   useEffect(() => {
+    const validateForm = () => {
+      const newErrors = { ...initialErrors };
+      let valid = true;
+
+      if (!formData.name.trim()) {
+        newErrors.name = 'Name is required.';
+        valid = false;
+      }
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+        newErrors.email = 'Enter a valid email.';
+        valid = false;
+      }
+
+      const phoneValue = formData.phone.replace(/\D/g, '');
+      if (!phoneValue || phoneValue.length < 7 || phoneValue.length > 15) {
+        newErrors.phone = 'Enter a valid phone number.';
+        valid = false;
+      }
+
+      if (!formData.service) {
+        newErrors.service = 'Please select a service.';
+        valid = false;
+      }
+
+      const today = new Date().toISOString().split('T')[0];
+      if (!formData.date || formData.date < today) {
+        newErrors.date = 'Select a valid future date.';
+        valid = false;
+      }
+
+      if (!formData.agree) {
+        newErrors.agree = 'You must agree before submitting.';
+        valid = false;
+      }
+
+      setErrors(newErrors);
+      setIsFormValid(valid);
+    };
+
     validateForm();
   }, [formData]);
-
-  const validateForm = () => {
-    const newErrors = { ...initialErrors };
-    let valid = true;
-
-    if (!formData.name.trim()) {
-      newErrors.name = 'Name is required.';
-      valid = false;
-    }
-
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Enter a valid email.';
-      valid = false;
-    }
-
-    const phoneValue = formData.phone.replace(/\D/g, '');
-    if (!phoneValue || phoneValue.length < 7 || phoneValue.length > 15) {
-      newErrors.phone = 'Enter a valid phone number.';
-      valid = false;
-    }
-
-    if (!formData.service) {
-      newErrors.service = 'Please select a service.';
-      valid = false;
-    }
-
-    const today = new Date().toISOString().split('T')[0];
-    if (!formData.date || formData.date < today) {
-      newErrors.date = 'Select a valid future date.';
-      valid = false;
-    }
-
-    if (!formData.agree) {
-      newErrors.agree = 'You must agree before submitting.';
-      valid = false;
-    }
-
-    setErrors(newErrors);
-    setIsFormValid(valid);
-  };
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>

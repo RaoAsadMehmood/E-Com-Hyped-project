@@ -1,6 +1,5 @@
 // components/StatsHeroSection.tsx
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 
 interface StatsHeroSectionProps {
   heading: string;
@@ -10,12 +9,11 @@ interface StatsHeroSectionProps {
 export const StatsHeroSection = ({
   heading,
   description,
-
 }: StatsHeroSectionProps) => {
   return (
     <section className="w-full">
       <div
-        className="w-full h-[458px] flex flex-col justify-center items-center px-4 sm:px-8 md:px-16 lg:px-24 text-center relative"
+        className="w-full min-h-[458px] py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-8 md:px-16 lg:px-24 flex flex-col justify-center items-center text-center relative"
         style={{
           backgroundImage: 'url("/images/stats-cover.png")',
           backgroundSize: 'cover',
@@ -23,7 +21,7 @@ export const StatsHeroSection = ({
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <div className="max-w-4xl mx-auto flex flex-col items-center gap-4">
+        <div className="max-w-4xl w-full mx-auto flex flex-col items-center gap-8">
           <motion.h1
             className="text-3xl md:text-4xl lg:text-[46px] text-white font-semibold leading-tight"
             initial={{ opacity: 0, y: 20 }}
@@ -35,7 +33,7 @@ export const StatsHeroSection = ({
           </motion.h1>
 
           <motion.p
-            className="text-base md:text-lg text-white max-w-3xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-white max-w-3xl leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6, ease: 'easeOut' }}
@@ -43,25 +41,6 @@ export const StatsHeroSection = ({
           >
             {description}
           </motion.p>
-
-          <div className="mt-6">
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.4, ease: 'easeOut' }}
-            viewport={{ once: true }}
-          >
-            <Link href="">
-              <button className="px-[48px] py-[14px] sm:px-[56px] mt-[10px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
-              hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
-              active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
-              transition-all duration-300 ease-out">
-                Schedule a Call
-              </button>
-            </Link>
-          </motion.div>
-          </div>
         </div>
 
         {/* Decorative Stars */}

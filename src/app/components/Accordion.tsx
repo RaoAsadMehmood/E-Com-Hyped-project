@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -6,30 +8,11 @@ interface AccordionItem {
   content: string;
 }
 
-const accordionItems: AccordionItem[] = [
-  {
-    title: 'What is Amazon FBA Automation?',
-    content:
-      'Amazon FBA Automation is a service where we manage your Amazon store for you, handling everything from product sourcing to inventory management, customer service, and sales optimization, so you can focus on growing your business.',
-  },
-  {
-    title: 'How long does it take to see results?',
-    content:
-      'Results vary depending on your store setup and market conditions, but most clients start seeing significant improvements in sales and profitability within 3-6 months of implementing our automation solutions.',
-  },
-  {
-    title: 'What makes EcomHyped different?',
-    content:
-      'At EcomHyped, we prioritize transparency, tailored solutions, and long-term partnerships. Our team uses cutting-edge technology and industry expertise to ensure your Amazon store reaches its maximum potential.',
-  },
-  {
-    title: 'Can I customize the services I receive?',
-    content:
-      'Absolutely! We offer fully customizable FBA automation packages to meet your specific needs, whether you’re just starting out or looking to scale an existing store.',
-  },
-];
+interface AccordionProps {
+  accordionItems: AccordionItem[];
+}
 
-const Accordion: React.FC = () => {
+const Accordion: React.FC<AccordionProps> = ({ accordionItems }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
@@ -37,7 +20,7 @@ const Accordion: React.FC = () => {
   };
 
   return (
-    <section className="w-full px-4 ">
+    <section className="w-full px-4">
       <div className="max-w-4xl mx-auto">
         <div className="space-y-4">
           {accordionItems.map((item, index) => (

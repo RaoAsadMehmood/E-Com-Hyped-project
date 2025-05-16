@@ -13,6 +13,36 @@ import TestimonialSlider from '../components/TestimonialSlider';
 
 
 const ContactIntro: React.FC = () => {
+  //    { animated stats data}
+    const statsData = [
+        { endValue: 1430, label: 'Happy Clients', suffix: '+' },
+        { endValue: 250, label: 'Revenue', suffix: '+' },
+        { endValue: 1810 , label: 'Reviews ', suffix: ' +' },
+        { endValue:  10253, label: 'Brands Catalog', suffix: 'K +' },
+    ];
+
+     const accordionItems = [
+        {
+            title: 'What is Amazon FBA Automation?',
+            content:
+'Amazon FBA Automation is a service where we manage your Amazon store for you, handling everything from product sourcing to inventory management, customer service, and sales optimization, so you can focus on growing your business.',
+        },
+        {
+            title: 'How long does it take to see results?',
+            content:
+                'Results vary depending on your store setup and market conditions, but most clients start seeing significant improvements in sales and profitability within 3-6 months of implementing our automation solutions.',
+        },
+        {
+            title: 'What makes EcomHyped different?',
+            content:
+            'At EcomHyped, we prioritize transparency, tailored solutions, and long-term partnerships. Our team uses cutting-edge technology and industry expertise to ensure your Amazon store reaches its maximum potential.',
+        },
+        {
+            title: 'Can I customize the services I receive?',
+            content:
+            'Absolutely! We offer fully customizable FBA automation packages to meet your specific needs, whether you are just starting out or looking to scale an existing store.',        },
+
+    ];
   return (
     <>
       <div className='overflow-x-hidden'>
@@ -112,7 +142,7 @@ const ContactIntro: React.FC = () => {
 
           {/* Stats Section */}
           <div className="mt-10">
-            <AnimatedStats />
+              <AnimatedStats statsData={statsData} />
           </div>
         </div>
 
@@ -137,7 +167,7 @@ const ContactIntro: React.FC = () => {
             </motion.div>
           </div>
 
-          <Accordion />
+           <Accordion accordionItems={accordionItems} />
 
           <Link href="">
             <button
@@ -267,3 +297,7 @@ const ContactIntro: React.FC = () => {
 };
 
       export default ContactIntro;
+
+
+
+

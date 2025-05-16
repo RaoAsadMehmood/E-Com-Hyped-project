@@ -16,6 +16,14 @@ import Navbar from '../components/Navbar';
 
 
 const Home = () => {
+
+    //    { animated stats data}
+    const statsData = [
+        { endValue: 1430, label: 'Happy Clients', suffix: '+' },
+        { endValue: 250, label: 'Revenue', suffix: '+' },
+        { endValue: 1810 , label: 'Reviews ', suffix: '+' },
+        { endValue:  10253, label: 'Brands Catalog', suffix: '+' },
+    ];
     const automationSlides = [
         { id: 1, imageSrc: '/images/amazon-fba-automation.png', title: 'Amazon FBA Automation' },
         { id: 2, imageSrc: '/images/walmart-automation.png', title: 'Walmart Automation' },
@@ -342,7 +350,7 @@ const Home = () => {
 
                     {/* Stats Section */}
                     <div className="mt-10">
-                        <AnimatedStats />
+                    <AnimatedStats statsData={statsData}  />
                     </div>
                 </div>
 

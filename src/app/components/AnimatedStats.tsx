@@ -70,13 +70,12 @@ const AnimatedStat = ({ endValue, label, duration = 2000, suffix = '' }: Animate
             viewport={{ once: true }}
             className="flex flex-col items-center text-center px-4"
         >
-            <h2 className="font-bold text-white text-[40px] md:text-[66px] leading-tight">
-    {count.toLocaleString()}{suffix}
-</h2>
-<p className="text-white mt-1 text-[16px] md:text-[18px]">
-    {label}
-</p>
-
+            <h2 className="font-bold text-white text-[30px] md:text-[50px] leading-tight">
+                {count.toLocaleString()}{suffix}
+            </h2>
+            <p className="text-white mt-1 text-[16px] md:text-[18px]">
+                {label}
+            </p>
         </motion.div>
     );
 };
@@ -101,14 +100,7 @@ const AnimatedStatsRow = ({ stats }: AnimatedStatsRowProps) => {
     );
 };
 
-
-export default function Stats() {
-    const statsData = [
-        { endValue: 1430, label: 'Happy Clients', suffix: '+' },
-        { endValue: 250, label: 'Revenue', suffix: '+' },
-        { endValue: 1810, label: 'Reviews', suffix: '+' },
-        { endValue: 10253, label: 'Brands Catalog', suffix: '+' }
-    ];
-
+// Modified Stats component to accept statsData as a prop
+export default function Stats({ statsData }: { statsData: AnimatedStatProps[] }) {
     return <AnimatedStatsRow stats={statsData} />;
 }
