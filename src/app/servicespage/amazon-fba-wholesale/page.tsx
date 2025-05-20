@@ -1,16 +1,16 @@
 'use client';
 import React from 'react'
-import Navbar from '../components/Navbar'
+import Navbar from '../../components/Navbar'
 import { motion } from 'framer-motion'
 import Link from 'next/link';
 import Image from 'next/image';
-import AnimatedStats from '../components/AnimatedStats';
-import { StatsHeroSection } from '../components/StatsSection';
-import Accordion from '../components/Accordion';
-import { StatsHero } from '../components/StatsBG';
+import AnimatedStats from '../../components/AnimatedStats';
+import { StatsHeroSection } from '../../components/StatsSection';
+import Accordion from '../../components/Accordion';
+import { StatsHero } from '../../components/StatsBG';
 
 
-const Services = () => {
+const AmazonFbaWholesale = () => {
 
   //    { animated stats data}
   const statsData = [
@@ -22,24 +22,24 @@ const Services = () => {
 
   const accordionItems = [
     {
-      title: 'What is online arbitrage?',
+      title: 'What is Amazon FBA Wholesale?',
       content:
-        'Online arbitrage is the practice of buying products at a low price from one online retailer and reselling them at a higher price on another online marketplace.',
+        "Amazon FBA Wholesale is a service provided by Amazon that allows businesses to source products from manufacturers or wholesale suppliers and sell them on Amazon. The FBA (Fulfillment by Amazon) aspect of the service means that the products are stored in Amazon's fulfillment centers, and Amazon handles the packaging, shipping, and customer service for those products.",
     },
     {
-      title: 'What is Amazon online arbitrage?',
+      title: 'How to find wholesale suppliers for Amazon FBA?',
       content:
-        'Our FBA automation services offer a monthly ROI of 15% to 18% based on gross sales. However, profits may vary depending on various factors such as inventory, sales, and market trends.',
+        "You can find wholesale suppliers for Amazon FBA by doing research online, attending trade shows and conferences, and networking with other sellers. Some popular online resources for finding wholesale suppliers include Alibaba, ThomasNet, and SaleHoo. It's important to vet potential suppliers thoroughly to ensure that they offer high-quality products at competitive prices and have a good track record of working with Amazon FBA sellers.",
     },
     {
-      title: 'What is Amazon FBA online arbitrage?',
+      title: 'What is Amazon Wholesale FBA?',
       content:
-        'Anyone who meets the capital requirements of $20k or more in credit or cash can invest in our FBA automation services. We offer no accreditation requirements, so anyone can be a business owner.',
+        "Amazon Wholesale FBA is a program offered by Amazon that allows businesses to purchase products in bulk from Amazon's wholesale suppliers and sell them on Amazon. The FBA aspect of the service means that the products are stored in Amazon's fulfillment centers and Amazon handles the packaging, shipping, and customer service for those products.",
     },
     {
-      title: 'How do I get started with online arbitrage?',
+      title: 'What niches amazon wholesale fba?',
       content:
-        'To start, you will need a minimum investment of $20k in credit or cash. We will take care of everything else, from setting up your Amazon FBA partnership store to managing inventory and logistics.',
+        "Amazon FBA wholesale can work with a variety of different product niches. The key is to find a niche that has high demand, good profit margins, and is not too competitive. Some popular niches include electronics, health and wellness, beauty and personal care, home and kitchen, sports and outdoors, and pet supplies. However, it's important to do your research and find a niche that aligns with your business goals and has the potential for long-term success. Additionally, it's important to find wholesale suppliers that can provide high-quality products at competitive prices to maximize your profit margins.",
     },
   ];
 
@@ -67,20 +67,18 @@ const Services = () => {
               transition={{ duration: 0.8, ease: 'easeOut' }}
             >
               <h1 className="text-white font-semibold leading-tight text-left text-shadow-lg/40 text-[40px] sm:text-[60px] md:text-[70px] lg:text-[87px]">
-                Unleash Your
+                Your Online Business  with Our Expert
+                {" "}
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
-                  Profit Potential
+                  Amazon FBA
                 </span>{" "}
-                with Our Online
+
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
-                  Arbitrage Services!
+                  Wholesale Services
                 </span>{" "}
               </h1>
               <p className="mt-4 text-[#cdd8dd] font-medium text-left text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-relaxed max-w-full ">
-                Are you looking to invest your money in a profitable venture that can yield maximum returns in just 12 months? Look no
-                further than Ecomhypeds online arbitrage services! Our company specializes in purchasing products from one online marketplace
-                or retailer to resell on Amazon, using the Fulfillment by Amazon (FBA) online arbitrage service to store and ship the
-                products to customers.</p>
+                Are you an Amazon seller looking to scale your business and increase your profits? Our Amazon FBA wholesales service can help you do just that. With years of experience in the industry, we have the expertise and resources needed to help you streamline your operations and maximize your success.</p>
               <Link href="#">
                 <button className="mt-[20px] px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
         hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
@@ -110,16 +108,13 @@ const Services = () => {
                 ABOUT US
               </h2>
               <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-2">
-                What is Online Arbitrage?
+                Amazon FBA Wholesales
               </p>
             </div>
 
             {/* Right Section */}
             <p className="mt-8 text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed max-w-[700px] text-left">
-              Online arbitrage is a proven method for buying products at a low cost and reselling them for a profit on Amazon.
-              This process involves finding products on other online marketplaces or retailers, purchasing them at a lower price,
-              and then selling them on Amazon for a higher price. With Ecomhypeds online arbitrage services, we take care of the entiref
-              process for you, from sourcing products to shipping them to customers.
+              Our Amazon FBA wholesales service includes a wide range of features designed to help you run your business more efficiently. This includes product sourcing, inventory management, order processing, and shipping logistics. We also offer expert guidance on pricing and marketing strategies to help you increase your sales and profitability.
             </p>
           </motion.div>
         </div>
@@ -137,16 +132,17 @@ const Services = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
-              ONLINE ARBITRAGE:
+              Scale Your Amazon Business to
             </h2>
             <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug mb-4">
-              Why Choose Ecom Hyped?
+              New Heights!
             </p>
             <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-              When it comes to online arbitrage, experience and expertise matter. At Ecomhyped, we have a proven track record of
-              success in the field of online arbitrage. Our team of experts has years of experience in identifying profitable
-              products and optimizing listings to maximize sales and profits. We also have a deep understanding of the Amazon
-              marketplace and the tools and strategies needed to succeed.
+              By partnering with us, you will be able to focus on what you do best - creating and selling great products - while we take
+              care of the rest. Our expert services will save you time and money, and help you grow your business faster than you ever
+              thought possible. At ECom Hyped, we are dedicated to helping Amazon sellers like you succeed. Let us handle the logistics
+              and management of your business so that you can focus on what you love doing. Contact us today to learn more about our
+              Amazon FBA wholesales service.
             </p>
             <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
               <li>Comprehensive product research to find the best deals and highest profit margins</li>
@@ -167,7 +163,7 @@ const Services = () => {
             viewport={{ once: true }}
           >
             <Image
-              src="/images/wrench-illustration.png" 
+              src="/images/wrench-illustration.png" // replace with your image path
               alt="illustration"
               width={588}
               height={607}
@@ -266,24 +262,23 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
-              SERVICES
-            </h2>
+            {/* <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
+              
+            </h2> */}
 
             <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-6">
-              Our Online Arbitrage Process
+              Benefits of Using Our Amazon FBA Wholesale Service
             </p>
 
             <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-              At EcomHyped, we have a well-defined process for online arbitrage that has been proven to yield maximum profits for our
-              investors. Our process involves the following steps:
+              EcomHyped’s Amazon FBA wholesale service saves you time and boosts profits by sourcing quality products, managing logistics, and handling customer service. Partner with us to streamline operations and grow your Amazon business efficiently.
             </p>
             <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
-              <li>Product Research: Our team of experts conducts comprehensive research to identify the best products with high profit margins</li>
-              <li>Purchase and Shipping: We purchase the products at a low cost and use FBA to store and ship them to customers.</li>
-              <li>Product Optimization: We optimize the product listings to maximize sales and rankings on Amazon.</li>
-              <li>Sales and Profit: We monitor the sales and profit of each product and provide regular updates to our investors.</li>
-              <li>Profit Distribution: We distribute the profits to our investors on a monthly basis.</li>
+              <li><b>Expert Suppliers:</b> Access high-quality products at low costs through our trusted Amazon FBA wholesale suppliers.</li>
+              <li><b>Logistics Management: </b>We handle shipping and warehousing, freeing you to focus on business growth.</li>
+              <li><b>Customer Service Support:</b> Our team manages customer service, reducing your operational workload.</li>
+              <li><b>Cost Efficiency:</b> Streamline operations and lower overhead costs to increase profitability.</li>
+              <li><b>Fast Results:</b> Achieve business goals and maximized profits within a 12-month timeframe.</li>
             </ul>
           </motion.div>
         </div>
@@ -337,18 +332,17 @@ const Services = () => {
             </h2>
 
             <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-6">
-              Our Approach to Online Arbitrage
+              How Our Amazon FBA Wholesale Service Works
             </p>
 
             <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-              At EcomHyped, we take a data-driven approach to online arbitrage. Our team of experts uses a range of research tools and
-              strategies to identify profitable products and optimize listings for maximum sales and rankings. Here are just a few of the
-              ways we approach online arbitrage:
+              Our Amazon FBA wholesale service sources high-quality products, manages logistics, and handles customer service, saving you time and costs. Focus on growing your business while we streamline operations and boost profits within 12 months.
             </p>
             <ul className=" text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
-              <li><b>Data Analysis:</b> We use a range of data analysis tools to identify profitable products, including historical sales data, competition analysis, and market trends.</li>
-              <li><b>No Need to Advertising:</b> We are selling the well established brands that already have credibility and reviews on Amazon. No Advertising and Marketing required selling those products.</li>
-              <li><b>Customer Service:</b> We offer top-notch customer service to ensure that your customers are happy and satisfied. This can lead to more positive reviews and higher rankings on Amazon.</li>
+              <li><b>Product Sourcing:</b>  Expert suppliers secure high-quality products at low costs for your Amazon FBA business.</li>
+              <li><b>Logistics Handling:</b> We manage shipping and warehousing, eliminating time-consuming tasks.</li>
+              <li><b>Customer Service:</b>  Our team ensures customer satisfaction, protecting your brand’s reputation.</li>
+              <li><b> Profit-Driven:</b>  Competitive pricing and a 12-month plan maximize your profits efficiently.</li>
             </ul>
           </motion.div>
         </div>
@@ -433,4 +427,4 @@ const Services = () => {
   )
 }
 
-export default Services
+export default AmazonFbaWholesale
