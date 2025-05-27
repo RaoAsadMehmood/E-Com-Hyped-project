@@ -98,32 +98,33 @@ const AmazonFbaWholesale = () => {
 
                 {/* text section    */}
 
-                <div className="flex justify-center items-center my-[80px] px-4 mx-[120px]">
+                <div className="my-[80px] px-4 sm:px-6 md:px-10 lg:px-[120px]">
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: 'easeOut' }}
                         viewport={{ once: true }}
-                        className="max-w-[1200px] w-full flex flex-col lg:flex-row justify-between items-start gap-10"
+                        className="max-w-[1200px] w-full mx-auto flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-10"
                     >
                         {/* Left Section */}
-                        <div className="flex flex-col items-start max-w-[400px] ">
-                            <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
+                        <div className="flex flex-col items-start max-w-full lg:max-w-[400px]">
+                            <h2 className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-3 sm:mb-4">
                                 ABOUT US
                             </h2>
-                            <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-2">
+                            <p className="text-[#334047] text-[26px] sm:text-[30px] md:text-[36px] lg:text-[44px] font-semibold leading-snug">
                                 Supplier Directory
                             </p>
                         </div>
 
                         {/* Right Section */}
-                        <p className="mt-8 text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed max-w-[700px] text-left">
+                        <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed max-w-full lg:max-w-[700px] text-left">
                             Our Supplier Directory service offers a curated list of trusted and verified suppliers to help you source high-quality products with
                             confidence. From finding the right manufacturer to ensuring reliable communication, we simplify the sourcing process—saving you time,
                             reducing risks, and helping you scale your Amazon business faster.
                         </p>
                     </motion.div>
                 </div>
+
 
 
                 {/* About us section start*/}
@@ -164,7 +165,7 @@ const AmazonFbaWholesale = () => {
                         viewport={{ once: true }}
                     >
                         <Image
-                            src="/images/wrench-illustration.png" // You can change this image to match the supplier directory theme
+                            src="/images/wrench-illustration.png"
                             alt="illustration"
                             width={588}
                             height={607}

@@ -10,7 +10,7 @@ import Accordion from '../../components/Accordion';
 import { StatsHero } from '../../components/StatsBG';
 
 
-const AmazonFbaWholesale = () => {
+const ProductResearch = () => {
 
   //    { animated stats data}
   const statsData = [
@@ -22,26 +22,27 @@ const AmazonFbaWholesale = () => {
 
   const accordionItems = [
     {
-      title: 'What is Amazon FBA Wholesale?',
+      title: 'What is product research in Amazon FBA?',
       content:
-        "Amazon FBA Wholesale is a service provided by Amazon that allows businesses to source products from manufacturers or wholesale suppliers and sell them on Amazon. The FBA (Fulfillment by Amazon) aspect of the service means that the products are stored in Amazon's fulfillment centers, and Amazon handles the packaging, shipping, and customer service for those products.",
+        "Product research is the process of identifying high-demand, low-competition products that offer good profit margins on Amazon. It involves analyzing market trends, customer needs, and competitor performance to find the best products to sell through FBA.",
     },
     {
-      title: 'How to find wholesale suppliers for Amazon FBA?',
+      title: 'How do your sourcing services work?',
       content:
-        "You can find wholesale suppliers for Amazon FBA by doing research online, attending trade shows and conferences, and networking with other sellers. Some popular online resources for finding wholesale suppliers include Alibaba, ThomasNet, and SaleHoo. It's important to vet potential suppliers thoroughly to ensure that they offer high-quality products at competitive prices and have a good track record of working with Amazon FBA sellers.",
+        "Our sourcing services connect you with verified and trusted suppliers to help you find high-quality products at competitive prices. We handle everything from supplier negotiation and quality checks to logistics coordination, ensuring a smooth and reliable sourcing process.",
     },
     {
-      title: 'What is Amazon Wholesale FBA?',
+      title: 'Why is product sourcing important for my Amazon business?',
       content:
-        "Amazon Wholesale FBA is a program offered by Amazon that allows businesses to purchase products in bulk from Amazon's wholesale suppliers and sell them on Amazon. The FBA aspect of the service means that the products are stored in Amazon's fulfillment centers and Amazon handles the packaging, shipping, and customer service for those products.",
+        "Effective product sourcing ensures that you are selling items with high profit potential and consistent quality. It also helps you maintain inventory flow, reduce overhead costs, and build long-term relationships with reputable suppliers for business scalability.",
     },
     {
-      title: 'What niches amazon wholesale fba?',
+      title: 'Do you work with international or local suppliers?',
       content:
-        "Amazon FBA wholesale can work with a variety of different product niches. The key is to find a niche that has high demand, good profit margins, and is not too competitive. Some popular niches include electronics, health and wellness, beauty and personal care, home and kitchen, sports and outdoors, and pet supplies. However, it's important to do your research and find a niche that aligns with your business goals and has the potential for long-term success. Additionally, it's important to find wholesale suppliers that can provide high-quality products at competitive prices to maximize your profit margins.",
+        "Yes, we work with both international and local suppliers based on your needs and business goals. Whether you're sourcing from the U.S., China, or other regions, we help you find the best supplier options that match your product criteria and budget.",
     },
   ];
+
 
   return (
 
@@ -70,15 +71,19 @@ const AmazonFbaWholesale = () => {
                 Your Online Business  with Our Expert
                 {" "}
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
-                  Amazon FBA
+                  Product Research
                 </span>{" "}
 
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
-                  Wholesale Services
+                  Sourcing Services
                 </span>{" "}
               </h1>
               <p className="mt-4 text-[#cdd8dd] font-medium text-left text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-relaxed max-w-full ">
-                Are you an Amazon seller looking to scale your business and increase your profits? Our Amazon FBA wholesales service can help you do just that. With years of experience in the industry, we have the expertise and resources needed to help you streamline your operations and maximize your success.</p>
+                Are you an Amazon seller struggling to find winning products or reliable suppliers? Our Product Research & Sourcing services
+                are designed to help you discover high-demand, low-competition products and connect with trusted manufacturers.
+                With years of industry expertise, we streamline the entire sourcing process saving you time, reducing risk, and helping you scale
+                your Amazon business with confidence.
+              </p>
               <Link href="#">
                 <button className="mt-[20px] px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
         hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
@@ -108,15 +113,15 @@ const AmazonFbaWholesale = () => {
                 ABOUT US
               </h2>
               <p className="text-[#334047] text-[26px] sm:text-[30px] md:text-[36px] lg:text-[44px] font-semibold leading-snug">
-                Amazon FBA Wholesales
+                Product Research & Sourcing
               </p>
             </div>
 
             {/* Right Section */}
             <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed max-w-full lg:max-w-[700px] text-left">
-              Our Amazon FBA wholesales service includes a wide range of features designed to help you run your business more efficiently.
-              This includes product sourcing, inventory management, order processing, and shipping logistics. We also offer expert guidance
-              on pricing and marketing strategies to help you increase your sales and profitability.
+              Our Product Research & Sourcing service focuses on identifying high-potential products with strong demand and low competition.
+              We use data-driven strategies to uncover profitable niches and connect you with verified suppliers for reliable sourcing.
+              From market analysis to supplier vetting, we handle the groundwork so you can launch and scale confidently on Amazon.
             </p>
           </motion.div>
         </div>
@@ -125,54 +130,50 @@ const AmazonFbaWholesale = () => {
         {/* About us section start*/}
 
         <section className="my-[80px] px-4 sm:px-8 md:px-[60px] lg:px-[120px] flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
-          {/* Left Text Content */}
-          <motion.div
-            className="max-w-xl lg:max-w-[588px] w-full"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
-              Scale Your Amazon Business to
-            </h2>
-            <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug mb-4">
-              New Heights!
-            </p>
-            <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-              By partnering with us, you will be able to focus on what you do best - creating and selling great products - while we take
-              care of the rest. Our expert services will save you time and money, and help you grow your business faster than you ever
-              thought possible. At ECom Hyped, we are dedicated to helping Amazon sellers like you succeed. Let us handle the logistics
-              and management of your business so that you can focus on what you love doing. Contact us today to learn more about our
-              Amazon FBA wholesales service.
-            </p>
-            <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
-              <li>Comprehensive product research to find the best deals and highest profit margins</li>
-              <li>Extensive optimization of product listings to maximize sales and rankings</li>
-              <li>Access to a wide range of online marketplaces and retailers for sourcing products</li>
-              <li>A streamlined process that takes care of everything from sourcing to shipping</li>
-              <li>A 12-month profit guarantee for all investors</li>
-            </ul>
+  {/* Left Text Content */}
+  <motion.div
+    className="max-w-xl lg:max-w-[588px] w-full"
+    initial={{ opacity: 0, x: -50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true }}
+  >
+    <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
+      Fuel Your Amazon Growth with
+    </h2>
+    <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug mb-4">
+      Proven Product Research & Sourcing!
+    </p>
+    <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
+      At Ecom Hyped, we help Amazon sellers discover profitable product opportunities and connect with trusted suppliers. Our data-driven research and sourcing strategies are designed to minimize risk, reduce guesswork, and accelerate your journey to consistent sales. Focus on scaling while we take care of finding what sells.
+    </p>
+    <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
+      <li>In-depth market research to identify trending and high-demand products</li>
+      <li>Access to verified suppliers for reliable and cost-effective sourcing</li>
+      <li>Competitor analysis to uncover gaps and winning strategies</li>
+      <li>Support in negotiating with suppliers and managing communication</li>
+      <li>End-to-end sourcing solution tailored to your business goals</li>
+    </ul>
+  </motion.div>
 
-          </motion.div>
+  {/* Right Image */}
+  <motion.div
+    className="w-full max-w-[588px] h-auto"
+    initial={{ opacity: 0, x: 50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+    viewport={{ once: true }}
+  >
+    <Image
+      src="/images/wrench-illustration.png" // Update if needed
+      alt="Product Sourcing Illustration"
+      width={588}
+      height={607}
+      className="w-full h-auto"
+    />
+  </motion.div>
+</section>
 
-          {/* Right Image */}
-          <motion.div
-            className="w-full max-w-[588px] h-auto"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <Image
-              src="/images/wrench-illustration.png" // replace with your image path
-              alt="illustration"
-              width={588}
-              height={607}
-              className="w-full h-auto"
-            />
-          </motion.div>
-        </section>
 
         {/* Animated Stats Started */}
         <div
@@ -429,4 +430,4 @@ const AmazonFbaWholesale = () => {
   )
 }
 
-export default AmazonFbaWholesale
+export default ProductResearch 
