@@ -27,19 +27,19 @@ const ProductResearch = () => {
         "Product research is the process of identifying high-demand, low-competition products that offer good profit margins on Amazon. It involves analyzing market trends, customer needs, and competitor performance to find the best products to sell through FBA.",
     },
     {
-      title: 'How do your sourcing services work?',
+      title: 'How do your USA Research & Sourcing Services work?',
       content:
-        "Our sourcing services connect you with verified and trusted suppliers to help you find high-quality products at competitive prices. We handle everything from supplier negotiation and quality checks to logistics coordination, ensuring a smooth and reliable sourcing process.",
+        "Our USA Research & Sourcing Services connect you with verified, US-based suppliers to secure high-quality products at competitive prices. We manage the entire process, from in-depth market research and supplier vetting to negotiations and logistics coordination, ensuring a seamless and efficient sourcing experience.",
     },
     {
       title: 'Why is product sourcing important for my Amazon business?',
       content:
-        "Effective product sourcing ensures that you are selling items with high profit potential and consistent quality. It also helps you maintain inventory flow, reduce overhead costs, and build long-term relationships with reputable suppliers for business scalability.",
+        "Effective product sourcing ensures you sell high-profit, high-quality products that resonate with US customers. Our services help you maintain consistent inventory, minimize costs, and build reliable relationships with trusted US suppliers, enabling scalability and long-term success.",
     },
     {
-      title: 'Do you work with international or local suppliers?',
+      title: 'Do you work with international or US-based suppliers?',
       content:
-        "Yes, we work with both international and local suppliers based on your needs and business goals. Whether you're sourcing from the U.S., China, or other regions, we help you find the best supplier options that match your product criteria and budget.",
+        "While we specialize in connecting you with trusted US-based suppliers for faster and more reliable sourcing, we also work with international suppliers based on your specific needs. At Ecom USA Solutions, we tailor supplier options to match your product requirements and budget for optimal results.",
     },
   ];
 
@@ -270,18 +270,18 @@ const ProductResearch = () => {
             </h2> */}
 
             <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-6">
-              Benefits of Using Our Amazon FBA Wholesale Service
+              Benefits of Using Our USA Research & Sourcing Services
             </p>
 
             <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-              EcomHyped’s Amazon FBA wholesale service saves you time and boosts profits by sourcing quality products, managing logistics, and handling customer service. Partner with us to streamline operations and grow your Amazon business efficiently.
+              Ecom USA Solutions’ USA Research & Sourcing Services save you time and maximize profits by identifying high-potential products, connecting you with trusted US-based suppliers, and streamlining the sourcing process. Partner with us to simplify your Amazon business operations and scale efficiently in the competitive US market.
             </p>
             <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
-              <li><b>Expert Suppliers:</b> Access high-quality products at low costs through our trusted Amazon FBA wholesale suppliers.</li>
-              <li><b>Logistics Management: </b>We handle shipping and warehousing, freeing you to focus on business growth.</li>
-              <li><b>Customer Service Support:</b> Our team manages customer service, reducing your operational workload.</li>
-              <li><b>Cost Efficiency:</b> Streamline operations and lower overhead costs to increase profitability.</li>
-              <li><b>Fast Results:</b> Achieve business goals and maximized profits within a 12-month timeframe.</li>
+              <li><b>Trusted US Suppliers:</b> Access high-demand, low-competition products at competitive prices through our network of verified USA-based suppliers.</li>
+              <li><b>Streamlined Sourcing Process:</b>We handle market research, supplier vetting, and negotiations, allowing you to focus on growing your Amazon business.</li>
+              <li><b>Competitor Insights:</b>Our in-depth competitor analysis uncovers market gaps and winning strategies to keep you ahead.</li>
+              <li><b>Cost Optimization:</b> Reduce sourcing costs and operational overheads with our data-driven strategies, boosting your profitability.</li>
+              <li><b>Rapid Growth:</b> Achieve your Amazon business goals with tailored solutions designed to deliver results within a 12-month timeframe.</li>
             </ul>
           </motion.div>
         </div>
@@ -335,17 +335,16 @@ const ProductResearch = () => {
             </h2>
 
             <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-6">
-              How Our Amazon FBA Wholesale Service Works
+             How Our USA Research & Sourcing Services Work
             </p>
 
             <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-              Our Amazon FBA wholesale service sources high-quality products, manages logistics, and handles customer service, saving you time and costs. Focus on growing your business while we streamline operations and boost profits within 12 months.
-            </p>
+Ecom USA Solutions’ USA Research & Sourcing Services identify high-potential products, connect you with trusted US-based suppliers, and streamline the sourcing process, saving you time and costs. Focus on scaling your Amazon business while we handle the groundwork to drive profits within 12 months.            </p>
             <ul className=" text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
-              <li><b>Product Sourcing:</b>  Expert suppliers secure high-quality products at low costs for your Amazon FBA business.</li>
-              <li><b>Logistics Handling:</b> We manage shipping and warehousing, eliminating time-consuming tasks.</li>
-              <li><b>Customer Service:</b>  Our team ensures customer satisfaction, protecting your brand’s reputation.</li>
-              <li><b> Profit-Driven:</b>  Competitive pricing and a 12-month plan maximize your profits efficiently.</li>
+              <li><b>Product Research:</b> Our team uses data-driven strategies to uncover high-demand, low-competition products tailored for the US market.</li>
+              <li><b>Supplier Connections:</b>We vet and connect you with reliable USA-based suppliers, securing competitive pricing for your Amazon FBA business.</li>
+              <li><b>Market Analysis:</b> In-depth competitor and market research ensures you stay ahead with winning strategies.</li>
+              <li><b> Profit-Focused:</b>Our tailored sourcing solutions and 12-month plan optimize costs and maximize your profitability efficiently.</li>
             </ul>
           </motion.div>
         </div>
