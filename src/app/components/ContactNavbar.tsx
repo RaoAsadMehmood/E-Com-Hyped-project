@@ -7,13 +7,27 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const ContactNavbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isServicesOpen, setIsServicesOpen] = useState(false); // State for services dropdown
     const pathname = usePathname();
 
     const toggleMenu = () => setIsOpen(!isOpen);
+    const toggleServicesMenu = () => setIsServicesOpen(!isServicesOpen);
 
     const navLinks = [
         { name: 'Home', href: '/home' },
-        { name: 'Services', href: '/servicespage' },
+        {
+            name: 'Services',
+            href: '/servicespage',
+            subLinks: [
+                { name: 'FBA Wholesale', href: '/servicespage/amazon-fba-wholesale' },
+                { name: 'Supplier Directory', href: '/servicespage/SupplierDirectory' },
+                { name: 'Product Research/Sourcing', href: '/servicespage/product-research' },
+                { name: 'Seller Central Management', href: '/servicespage/seller-central-managment' },
+                { name: 'Brand Management', href: '/servicespage/brand-management' },
+                { name: 'Amazon Listing Optimization', href: '/servicespage/amazon-listing-optimization' },
+                { name: 'PPC Optimization', href: '/servicespage/ppc-optimization' },
+            ],
+        },
         { name: 'Automation Services', href: '/automationservices' },
         { name: 'Our Story', href: '/ourstory' },
         { name: 'About Us', href: '/about' },
@@ -53,13 +67,38 @@ const ContactNavbar: React.FC = () => {
                 {/* Left nav (desktop only) */}
                 <div className="hidden md:flex flex-row gap-10">
                     {navLinks.slice(0, 3).map((link) => (
-                        <Link
+                        <div
                             key={link.name}
-                            href={link.href}
-                            className={`text-teal-600 text-lg font-light hover:text-teal-800 ${isActive(link.href) ? 'border-b-2 border-teal-600 pb-1' : ''}`}
+                            className="relative"
+                            onMouseEnter={() => link.subLinks && setIsServicesOpen(true)}
+                            onMouseLeave={() => link.subLinks && setIsServicesOpen(false)}
                         >
-                            {link.name}
-                        </Link>
+                            <Link
+                                href={link.href}
+                                className={`text-teal-600 text-lg font-light hover:text-teal-800 ${isActive(link.href) ? 'border-b-2 border-teal-600 pb-1' : ''}`}
+                            >
+                                {link.name}
+                            </Link>
+                            {link.subLinks && isServicesOpen && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    transition={{ duration: 0.2 }}
+                                    className="absolute top-full left-0 bg-[#026F72] shadow-lg rounded-md py-2 z-50 min-w-[300px]"
+                                >
+                                    {link.subLinks.map((subLink) => (
+                                        <Link
+                                            key={subLink.name}
+                                            href={subLink.href}
+                                            className={`block px-4 py-2 text-white text-lg font-light hover:bg-[#F7A51E] hover:text-white ${isActive(subLink.href) ? 'bg-[#F7A51E]' : ''}`}
+                                        >
+                                            {subLink.name}
+                                        </Link>
+                                    ))}
+                                </motion.div>
+                            )}
+                        </div>
                     ))}
                 </div>
 
@@ -114,14 +153,32 @@ const ContactNavbar: React.FC = () => {
                         className="md:hidden flex flex-col gap-4 px-6 py-4 bg-white w-full z-40 shadow-lg"
                     >
                         {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                className={`text-teal-600 text-lg font-light hover:text-teal-800 ${isActive(link.href) ? 'border-b-2 border-teal-600 pb-1' : ''}`}
-                                onClick={() => setIsOpen(false)}
-                            >
-                                {link.name}
-                            </Link>
+                            <div key={link.name}>
+                                <Link
+                                    href={link.href}
+                                    className={`text-teal-600 text-lg font-light hover:text-teal-800 ${isActive(link.href) ? 'border-b-2 border-teal-600 pb-1' : ''}`}
+                                    onClick={() => {
+                                        if (!link.subLinks) setIsOpen(false);
+                                        if (link.subLinks) toggleServicesMenu();
+                                    }}
+                                >
+                                    {link.name}
+                                </Link>
+                                {link.subLinks && isServicesOpen && (
+                                    <div className="flex flex-col gap-2 pl-4 mt-2">
+                                        {link.subLinks.map((subLink) => (
+                                            <Link
+                                                key={subLink.name}
+                                                href={subLink.href}
+                                                className={`text-teal-600 text-base font-light hover:text-teal-800 ${isActive(subLink.href) ? 'border-b-2 border-teal-600 pb-1' : ''}`}
+                                                onClick={() => setIsOpen(false)}
+                                            >
+                                                {subLink.name}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         ))}
                         <Link href="/contact" onClick={() => setIsOpen(false)}>
                             <motion.button

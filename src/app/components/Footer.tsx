@@ -25,18 +25,18 @@ const Footer = () => {
                             title: 'Ecommerce',
                             links: [
                                 { href: '/automationservices', label: 'Automation Services' },
-                                { href: '#', label: 'Online Arbitrage' },
-                                { href: '#', label: 'FBA Wholesale' },
-                                { href: '#', label: 'Supplier Directory' },
-                                { href: '#', label: 'Product Research' },
+                                { href: '/servicespage', label: 'Online Arbitrage' },
+                                { href: '/servicespage/amazon-fba-wholesale', label: 'FBA Wholesale' },
+                                { href: '/servicespage/supplier-directory', label: 'Supplier Directory' },
+                                { href: '/servicespage/product-research-sourcing', label: 'Product Research' },
                             ],
                         },
                         {
                             title: 'Advertising',
                             links: [
-                                { href: '#', label: 'Seller Management' },
-                                { href: '#', label: 'PPC Advertising' },
-                                { href: '#', label: 'Content Optimization' },
+                                { href: '/servicespage/seller-central-management-', label: 'Seller Management' },
+                                { href: '/servicespage/ppc-optimization', label: 'PPC Advertising' },
+                                // { href: '#', label: 'Content Optimization' },
                             ],
                         },
                         {

@@ -13,7 +13,7 @@ export const StatsHeroSection = ({
   return (
     <section className="w-full">
       <div
-        className="w-full min-h-[458px] py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-8 md:px-16 lg:px-24 flex flex-col justify-center items-center text-center relative"
+        className="w-full min-h-[458px] py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-8 md:px-12 lg:px-20 flex flex-col justify-center items-center text-center relative overflow-hidden" // Added overflow-hidden for safety
         style={{
           backgroundImage: 'url("/images/stats-cover.png")',
           backgroundSize: 'cover',
@@ -21,9 +21,12 @@ export const StatsHeroSection = ({
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <div className="max-w-4xl w-full mx-auto flex flex-col items-center gap-8">
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black opacity-40"></div> 
+
+        <div className="max-w-5xl w-full mx-auto flex flex-col items-center gap-6 relative z-10"> {/* Increased max-w and added z-10 */}
           <motion.h1
-            className="text-3xl md:text-4xl lg:text-[46px] text-white font-semibold leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl text-white font-bold leading-tight sm:leading-tight lg:leading-tightest tracking-tight" // Adjusted font sizes, weight, and line height
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
@@ -33,7 +36,7 @@ export const StatsHeroSection = ({
           </motion.h1>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-white max-w-3xl leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-white max-w-4xl leading-relaxed sm:leading-relaxed md:leading-relaxed-lg" // Adjusted max-w and line height
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6, ease: 'easeOut' }}
@@ -43,9 +46,9 @@ export const StatsHeroSection = ({
           </motion.p>
         </div>
 
-        {/* Decorative Stars */}
+        {/* Decorative Stars - Adjusted positioning for better visual balance */}
         <motion.div
-          className="absolute top-24 left-24 text-white opacity-70"
+          className="absolute top-16 left-8 sm:top-24 sm:left-24 text-white opacity-70 z-10" // Added z-10
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.8, duration: 0.6, ease: 'easeOut' }}
@@ -59,7 +62,7 @@ export const StatsHeroSection = ({
         </motion.div>
 
         <motion.div
-          className="absolute bottom-24 right-24 text-white opacity-70"
+          className="absolute bottom-16 right-8 sm:bottom-24 sm:right-24 text-white opacity-70 z-10" // Added z-10
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 0.6, ease: 'easeOut' }}
