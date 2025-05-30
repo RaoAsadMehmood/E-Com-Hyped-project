@@ -280,34 +280,34 @@ const SupplierDirectory = () => {
             </p>
 
             <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-              EcomHyped’s Supplier Directory simplifies your product sourcing
+              EcomHyped&apos;s Supplier Directory simplifies your product sourcing
               journey by connecting you with verified and reliable manufacturers
               and wholesalers. Save time, reduce risk, and build stronger
               supplier relationships—all in one place.
             </p>
 
-            <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
-              <li>
-                <b>Verified Suppliers:</b> Get access to a curated list of
-                trusted and thoroughly vetted suppliers.
-              </li>
-              <li>
-                <b>Global Reach:</b> Discover manufacturers and wholesalers from
-                key markets around the world.
-              </li>
-              <li>
-                <b>Faster Sourcing:</b> Quickly find and contact suppliers with
-                clear details and sourcing support.
-              </li>
-              <li>
-                <b>Risk Reduction:</b> Avoid scams, delays, and poor-quality
-                products through our trusted network.
-              </li>
-              <li>
-                <b>Business Growth:</b> Source with confidence and scale your
-                brand with reliable partnerships.
-              </li>
-            </ul>
+            <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
+  <li>
+    <b>Verified Suppliers:</b> Get access to a curated list of
+    trusted and thoroughly vetted suppliers.
+  </li>
+  <li>
+    <b>Global Reach:</b> Discover manufacturers and wholesalers from
+    key markets around the world.
+  </li>
+  <li>
+    <b>Faster Sourcing:</b> Quickly find and contact suppliers with
+    clear details and sourcing support.
+  </li>
+  <li>
+    <b>Risk Reduction:</b> Avoid scams, delays, and poor-quality
+    products through our trusted network.
+  </li>
+  <li>
+    <b>Business Growth:</b> Source with confidence and scale your
+    brand with reliable partnerships.
+  </li>
+</ul>
           </motion.div>
         </div>
 

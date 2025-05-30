@@ -1,61 +1,58 @@
-'use client';
-import React from 'react'
-import Navbar from '../../components/Navbar'
-import { motion } from 'framer-motion'
-import Link from 'next/link';
-import Image from 'next/image';
-import AnimatedStats from '../../components/AnimatedStats';
-import { StatsHeroSection } from '../../components/StatsSection';
-import Accordion from '../../components/Accordion';
-import { StatsHero } from '../../components/StatsBG';
-
+"use client";
+import React from "react";
+import Navbar from "../../components/Navbar";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import AnimatedStats from "../../components/AnimatedStats";
+import { StatsHeroSection } from "../../components/StatsSection";
+import Accordion from "../../components/Accordion";
+import { StatsHero } from "../../components/StatsBG";
 
 const AmazonFbaWholesale = () => {
-
   //    { animated stats data}
   const statsData = [
-    { endValue: 1430, label: 'Happy Clients', suffix: '+' },
-    { endValue: 250, label: 'Revenue', suffix: 'M' },
-    { endValue: 1810, label: 'Reviews', suffix: '+' },
-    { endValue: 10253, label: 'Brands Catalog', suffix: '+' }
+    { endValue: 1430, label: "Happy Clients", suffix: "+" },
+    { endValue: 250, label: "Revenue", suffix: "M" },
+    { endValue: 1810, label: "Reviews", suffix: "+" },
+    { endValue: 10253, label: "Brands Catalog", suffix: "+" },
   ];
 
   const accordionItems = [
     {
-      title: 'What is Amazon FBA Wholesale?',
+      title: "What is Amazon FBA Wholesale?",
       content:
         "Amazon FBA Wholesale is a service provided by Amazon that allows businesses to source products from manufacturers or wholesale suppliers and sell them on Amazon. The FBA (Fulfillment by Amazon) aspect of the service means that the products are stored in Amazon's fulfillment centers, and Amazon handles the packaging, shipping, and customer service for those products.",
     },
     {
-      title: 'How to find wholesale suppliers for Amazon FBA?',
+      title: "How to find wholesale suppliers for Amazon FBA?",
       content:
         "You can find wholesale suppliers for Amazon FBA by doing research online, attending trade shows and conferences, and networking with other sellers. Some popular online resources for finding wholesale suppliers include Alibaba, ThomasNet, and SaleHoo. It's important to vet potential suppliers thoroughly to ensure that they offer high-quality products at competitive prices and have a good track record of working with Amazon FBA sellers.",
     },
     {
-      title: 'What is Amazon Wholesale FBA?',
+      title: "What is Amazon Wholesale FBA?",
       content:
         "Amazon Wholesale FBA is a program offered by Amazon that allows businesses to purchase products in bulk from Amazon's wholesale suppliers and sell them on Amazon. The FBA aspect of the service means that the products are stored in Amazon's fulfillment centers and Amazon handles the packaging, shipping, and customer service for those products.",
     },
     {
-      title: 'What niches amazon wholesale fba?',
+      title: "What niches amazon wholesale fba?",
       content:
         "Amazon FBA wholesale can work with a variety of different product niches. The key is to find a niche that has high demand, good profit margins, and is not too competitive. Some popular niches include electronics, health and wellness, beauty and personal care, home and kitchen, sports and outdoors, and pet supplies. However, it's important to do your research and find a niche that aligns with your business goals and has the potential for long-term success. Additionally, it's important to find wholesale suppliers that can provide high-quality products at competitive prices to maximize your profit margins.",
     },
   ];
 
   return (
-
     <>
-      < Navbar />
+      <Navbar />
 
-      <div className='overflow-x-hidden'>
+      <div className="overflow-x-hidden">
         <div
           className="w-full min-h-screen flex items-center justify-center relative px-4 "
           style={{
             backgroundImage: 'url("/images/hero-cover.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         >
           <div className="max-w-6xl w-full flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12">
@@ -64,26 +61,31 @@ const AmazonFbaWholesale = () => {
               className="flex flex-col"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h1 className="text-white font-semibold leading-tight text-left text-shadow-lg/40 text-[40px] sm:text-[60px] md:text-[70px] lg:text-[87px]">
-                Your Online Business  with Our Expert
-                {" "}
+                Your Online Business with Our Expert{" "}
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
                   Amazon FBA
                 </span>{" "}
-
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
                   Wholesale Services
                 </span>{" "}
               </h1>
               <p className="mt-4 text-[#cdd8dd] font-medium text-left text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-relaxed max-w-full ">
-                Are you an Amazon seller looking to scale your business and increase your profits? Our Amazon FBA wholesales service can help you do just that. With years of experience in the industry, we have the expertise and resources needed to help you streamline your operations and maximize your success.</p>
+                Are you an Amazon seller looking to scale your business and
+                increase your profits? Our Amazon FBA wholesales service can
+                help you do just that. With years of experience in the industry,
+                we have the expertise and resources needed to help you
+                streamline your operations and maximize your success.
+              </p>
               <Link href="/contact">
-                <button className="mt-[20px] px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
+                <button
+                  className="mt-[20px] px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
         hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
         active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
-        transition-all duration-300 ease-out">
+        transition-all duration-300 ease-out"
+                >
                   Schedule a Call
                 </button>
               </Link>
@@ -91,14 +93,13 @@ const AmazonFbaWholesale = () => {
           </div>
         </div>
 
-
         {/* text section    */}
 
         <div className="my-[80px] px-4 sm:px-6 md:px-10 lg:px-[120px]">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
             className="max-w-[1200px] w-full mx-auto flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-10"
           >
@@ -114,13 +115,15 @@ const AmazonFbaWholesale = () => {
 
             {/* Right Section */}
             <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed max-w-full lg:max-w-[700px] text-left">
-              Our Amazon FBA wholesales service includes a wide range of features designed to help you run your business more efficiently.
-              This includes product sourcing, inventory management, order processing, and shipping logistics. We also offer expert guidance
-              on pricing and marketing strategies to help you increase your sales and profitability.
+              Our Amazon FBA wholesales service includes a wide range of
+              features designed to help you run your business more efficiently.
+              This includes product sourcing, inventory management, order
+              processing, and shipping logistics. We also offer expert guidance
+              on pricing and marketing strategies to help you increase your
+              sales and profitability.
             </p>
           </motion.div>
         </div>
-
 
         {/* About us section start*/}
 
@@ -140,20 +143,34 @@ const AmazonFbaWholesale = () => {
               New Heights!
             </p>
             <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-              By partnering with us, you will be able to focus on what you do best - creating and selling great products - while we take
-              care of the rest. Our expert services will save you time and money, and help you grow your business faster than you ever
-              thought possible. At ECom Hyped, we are dedicated to helping Amazon sellers like you succeed. Let us handle the logistics
-              and management of your business so that you can focus on what you love doing. Contact us today to learn more about our
-              Amazon FBA wholesales service.
+              By partnering with us, you will be able to focus on what you do
+              best - creating and selling great products - while we take care of
+              the rest. Our expert services will save you time and money, and
+              help you grow your business faster than you ever thought possible.
+              At ECom Hyped, we are dedicated to helping Amazon sellers like you
+              succeed. Let us handle the logistics and management of your
+              business so that you can focus on what you love doing. Contact us
+              today to learn more about our Amazon FBA wholesales service.
             </p>
-            <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
-              <li>Comprehensive product research to find the best deals and highest profit margins</li>
-              <li>Extensive optimization of product listings to maximize sales and rankings</li>
-              <li>Access to a wide range of online marketplaces and retailers for sourcing products</li>
-              <li>A streamlined process that takes care of everything from sourcing to shipping</li>
+            <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
+              <li>
+                Comprehensive product research to find the best deals and
+                highest profit margins
+              </li>
+              <li>
+                Extensive optimization of product listings to maximize sales and
+                rankings
+              </li>
+              <li>
+                Access to a wide range of online marketplaces and retailers for
+                sourcing products
+              </li>
+              <li>
+                A streamlined process that takes care of everything from
+                sourcing to shipping
+              </li>
               <li>A 12-month profit guarantee for all investors</li>
             </ul>
-
           </motion.div>
 
           {/* Right Image */}
@@ -186,7 +203,7 @@ const AmazonFbaWholesale = () => {
             <motion.p
               initial={{ x: -60, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
               className="text-white text-[46px] sm:text-[40px] lg:text-[46px] font-semibold leading-tight md:max-w-[45%]"
             >
@@ -198,7 +215,7 @@ const AmazonFbaWholesale = () => {
             <motion.div
               initial={{ x: 60, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true }}
               className="flex flex-col gap-2 items-start text-left md:max-w-[50%]"
             >
@@ -221,7 +238,6 @@ const AmazonFbaWholesale = () => {
 
         {/* Animated Stats Ended */}
 
-
         <div className="flex flex-col lg:flex-row-reverse justify-between items-center gap-[16px] px-4 py-16 max-w-7xl mx-auto">
           {/* Image Section */}
           <motion.div
@@ -229,7 +245,7 @@ const AmazonFbaWholesale = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <div
               className="w-full max-w-[588px] h-auto sm:h-[695px] rounded-2xl overflow-hidden relative flex flex-col justify-center items-center gap-4 px-4"
@@ -262,7 +278,7 @@ const AmazonFbaWholesale = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
               
@@ -273,28 +289,44 @@ const AmazonFbaWholesale = () => {
             </p>
 
             <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-              EcomHypeds Amazon FBA wholesale service saves you time and boosts profits by sourcing quality products, managing logistics, and handling customer service. Partner with us to streamline operations and grow your Amazon business efficiently.
+              EcomHypeds Amazon FBA wholesale service saves you time and boosts
+              profits by sourcing quality products, managing logistics, and
+              handling customer service. Partner with us to streamline
+              operations and grow your Amazon business efficiently.
             </p>
-            <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
-              <li><b>Expert Suppliers:</b> Access high-quality products at low costs through our trusted Amazon FBA wholesale suppliers.</li>
-              <li><b>Logistics Management: </b>We handle shipping and warehousing, freeing you to focus on business growth.</li>
-              <li><b>Customer Service Support:</b> Our team manages customer service, reducing your operational workload.</li>
-              <li><b>Cost Efficiency:</b> Streamline operations and lower overhead costs to increase profitability.</li>
-              <li><b>Fast Results:</b> Achieve business goals and maximized profits within a 12-month timeframe.</li>
+            <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
+              <li>
+                <b>Expert Suppliers:</b> Access high-quality products at low
+                costs through our trusted Amazon FBA wholesale suppliers.
+              </li>
+              <li>
+                <b>Logistics Management: </b>We handle shipping and warehousing,
+                freeing you to focus on business growth.
+              </li>
+              <li>
+                <b>Customer Service Support:</b> Our team manages customer
+                service, reducing your operational workload.
+              </li>
+              <li>
+                <b>Cost Efficiency:</b> Streamline operations and lower overhead
+                costs to increase profitability.
+              </li>
+              <li>
+                <b>Fast Results:</b> Achieve business goals and maximized
+                profits within a 12-month timeframe.
+              </li>
             </ul>
           </motion.div>
         </div>
 
-
         <div className="flex flex-col lg:flex-row justify-between items-center gap-[16px] px-4 py-16 max-w-7xl mx-auto">
-
           {/* Image Section */}
           <motion.div
             className="w-full lg:w-1/2 flex justify-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <div
               className="w-full max-w-[588px] h-auto sm:h-[695px] rounded-2xl overflow-hidden relative flex flex-col justify-center items-center gap-4 px-4"
@@ -327,7 +359,7 @@ const AmazonFbaWholesale = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
               SERVICES
@@ -338,31 +370,49 @@ const AmazonFbaWholesale = () => {
             </p>
 
             <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-              Our Amazon FBA wholesale service sources high-quality products, manages logistics, and handles customer service, saving you time and costs. Focus on growing your business while we streamline operations and boost profits within 12 months.
+              Our Amazon FBA wholesale service sources high-quality products,
+              manages logistics, and handles customer service, saving you time
+              and costs. Focus on growing your business while we streamline
+              operations and boost profits within 12 months.
             </p>
             <ul className=" text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
-              <li><b>Product Sourcing:</b>  Expert suppliers secure high-quality products at low costs for your Amazon FBA business.</li>
-              <li><b>Logistics Handling:</b> We manage shipping and warehousing, eliminating time-consuming tasks.</li>
-              <li><b>Customer Service:</b>  Our team ensures customer satisfaction, protecting your brand’s reputation.</li>
-              <li><b> Profit-Driven:</b>  Competitive pricing and a 12-month plan maximize your profits efficiently.</li>
+              <li>
+                <b>Product Sourcing:</b> Expert suppliers secure high-quality
+                products at low costs for your Amazon FBA business.
+              </li>
+              <li>
+                <b>Logistics Handling:</b> We manage shipping and warehousing,
+                eliminating time-consuming tasks.
+              </li>
+              <li>
+                <b>Customer Service:</b> Our team ensures customer satisfaction,
+                protecting your brand’s reputation.
+              </li>
+              <li>
+                <b> Profit-Driven:</b> Competitive pricing and a 12-month plan
+                maximize your profits efficiently.
+              </li>
             </ul>
           </motion.div>
         </div>
 
-
-
-        <div className='my-[80px]'>
-          <StatsHeroSection heading={"Revolutionize Your Amazon Business with FBA Automation: Benefits You Can't Afford to Miss!"}
-            description={"At Ecom Hyped, we offer the most affordable and reliable FBA automation services in the market. With our gold and elite packages, we provide a range of benefits that you can't afford to miss. With our FBA automation services, we revolutionize your Amazon business and help you achieve financial success. You can trust us to be a transparent and reliable partner in your journey."} />
+        <div className="my-[80px]">
+          <StatsHeroSection
+            heading={
+              "Revolutionize Your Amazon Business with FBA Automation: Benefits You Can't Afford to Miss!"
+            }
+            description={
+              "At Ecom Hyped, we offer the most affordable and reliable FBA automation services in the market. With our gold and elite packages, we provide a range of benefits that you can't afford to miss. With our FBA automation services, we revolutionize your Amazon business and help you achieve financial success. You can trust us to be a transparent and reliable partner in your journey."
+            }
+          />
         </div>
-
 
         <div className="flex flex-col justify-center items-center gap-6">
           <div className="flex justify-center items-center my-10 px-4">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
               className="max-w-[900px] w-full flex flex-col justify-center items-center text-center"
             >
@@ -389,16 +439,20 @@ const AmazonFbaWholesale = () => {
           </Link>
         </div>
 
-        <StatsHero heading={'Lets Connect - Get in Touch Ecom Hyped!'}
-          description={'At EcomHyped, we are always happy to connect with new and potential clients. If you are interested in learning more about our services or how we can help you succeed in the world of e-commerce, we encourage you to get in touch. You can contact us by phone, email, or through our website, and we will be happy to answer any questions you may have. Lets connect and start working together to achieve your e-commerce goals.'} />
+        <StatsHero
+          heading={"Lets Connect - Get in Touch Ecom Hyped!"}
+          description={
+            "At EcomHyped, we are always happy to connect with new and potential clients. If you are interested in learning more about our services or how we can help you succeed in the world of e-commerce, we encourage you to get in touch. You can contact us by phone, email, or through our website, and we will be happy to answer any questions you may have. Lets connect and start working together to achieve your e-commerce goals."
+          }
+        />
 
         <div className="flex flex-wrap justify-around items-center gap-6 sm:gap-10 py-[55px] px-4 bg-[#ecf9f9]">
           {[
-            '/images/company-logo1.png',
-            '/images/company-logo2.png',
-            '/images/company-logo3.png',
-            '/images/company-logo4.png',
-            '/images/company-logo5.png',
+            "/images/company-logo1.png",
+            "/images/company-logo2.png",
+            "/images/company-logo3.png",
+            "/images/company-logo4.png",
+            "/images/company-logo5.png",
           ].map((src, index) => (
             <motion.div
               key={index}
@@ -406,7 +460,7 @@ const AmazonFbaWholesale = () => {
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{
                 duration: 0.5,
-                ease: 'easeOut',
+                ease: "easeOut",
                 delay: index * 0.15,
               }}
               viewport={{ once: true, amount: 0.3 }}
@@ -423,10 +477,9 @@ const AmazonFbaWholesale = () => {
         </div>
 
         {/* Companies Logo  */}
-
-      </div >
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default AmazonFbaWholesale
+export default AmazonFbaWholesale;

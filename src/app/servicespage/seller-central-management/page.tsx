@@ -106,10 +106,10 @@ const SellerCentralManagement = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="max-w-[1200px] w-full mx-auto flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-10"
+            className="max-w-[1200px] w-full mx-auto flex flex-col lg:flex-row items-center gap-8 sm:gap-10"
           >
             {/* Left Section */}
-            <div className="flex flex-col items-start max-w-full lg:max-w-[400px]">
+            <div className="flex flex-col items-start w-full lg:w-5/12">
               <h2 className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-3 sm:mb-4">
                 ABOUT OUR SERVICE
               </h2>
@@ -119,7 +119,7 @@ const SellerCentralManagement = () => {
             </div>
 
             {/* Right Section */}
-            <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed max-w-full lg:max-w-[700px] text-left">
+            <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed w-full lg:w-7/12 text-left">
               Our Seller Central Management service offers end-to-end solutions
               to optimize your Amazon presence. We handle daily operations,
               performance monitoring, and strategic adjustments to ensure your
@@ -287,8 +287,8 @@ const SellerCentralManagement = () => {
               efficiency and results. We begin with a thorough audit of your
               current account, identify areas for improvement, and implement
               data-driven strategies. Our team then continuously monitors
-              performance, manages daily tasks, and adapts to Amazon&apos;s evolving
-              landscape to ensure your business thrives.
+              performance, manages daily tasks, and adapts to Amazon&apos;s
+              evolving landscape to ensure your business thrives.
             </p>
 
             <ul className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">

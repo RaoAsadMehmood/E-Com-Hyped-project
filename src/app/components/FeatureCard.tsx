@@ -1,3 +1,4 @@
+// components/FeatureCard.jsx
 import React from 'react';
 import Image from 'next/image';
 
@@ -9,9 +10,9 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ imageSrc, heading, description }) => {
   return (
-    <div className="w-full sm:w-auto max-w-[100%] sm:max-w-none flex flex-col items-start gap-4 p-4">
+    <div className="w-full max-w-xs flex flex-col items-center gap-4 p-4 text-center"> {/* Changed items-start to items-center, added text-center */}
       {/* Image */}
-      <div className="self-start">
+      <div className="self-center"> {/* Changed self-start to self-center */}
         <Image
           src={imageSrc}
           alt={heading}
@@ -22,12 +23,12 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ imageSrc, heading, descriptio
       </div>
 
       {/* Heading */}
-      <h4 className="text-[20px] sm:text-[22px] md:text-[24px] text-[#334047] font-semibold text-left">
+      <h4 className="text-[20px] sm:text-[22px] md:text-[24px] text-[#334047] font-semibold text-center leading-tight"> {/* Changed text-left to text-center, added leading-tight for tighter heading */}
         {heading}
       </h4>
 
       {/* Description */}
-      <p className="text-[16px] sm:text-[17px] md:text-[18px] text-[#45565F] font-normal text-left leading-relaxed">
+      <p className="text-[16px] sm:text-[17px] md:text-[18px] text-[#45565F] font-normal text-center leading-relaxed break-words"> {/* Changed text-left to text-center, added break-words */}
         {description}
       </p>
     </div>

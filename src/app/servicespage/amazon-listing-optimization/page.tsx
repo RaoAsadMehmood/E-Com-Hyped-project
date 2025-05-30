@@ -105,10 +105,12 @@ const AmazonListingOptimization = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-10"
+              className="max-w-[1200px] w-full mx-auto flex flex-col lg:flex-row items-center gap-8 sm:gap-10"
             >
               {/* Left Section */}
-              <div className="flex flex-col items-start max-w-full lg:max-w-[400px]">
+              <div className="flex flex-col items-start w-full lg:w-5/12">
+                {" "}
+                {/* Changed max-w-full lg:max-w-[400px] to w-full lg:w-5/12 */}
                 <h2 className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-3 sm:mb-4">
                   ABOUT OUR SERVICE
                 </h2>
@@ -118,7 +120,9 @@ const AmazonListingOptimization = () => {
               </div>
 
               {/* Right Section */}
-              <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed max-w-full lg:max-w-[700px] text-left">
+              <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed w-full lg:w-7/12 text-left">
+                {" "}
+                {/* Changed max-w-full lg:max-w-[700px] to w-full lg:w-7/12 */}
                 Our Amazon Listing Optimization service dives deep into product
                 data, intensive keyword research, and comprehensive competitor
                 analysis to create listings that truly convert. We focus on
@@ -160,7 +164,7 @@ const AmazonListingOptimization = () => {
                   refine your listings to outperform the competition and
                   accelerate your sales growth.
                 </p>
-                <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
+                <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
                   <li>
                     <b>In-depth Keyword Research:</b> For maximum visibility and
                     relevant traffic.
@@ -310,7 +314,7 @@ const AmazonListingOptimization = () => {
                   to maximize your visibility and profitability on Amazon.
                 </p>
 
-                <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
+                <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
                   <li>
                     <b>Increased Visibility:</b> Rank higher in Amazon search
                     results for relevant keywords, ensuring more potential

@@ -151,7 +151,7 @@ const ProductResearch = () => {
               reduce guesswork, and accelerate your journey to consistent sales.
               Focus on scaling while we take care of finding what sells.
             </p>
-            <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
+            <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
               <li>
                 In-depth market research to identify trending and high-demand
                 products
@@ -291,7 +291,7 @@ const ProductResearch = () => {
               scale your business with confidence.
             </p>
 
-            <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
+            <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
               <li>
                 <b>Trusted Suppliers:</b> Access high-demand, low-competition
                 products at competitive prices through our verified supplier

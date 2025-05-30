@@ -78,13 +78,14 @@ const BrandManagment = () => {
                 </span>{" "}
               </h1>
               <p className="mt-4 text-[#cdd8dd] font-medium text-left text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-relaxed max-w-full ">
-                Are you looking to solidify your brand&apos;s presence and maximize
-                its potential on Amazon? Our Brand Management services are
-                designed to protect your brand, optimize your listings, and
+                Are you looking to solidify your brand&apos;s presence and
+                maximize its potential on Amazon? Our Brand Management services
+                are designed to protect your brand, optimize your listings, and
                 drive sustainable growth. With our deep understanding of
-                Amazon&apos;s ecosystem, we streamline operations, enhance customer
-                loyalty, and ensure your brand stands out in a competitive
-                marketplace, allowing you to focus on innovation and expansion.
+                Amazon&apos;s ecosystem, we streamline operations, enhance
+                customer loyalty, and ensure your brand stands out in a
+                competitive marketplace, allowing you to focus on innovation and
+                expansion.
               </p>
               <Link href="/contact">
                 <button
@@ -121,14 +122,14 @@ const BrandManagment = () => {
             {/* Right Section */}
             <div className="w-full lg:w-[60%]">
               <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed text-left">
-                Our Brand Management service focuses on elevating your brand&apos;s
-                presence and performance on Amazon. We handle everything from
-                brand protection and intellectual property enforcement to
-                optimizing your product listings, creating compelling A+
-                Content, and managing powerful advertising campaigns. With our
-                expert guidance, your brand will thrive, building stronger
-                customer loyalty and achieving remarkable growth in the
-                competitive Amazon marketplace.
+                Our Brand Management service focuses on elevating your
+                brand&apos;s presence and performance on Amazon. We handle
+                everything from brand protection and intellectual property
+                enforcement to optimizing your product listings, creating
+                compelling A+ Content, and managing powerful advertising
+                campaigns. With our expert guidance, your brand will thrive,
+                building stronger customer loyalty and achieving remarkable
+                growth in the competitive Amazon marketplace.
               </p>
             </div>
           </motion.div>
@@ -157,7 +158,7 @@ const BrandManagment = () => {
               growth in the competitive Amazon marketplace, allowing you to
               concentrate on your product and vision.
             </p>
-            <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
+            <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
               <li>
                 Strategic brand development and positioning on the Amazon
                 platform
@@ -298,7 +299,7 @@ const BrandManagment = () => {
               transform your Amazon channel into a powerful asset.
             </p>
 
-            <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
+            <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
               <li>
                 <b>Strategic Brand Fortification:</b> Establish an unshakeable
                 brand foundation, safeguarding your intellectual property and
@@ -355,7 +356,7 @@ const BrandManagment = () => {
               complexities of the Amazon marketplace.
             </p>
 
-            <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
+            <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
               <li>
                 <b>Initial Brand Audit & Strategy:</b> We begin with a deep dive
                 into your current brand standing, competitor landscape, and
@@ -378,12 +379,6 @@ const BrandManagment = () => {
                 analysis of key metrics, we identify areas for improvement and
                 strategically adjust campaigns to maximize ROI and sustain
                 momentum.
-              </li>
-              <li>
-                <b>Continuous Innovation & Expansion:</b> We stay ahead of
-                Amazon&apos;s evolving ecosystem, identifying new features,
-                advertising opportunities, and market trends to ensure your
-                brand remains competitive and continues to expand.
               </li>
             </ul>
           </motion.div>
@@ -420,8 +415,6 @@ const BrandManagment = () => {
             </div>
           </motion.div>
         </div>
-
-
         <div className="my-[80px]">
           <StatsHeroSection
             heading={

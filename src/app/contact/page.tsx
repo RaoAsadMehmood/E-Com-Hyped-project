@@ -1,57 +1,55 @@
-'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
-import ContactNavbar from '../components/ContactNavbar';
-import ContactCards from '../components/ContactCards';
-import ContactForm from '../components/ContactForm';
-import AnimatedStats from '../components/AnimatedStats';
-import Accordion from '../components/Accordion';
-import Link from 'next/link';
-import Image from 'next/image';
-import TestimonialSlider from '../components/TestimonialSlider';
-
-
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
+import ContactNavbar from "../components/ContactNavbar";
+import ContactCards from "../components/ContactCards";
+import ContactForm from "../components/ContactForm";
+import AnimatedStats from "../components/AnimatedStats";
+import Accordion from "../components/Accordion";
+import Link from "next/link";
+import Image from "next/image";
+import TestimonialSlider from "../components/TestimonialSlider";
 
 const ContactIntro: React.FC = () => {
   //    { animated stats data}
-    const statsData = [
-        { endValue: 1430, label: 'Happy Clients', suffix: '+' },
-        { endValue: 250, label: 'Revenue', suffix: '+' },
-        { endValue: 1810 , label: 'Reviews ', suffix: ' +' },
-        { endValue:  10253, label: 'Brands Catalog', suffix: 'K +' },
-    ];
+  const statsData = [
+    { endValue: 1430, label: "Happy Clients", suffix: "+" },
+    { endValue: 250, label: "Revenue", suffix: "M" },
+    { endValue: 1810, label: "Reviews ", suffix: " +" },
+    { endValue: 10253, label: "Brands Catalog", suffix: "K +" },
+  ];
 
-     const accordionItems = [
-        {
-            title: 'What is Amazon FBA Automation?',
-            content:
-'Amazon FBA Automation is a service where we manage your Amazon store for you, handling everything from product sourcing to inventory management, customer service, and sales optimization, so you can focus on growing your business.',
-        },
-        {
-            title: 'How long does it take to see results?',
-            content:
-                'Results vary depending on your store setup and market conditions, but most clients start seeing significant improvements in sales and profitability within 3-6 months of implementing our automation solutions.',
-        },
-        {
-            title: 'What makes EcomHyped different?',
-            content:
-            'At EcomHyped, we prioritize transparency, tailored solutions, and long-term partnerships. Our team uses cutting-edge technology and industry expertise to ensure your Amazon store reaches its maximum potential.',
-        },
-        {
-            title: 'Can I customize the services I receive?',
-            content:
-            'Absolutely! We offer fully customizable FBA automation packages to meet your specific needs, whether you are just starting out or looking to scale an existing store.',        },
-
-    ];
+  const accordionItems = [
+    {
+      title: "What is Amazon FBA Automation?",
+      content:
+        "Amazon FBA Automation is a service where we manage your Amazon store for you, handling everything from product sourcing to inventory management, customer service, and sales optimization, so you can focus on growing your business.",
+    },
+    {
+      title: "How long does it take to see results?",
+      content:
+        "Results vary depending on your store setup and market conditions, but most clients start seeing significant improvements in sales and profitability within 3-6 months of implementing our automation solutions.",
+    },
+    {
+      title: "What makes EcomHyped different?",
+      content:
+        "At EcomHyped, we prioritize transparency, tailored solutions, and long-term partnerships. Our team uses cutting-edge technology and industry expertise to ensure your Amazon store reaches its maximum potential.",
+    },
+    {
+      title: "Can I customize the services I receive?",
+      content:
+        "Absolutely! We offer fully customizable FBA automation packages to meet your specific needs, whether you are just starting out or looking to scale an existing store.",
+    },
+  ];
   return (
     <>
-      <div className='overflow-x-hidden'>
+      <div className="overflow-x-hidden">
         <ContactNavbar />
         <div className="flex justify-center items-center my-[80px] px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
             className="max-w-[900px] w-full flex flex-col justify-center items-center text-center"
           >
@@ -64,11 +62,13 @@ const ContactIntro: React.FC = () => {
             </p>
 
             <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed">
-              We are dedicated to helping businesses succeed on Amazon. Our team of experts provides comprehensive Amazon automation services, including FBA automation, account creation, listing setup, store launch, and much more.
+              We are dedicated to helping businesses succeed on Amazon. Our team
+              of experts provides comprehensive Amazon automation services,
+              including FBA automation, account creation, listing setup, store
+              launch, and much more.
             </p>
           </motion.div>
         </div>
-
 
         {/* cards section started */}
 
@@ -80,7 +80,7 @@ const ContactIntro: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
             className="max-w-[900px] w-full flex flex-col justify-center items-center text-center"
           >
@@ -93,13 +93,15 @@ const ContactIntro: React.FC = () => {
             </p>
 
             <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed">
-              In addition to our expertise, we also offer a range of unique selling points that make us stand out from competitors. These include:          </p>
+              In addition to our expertise, we also offer a range of unique
+              selling points that make us stand out from competitors. These
+              include:{" "}
+            </p>
           </motion.div>
         </div>
 
         {/* Contact Form */}
         <ContactForm />
-
 
         {/* Animated Stats Started */}
         <div
@@ -113,7 +115,7 @@ const ContactIntro: React.FC = () => {
             <motion.p
               initial={{ x: -60, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
               className="text-white text-[46px] sm:text-[40px] lg:text-[46px] font-semibold leading-tight md:max-w-[45%]"
             >
@@ -125,7 +127,7 @@ const ContactIntro: React.FC = () => {
             <motion.div
               initial={{ x: 60, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true }}
               className="flex flex-col gap-2 items-start text-left md:max-w-[50%]"
             >
@@ -142,19 +144,18 @@ const ContactIntro: React.FC = () => {
 
           {/* Stats Section */}
           <div className="mt-10">
-              <AnimatedStats statsData={statsData} />
+            <AnimatedStats statsData={statsData} />
           </div>
         </div>
 
         {/* Animated Stats Ended */}
-
 
         <div className="flex flex-col justify-center items-center gap-6">
           <div className="flex justify-center items-center my-10 px-4">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
               className="max-w-[900px] w-full flex flex-col justify-center items-center text-center"
             >
@@ -167,7 +168,7 @@ const ContactIntro: React.FC = () => {
             </motion.div>
           </div>
 
-           <Accordion accordionItems={accordionItems} />
+          <Accordion accordionItems={accordionItems} />
 
           <Link href="">
             <button
@@ -181,16 +182,14 @@ const ContactIntro: React.FC = () => {
           </Link>
         </div>
 
-
-
         {/* Testimonials Section Started */}
         <section
           className="w-full min-h-screen px-6 py-10 lg:py-20"
           style={{
             backgroundImage: 'url("/images/Union.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         >
           <div className="flex flex-col lg:flex-row justify-around items-center gap-10 lg:gap-0 mt-[60px] sm:mt-[80px] md:mt-[100px]">
@@ -257,15 +256,14 @@ const ContactIntro: React.FC = () => {
 
         {/* Testimonials Section Ended */}
 
-
         {/* Companies Logo  */}
         <div className="flex flex-wrap justify-around items-center gap-6 sm:gap-10 py-[55px] px-4 bg-[#ecf9f9]">
           {[
-            '/images/company-logo1.png',
-            '/images/company-logo2.png',
-            '/images/company-logo3.png',
-            '/images/company-logo4.png',
-            '/images/company-logo5.png',
+            "/images/company-logo1.png",
+            "/images/company-logo2.png",
+            "/images/company-logo3.png",
+            "/images/company-logo4.png",
+            "/images/company-logo5.png",
           ].map((src, index) => (
             <motion.div
               key={index}
@@ -273,7 +271,7 @@ const ContactIntro: React.FC = () => {
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{
                 duration: 0.5,
-                ease: 'easeOut',
+                ease: "easeOut",
                 delay: index * 0.15,
               }}
               viewport={{ once: true, amount: 0.3 }}
@@ -290,14 +288,9 @@ const ContactIntro: React.FC = () => {
         </div>
 
         {/* Companies Logo  */}
-
-        </div>
-      </>
-      );
+      </div>
+    </>
+  );
 };
 
-      export default ContactIntro;
-
-
-
-
+export default ContactIntro;

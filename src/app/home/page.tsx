@@ -11,12 +11,11 @@ import AmazonCarousel from "../components/AmazonCarousel";
 import Link from "next/link";
 import TestimonialSlider from "../components/TestimonialSlider";
 import Navbar from "../components/Navbar";
-
 const Home = () => {
   //    { animated stats data}
   const statsData = [
     { endValue: 1430, label: "Happy Clients", suffix: "+" },
-    { endValue: 250, label: "Revenue", suffix: "+" },
+    { endValue: 250, label: "Revenue", suffix: "M" },
     { endValue: 1810, label: "Reviews ", suffix: "+" },
     { endValue: 10253, label: "Brands Catalog", suffix: "+" },
   ];
@@ -129,6 +128,7 @@ const Home = () => {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="md:ml-auto md:mt-auto relative"
               >
+                <Link href ="/contact">
                 <div className="relative flex flex-col items-center">
                   <div className="px-1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full flex justify-center items-center">
                     <span className="flex justify-center items-center text-lg sm:text-xl md:text-2xl text-black font-semibold">
@@ -140,7 +140,6 @@ const Home = () => {
                       />
                     </span>
                   </div>
-
                   {/* Rotating Image */}
                   <div className="rotating-image">
                     <Image
@@ -152,6 +151,7 @@ const Home = () => {
                     />
                   </div>
                 </div>
+                  </Link>
               </motion.div>
             </motion.div>
           </div>
@@ -482,7 +482,7 @@ const Home = () => {
               transition={{ delay: 1.2, duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Link href="">
+              <Link href="/contact">
                 <button
                   className="px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
           hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
@@ -538,7 +538,7 @@ const Home = () => {
               transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Link href="">
+              <Link href="/contact">
                 <button
                   className="px-[48px] py-[14px] sm:px-[56px] mt-[20px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
         hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
@@ -632,7 +632,7 @@ const Home = () => {
               transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Link href="">
+              <Link href="/contact">
                 <button
                   className="px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
         hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
@@ -763,7 +763,7 @@ const Home = () => {
                   transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
                   viewport={{ once: true }}
                 >
-                  <Link href="">
+                  <Link href="/contact">
                     <button
                       className="px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
               hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 

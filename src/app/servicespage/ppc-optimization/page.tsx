@@ -103,38 +103,39 @@ const PPCOptimization = () => {
         </div>
 
         {/* About Service Section */}
-        <div className="my-[80px]">
-          <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-10"
-            >
-              {/* Left Section */}
-              <div className="flex flex-col items-start max-w-full lg:max-w-[400px]">
-                <h2 className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-3 sm:mb-4">
-                  ABOUT OUR SERVICE
-                </h2>
-                <p className="text-[#334047] text-[26px] sm:text-[30px] md:text-[36px] lg:text-[44px] font-semibold leading-snug">
-                  Strategic Amazon PPC Campaign Optimization
-                </p>
-              </div>
-
-              {/* Right Section */}
-              <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed max-w-full lg:max-w-[700px] text-left">
-                Our Amazon PPC Optimization service maximizes your advertising
-                ROI through data-driven campaign management, strategic keyword
-                targeting, and continuous bid optimization. We analyze your
-                advertising performance, identify profitable opportunities, and
-                eliminate wasteful spending to ensure every dollar invested
-                drives qualified traffic and converts into profitable sales,
-                helping you dominate your market while maintaining optimal ACoS
-                and TACoS.
+        <div className="my-[80px] px-4 sm:px-6 md:px-10 lg:px-[120px]">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="max-w-[1200px] w-full mx-auto flex flex-col lg:flex-row items-center gap-8 sm:gap-10"
+          >
+            {/* Left Section */}
+            <div className="flex flex-col items-start w-full lg:w-5/12">
+              {" "}
+              {/* Changed max-w-full lg:max-w-[400px] to w-full lg:w-5/12 */}
+              <h2 className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-3 sm:mb-4">
+                ABOUT OUR SERVICE
+              </h2>
+              <p className="text-[#334047] text-[26px] sm:text-[30px] md:text-[36px] lg:text-[44px] font-semibold leading-snug">
+                Strategic Amazon PPC Campaign Optimization
               </p>
-            </motion.div>
-          </div>
+            </div>
+
+            {/* Right Section */}
+            <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed w-full lg:w-7/12 text-left">
+              {" "}
+              {/* Changed max-w-full lg:max-w-[700px] to w-full lg:w-7/12 */}
+              Our Amazon PPC Optimization service maximizes your advertising ROI
+              through data-driven campaign management, strategic keyword
+              targeting, and continuous bid optimization. We analyze your
+              advertising performance, identify profitable opportunities, and
+              eliminate wasteful spending to ensure every dollar invested drives
+              qualified traffic and converts into profitable sales, helping you
+              dominate your market while maintaining optimal ACoS and TACoS.
+            </p>
+          </motion.div>
         </div>
 
         {/* About Us Section */}
@@ -164,7 +165,7 @@ const PPCOptimization = () => {
                   campaigns to reduce wasted spend while dramatically increasing
                   your return on ad spend (ROAS).
                 </p>
-                <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
+                <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
                   <li>
                     <b>Strategic Keyword Targeting:</b> Identify high-converting
                     keywords while eliminating wasteful spend.
@@ -315,34 +316,34 @@ const PPCOptimization = () => {
                   Amazon advertising and achieve sustainable, profitable growth.
                 </p>
 
-                <ul className="list-disc list-inside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
-                  <li>
-                    <b>Improved ROAS:</b> Maximize return on ad spend through
-                    strategic keyword targeting and intelligent bid
-                    optimization, ensuring every dollar generates maximum
-                    profit.
-                  </li>
-                  <li>
-                    <b>Reduced Advertising Costs:</b> Eliminate wasteful spend
-                    with precise negative keyword management and targeted
-                    campaign structure, lowering your ACoS significantly.
-                  </li>
-                  <li>
-                    <b>Enhanced Campaign Performance:</b> Boost click-through
-                    rates and conversion rates with optimized ad copy, strategic
-                    placement, and continuous A/B testing.
-                  </li>
-                  <li>
-                    <b>Scalable Growth:</b> Build sustainable advertising
-                    systems that grow with your business, maintaining
-                    profitability as you expand your product portfolio.
-                  </li>
-                  <li>
-                    <b>Data-Driven Insights:</b> Receive comprehensive analytics
-                    and actionable recommendations to make informed decisions
-                    and stay ahead of market trends.
-                  </li>
-                </ul>
+                <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
+  <li>
+    <b>Improved ROAS:</b> Maximize return on ad spend through
+    strategic keyword targeting and intelligent bid
+    optimization, ensuring every dollar generates maximum
+    profit.
+  </li>
+  <li>
+    <b>Reduced Advertising Costs:</b> Eliminate wasteful spend
+    with precise negative keyword management and targeted
+    campaign structure, lowering your ACoS significantly.
+  </li>
+  <li>
+    <b>Enhanced Campaign Performance:</b> Boost click-through
+    rates and conversion rates with optimized ad copy, strategic
+    placement, and continuous A/B testing.
+  </li>
+  <li>
+    <b>Scalable Growth:</b> Build sustainable advertising
+    systems that grow with your business, maintaining
+    profitability as you expand your product portfolio.
+  </li>
+  <li>
+    <b>Data-Driven Insights:</b> Receive comprehensive analytics
+    and actionable recommendations to make informed decisions
+    and stay ahead of market trends.
+  </li>
+</ul>
               </motion.div>
             </div>
           </div>
