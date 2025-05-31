@@ -128,30 +128,30 @@ const Home = () => {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="md:ml-auto md:mt-auto relative"
               >
-                <Link href ="/contact">
-                <div className="relative flex flex-col items-center">
-                  <div className="px-1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full flex justify-center items-center">
-                    <span className="flex justify-center items-center text-lg sm:text-xl md:text-2xl text-black font-semibold">
-                      Schedule A Call
-                      <MdOutlineArrowRight
-                        size={24}
-                        className="sm:w-[30px] sm:h-[30px] md:w-[40px] md:h-[40px]"
-                        color="#026F72"
+                <Link href="/contact">
+                  <div className="relative flex flex-col items-center">
+                    <div className="px-1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full flex justify-center items-center">
+                      <span className="flex justify-center items-center text-lg sm:text-xl md:text-2xl text-black font-semibold">
+                        Schedule A Call
+                        <MdOutlineArrowRight
+                          size={24}
+                          className="sm:w-[30px] sm:h-[30px] md:w-[40px] md:h-[40px]"
+                          color="#026F72"
+                        />
+                      </span>
+                    </div>
+                    {/* Rotating Image */}
+                    <div className="rotating-image">
+                      <Image
+                        src={"/Images/btn get started.png"}
+                        alt={"Schedule a call button"}
+                        width={230}
+                        height={230}
+                        className="w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] md:w-[230px] md:h-[230px]"
                       />
-                    </span>
+                    </div>
                   </div>
-                  {/* Rotating Image */}
-                  <div className="rotating-image">
-                    <Image
-                      src={"/Images/btn get started.png"}
-                      alt={"Schedule a call button"}
-                      width={230}
-                      height={230}
-                      className="w-[180px] h-[180px] sm:w-[200px] sm:h-[200px] md:w-[230px] md:h-[230px]"
-                    />
-                  </div>
-                </div>
-                  </Link>
+                </Link>
               </motion.div>
             </motion.div>
           </div>
@@ -176,7 +176,7 @@ const Home = () => {
         </div>
 
         {/* Featured Cards Section started*/}
-        <section className="w-full px-4 py-16 mt-[80px] min-h-screen">
+        <section className="w-full px-4 py-16 mt-[80px] ">
           <motion.div
             className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10 items-start"
             initial={{ opacity: 0, y: 40 }}

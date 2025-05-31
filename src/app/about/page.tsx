@@ -8,6 +8,7 @@ import Link from "next/link";
 import { StatsHeroSection } from "../components/StatsSection";
 import Navbar from "../components/Navbar";
 
+
 const About = () => {
   return (
     <>
@@ -99,7 +100,7 @@ const About = () => {
         {/* Video Section ended */}
 
         {/* Featured Cards Section started*/}
-        <section className="w-full px-4 py-12 mt-[80px] min-h-screen">
+        <section className="w-full px-4 py-12 mt-[80px] ">
           <motion.div
             className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10 items-start"
             initial={{ opacity: 0, y: 40 }}
@@ -185,67 +186,84 @@ const About = () => {
 
         {/* Featured Cards Section ending*/}
 
-        <section className="mb-[50] px-4 sm:px-8 md:px-[60px] lg:px-[120px] flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+        <section className="mb-[50px] px-4 sm:px-8 md:px-[60px] lg:px-[120px] flex flex-col-reverse lg:flex-row items-stretch justify-between gap-12">
           {/* Left Text Content */}
           <motion.div
-            className="max-w-xl lg:max-w-[588px] w-full"
+            className="max-w-xl lg:max-w-[588px] w-full lg:w-1/2 flex flex-col justify-center min-h-[500px] lg:min-h-[650px]"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4 text-center lg:text-left">
-              PORTFOLIO
-            </h2>
-            <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug mb-4 text-center lg:text-left">
-              More Than Just A Service Provider
-            </p>
-            <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] mb-6 text-center lg:text-left">
-              At EcomHyped, our primary objective is to help our clients
-              maximize their return on investment through innovative and
-              effective automation solutions. We are a team of passionate
-              professionals with years of experience in the industry, dedicated
-              to helping businesses achieve their full potential and
-              profitability. Our team is driven by a shared commitment to
-              helping our clients achieve their business goals, and we take
-              pride in delivering exceptional customer service and using the
-              latest technology to deliver the best possible results.
-            </p>
-            <motion.div
-              className="flex justify-center lg:justify-start"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <Link href="/contact">
-                <button
-                  className="px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
-        hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
-        active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
-        transition-all duration-300 ease-out"
-                >
-                  Schedule a Call
-                </button>
-              </Link>
-            </motion.div>
+            <div className="flex flex-col justify-center h-full">
+              <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4 text-center lg:text-left">
+                PORTFOLIO
+              </h2>
+              <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug mb-4 text-center lg:text-left">
+                More Than Just A Service Provider
+              </p>
+              <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] mb-6 text-center lg:text-left">
+                At EcomHyped, our primary objective is to help our clients
+                maximize their return on investment through innovative and
+                effective automation solutions. We are a team of passionate
+                professionals with years of experience in the industry,
+                dedicated to helping businesses achieve their full potential and
+                profitability. Our team is driven by a shared commitment to
+                helping our clients achieve their business goals, and we take
+                pride in delivering exceptional customer service and using the
+                latest technology to deliver the best possible results.
+              </p>
+              <motion.div
+                className="flex justify-center lg:justify-start"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
+                viewport={{ once: true }}
+              >
+                <Link href="/contact">
+                  <button
+                    className="px-[48px] py-[14px] sm:px-[56px] mt-[10px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md
+            hover:bg-[#F7A51E] hover:text-white hover:shadow-lg
+            active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2
+            transition-all duration-300 ease-out"
+                  >
+                    Schedule a Call
+                  </button>
+                </Link>
+              </motion.div>
+            </div>
           </motion.div>
 
           {/* Right Image */}
           <motion.div
-            className="w-full max-w-[588px] h-auto"
+            className="w-full lg:w-1/2 flex justify-center items-center min-h-[500px] lg:min-h-[650px]"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Image
-              src="/images/portfolio-illustration.png"
-              alt="illustration"
-              width={588}
-              height={607}
-              className="w-full h-auto"
-            />
+            <div
+              className="w-full max-w-[588px] h-full rounded-2xl overflow-hidden relative flex flex-col justify-center items-center gap-4 px-4"
+              style={{
+                background: `
+        radial-gradient(circle at top left, rgba(2, 111, 114, 0.75) 0%, transparent 50%),
+        radial-gradient(circle at bottom right, rgba(247, 165, 30, 0.55) 0%, transparent 60%),
+        radial-gradient(circle at top right, white 0%, white 100%),
+        radial-gradient(circle at bottom left, white 0%, white 100%)
+      `,
+              }}
+            >
+              {/* Static Image */}
+              <div className="relative w-full max-w-[500px] h-[400px] lg:h-[500px]">
+                <Image
+                  src="/images/portfolio-illustration.png"
+                  alt="illustration"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 1024px) 90vw, 500px"
+                />
+              </div>
+            </div>
           </motion.div>
         </section>
 
@@ -334,6 +352,84 @@ const About = () => {
             }
           />
         </div>
+
+        {/* Testimonials Section Started */}
+
+        <section className="my-[80px] px-4 sm:px-6 md:px-10 lg:px-[120px] max-w-7xl mx-auto">
+          <div className="flex flex-col items-center text-center mb-12">
+            <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
+              HEAR IT FROM OUR CLIENTS
+            </h2>
+            <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-tight max-w-4xl">
+              Authentic Experiences, Real Success Stories
+            </p>
+            <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mt-4 max-w-3xl">
+              Our partners share how <b>EcomHyped</b>  has helped them achieve their
+              Amazon business goals and maximize profitability.
+            </p>
+          </div>
+
+          {/* Video Testimonials Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+            {/* Video 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="relative w-full h-[300px] sm:h-[400px] md:h-[350px] lg:h-[450px] rounded-[20px] p-[5px] bg-transparent overflow-hidden"
+              style={{
+                background:
+                  "linear-gradient(to right, rgba(2, 111, 114, 0.75), rgba(247, 165, 30, 0.55))",
+              }}
+            >
+              <div className="w-full h-full rounded-[15px] overflow-hidden bg-black">
+                <video
+                  src="/Videos/testimonial-1.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  controls
+                  className="w-full h-full object-cover"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </motion.div>
+
+            {/* Video 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="relative w-full h-[300px] sm:h-[400px] md:h-[350px] lg:h-[450px] rounded-[20px] p-[5px] bg-transparent overflow-hidden"
+              style={{
+                background:
+                  "linear-gradient(to left, rgba(2, 111, 114, 0.75), rgba(247, 165, 30, 0.55))",
+              }}
+            >
+              <div className="w-full h-full rounded-[15px] overflow-hidden bg-black">
+                <video
+                  src="/Videos/testimonial-2.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  controls
+                  className="w-full h-full object-cover"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Testimonials Section Ended */}
 
         <div className="flex flex-col-reverse lg:flex-row justify-between items-center gap-[16px] px-4 py-16 max-w-7xl mx-auto">
           {/* Text Section */}
