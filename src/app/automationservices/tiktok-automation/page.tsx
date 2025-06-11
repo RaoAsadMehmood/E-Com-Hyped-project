@@ -4,12 +4,11 @@ import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import TestimonialSlider from "../components/TestimonialSlider";
-import Navbar from "../components/Navbar";
-// import FeatureCard from "../components/FeatureCard";
-import AnimatedStats from "../components/AnimatedStats";
-import Accordion from "../components/Accordion";
-import { StatsHeroSection } from "../components/StatsSection";
+import TestimonialSlider from "../../components/TestimonialSlider";
+import Navbar from "../../components/Navbar";
+import AnimatedStats from "../../components/AnimatedStats";
+import Accordion from "../../components/Accordion";
+import { StatsHeroSection } from "../../components/StatsSection";
 
 const AutomationServices = () => {
   const statsData = [
@@ -21,26 +20,27 @@ const AutomationServices = () => {
 
   const accordionItems = [
     {
-      title: "How much can I Invest?",
+      title: "How much investment is needed for TikTok Automation?",
       content:
-        "At Ecom Hyped, we require a minimum investment of $20k for both our FBA Gold and FBA Elite packages. You can also invest more based on your business goals and financial capacity.",
+        "The investment for TikTok Automation primarily covers product sourcing, initial ad spend for campaigns, and platform fees. Costs can vary depending on your product niche and desired scale of reach, but we'll work with you to define a clear budget that aligns with your business goals.",
     },
     {
-      title: "How much money can I make?",
+      title: "What are the potential earnings with TikTok Automation?",
       content:
-        "Our FBA automation services offer a monthly ROI of 15% to 18% based on gross sales. However, profits may vary depending on various factors such as inventory, sales, and market trends.",
+        "TikTok Automation offers significant earning potential due to its viral nature and massive user base. Profits are driven by trending product selection, engaging content strategy, and efficient ad targeting. While results can be rapid, our focus is on building sustainable sales growth and maximizing your ROI on the platform.",
     },
     {
-      title: "Who can Invest?",
+      title: "Who is TikTok Automation suitable for?",
       content:
-        "Anyone who meets the capital requirements of $20k or more in credit or cash can invest in our FBA automation services. We offer no accreditation requirements, so anyone can be a business owner.",
+        "TikTok Automation is ideal for entrepreneurs, brands, or investors keen on tapping into the explosive growth of social commerce. It's especially suited for those targeting younger demographics and looking to leverage short-form video content for rapid product discovery and sales without the day-to-day operational burden.",
     },
     {
-      title: "What do I need to start?",
+      title: "What do I need to get started with TikTok Automation?",
       content:
-        "To start, you will need a minimum investment of $20k in credit or cash. We will take care of everything else, from setting up your Amazon FBA partnership store to managing inventory and logistics.",
+        "To start with TikTok Automation, you primarily need a product idea that resonates with current trends (or we can help with product research). Our team handles everything from content creation and ad campaign setup to audience targeting, order fulfillment integration, and continuous optimization, creating a hands-off revenue stream.",
     },
   ];
+
   return (
     <>
       <Navbar />
@@ -63,25 +63,27 @@ const AutomationServices = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h1 className="text-white font-semibold leading-tight text-left text-shadow-lg/40 text-[40px] sm:text-[60px] md:text-[75px] lg:text-[87px]">
-                Automate Your
+                Go Viral & Automate{" "}
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
-                  Store for
+                  Your TikTok
                 </span>{" "}
-                Maximum
+                <br className="hidden md:inline" />
+                for Explosive{" "}
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
-                  Profit
+                  Growth
                 </span>{" "}
               </h1>
               <p className="mt-4 text-[#cdd8dd] font-medium text-left text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-relaxed max-w-full ">
-                Are you looking to invest in a profitable opportunity that can
-                help you maximize your returns in just 12 months? Look no
-                further than FBA Automation by Ecom Hyped! Our automated Amazon
-                store solutions are designed to help investors like you achieve
-                maximum profitability with minimum effort. With our expert team
-                of Amazon FBA partners, we can help you launch and manage a
-                successful Amazon store that generates consistent revenue month
-                after month.
+                Ready to tap into the immense power of social commerce without
+                the daily hassle? Discover TikTok Automation by Ecom Hyped! Our
+                innovative solutions are crafted to help entrepreneurs and
+                brands like you leverage TikTok&apos;s viral reach for rapid product
+                discovery and sales. Our expert team specializes in creating
+                engaging content, optimizing ad campaigns, and streamlining
+                fulfillment, allowing you to achieve explosive growth and a
+                truly passive revenue stream from the dynamic TikTok platform.
               </p>
+
               <motion.div
                 className="flex justify-center lg:justify-start"
                 initial={{ opacity: 0, y: 20 }}
@@ -188,18 +190,18 @@ const AutomationServices = () => {
               ABOUT US
             </h2>
             <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug mb-4 text-center lg:text-left">
-              How Amazon FBA Automation Works?
+              How TikTok Automation Works?
             </p>
-            <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] mb-6 text-center lg:text-left">
-              Our team of Amazon FBA experts will work with you to identify the
-              best products to sell on Amazon, source them from trusted
-              suppliers, and launch them on your Amazon store. We will then use
-              our advanced marketing and optimization strategies to increase
-              your stores visibility and sales, ensuring consistent revenue
-              month after month. Our real-time reporting, analytics, and risk
-              monitoring tools will give you complete transparency into your
-              investment, allowing you to make informed decisions about your
-              Amazon store.
+            <p className="text-[#45565F] text-[16px] font-medium sm:text-[17px] md:text-[18px] mb-6 text-center lg:text-left">
+              Our team of TikTok automation specialists will collaborate closely
+              with you to identify trending product opportunities, source them
+              efficiently, and expertly launch them with viral content
+              strategies on TikTok. We then leverage our advanced marketing and
+              optimization strategies to enhance your TikTok presence and boost
+              sales, ensuring a steady stream of revenue. Our transparent
+              reporting, analytics, and performance monitoring will give you
+              complete peace of mind, allowing you to focus on growth or simply
+              enjoy the passive income from your automated TikTok store.
             </p>
             <motion.div
               className="flex justify-center lg:justify-start"
@@ -281,27 +283,24 @@ const AutomationServices = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
-              Triumph Tales:
+              Viral Victories:
             </h2>
-
             <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-6">
-              Stories of Investors Who Maximized Profits with Our FBA Automation
-              Services
+              Real Stories of Brands Thriving with Our TikTok Automation
             </p>
-
             <p className="text-[#45565F] text-[18px] font-medium sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-              At EcomHyped, we believe in transparency and reliability, and
-              thats why we are proud to share our triumph tales with you. Our
-              success stories highlight real investors who trusted us to help
-              them maximize profits with FBA automation. We provide real-time
-              reporting, analytics, and risk monitoring to ensure the success of
-              our clients. With our gold and elite packages, we partner with you
-              to establish an Amazon FBA store and work tirelessly to make sure
-              your store generates a monthly ROI of 15% to 18%. Our goal is to
-              help you achieve financial success and we are dedicated to being a
-              trusted partner in your journey.
+              At EcomHyped, our dedication is evident in the viral success of
+              our TikTok partners. We champion transparency, and our success
+              stories vividly showcase how entrepreneurs and brands have
+              achieved explosive growth by leveraging our TikTok automation
+              solutions. From identifying trending products and creating
+              engaging short-form video content to running highly effective ad
+              campaigns and streamlining fulfillment, we provide end-to-end
+              support. Our detailed reporting, analytics, and continuous
+              optimization offer complete peace of mind, empowering you to
+              capture market attention and enjoy significant profits from your
+              automated TikTok presence.
             </p>
-
             <motion.div
               className=""
               initial={{ opacity: 0, y: 20 }}
@@ -339,7 +338,7 @@ const AutomationServices = () => {
               viewport={{ once: true }}
               className="text-white text-[46px] sm:text-[40px] lg:text-[46px] font-semibold leading-tight md:max-w-[65%]"
             >
-              Why Choose EcomHyped for Your Amazon Automation Services?
+              Why Choose EcomHyped for Your TikTok Automation Services?
             </motion.p>
           </div>
 
@@ -383,15 +382,15 @@ const AutomationServices = () => {
             </button>
           </Link>
         </div>
-
         <div className="my-[80px]">
           <StatsHeroSection
             heading={
-              "Revolutionize Your Amazon Business with FBA Automation: Benefits You Can't Afford to Miss!"
+              "Go Viral, Automate Your Sales: Discover TikTok Automation by Ecom Hyped!"
             }
-            description={
-              "At Ecom Hyped, we offer the most affordable and reliable FBA automation services in the market. With our gold and elite packages, we provide a range of benefits that you can't afford to miss. With our FBA automation services, we revolutionize your Amazon business and help you achieve financial success. You can trust us to be a transparent and reliable partner in your journey."
-            }
+            description={`At Ecom Hyped, we offer cutting-edge TikTok automation services, meticulously designed to transform your product ideas
+               into viral sensations and significant profits. Our tailored solutions allow you to tap into TikTok's immense social commerce potential
+                with minimal effort, freeing you from daily operational tasks. Partner with us to achieve explosive growth, capture massive audience
+                 attention, and unlock true passive income from the world's most dynamic platform.`}
           />
         </div>
 

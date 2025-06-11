@@ -4,12 +4,11 @@ import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import TestimonialSlider from "../components/TestimonialSlider";
-import Navbar from "../components/Navbar";
-// import FeatureCard from "../components/FeatureCard";
-import AnimatedStats from "../components/AnimatedStats";
-import Accordion from "../components/Accordion";
-import { StatsHeroSection } from "../components/StatsSection";
+import TestimonialSlider from "../../components/TestimonialSlider";
+import Navbar from "../../components/Navbar";
+import AnimatedStats from "../../components/AnimatedStats";
+import Accordion from "../../components/Accordion";
+import { StatsHeroSection } from "../../components/StatsSection";
 
 const AutomationServices = () => {
   const statsData = [
@@ -21,26 +20,27 @@ const AutomationServices = () => {
 
   const accordionItems = [
     {
-      title: "How much can I Invest?",
+      title: "How much investment is needed for Shopify Automation?",
       content:
-        "At Ecom Hyped, we require a minimum investment of $20k for both our FBA Gold and FBA Elite packages. You can also invest more based on your business goals and financial capacity.",
+        "The initial investment for Shopify Automation varies based on your business model (e.g., dropshipping, private label), product range, and desired scale. Key costs include Shopify subscription fees, app subscriptions, initial inventory (if applicable), and marketing spend. We provide a detailed breakdown and guidance tailored to your goals.",
     },
     {
-      title: "How much money can I make?",
+      title: "What are the potential earnings with Shopify Automation?",
       content:
-        "Our FBA automation services offer a monthly ROI of 15% to 18% based on gross sales. However, profits may vary depending on various factors such as inventory, sales, and market trends.",
+        "Shopify Automation offers substantial earning potential due to its scalability and customization. Profits are driven by effective product selection, marketing strategies, and conversion rate optimization. While figures vary, our services are designed to maximize your revenue and build a sustainable, high-profit e-commerce business.",
     },
     {
-      title: "Who can Invest?",
+      title: "Who is Shopify Automation suitable for?",
       content:
-        "Anyone who meets the capital requirements of $20k or more in credit or cash can invest in our FBA automation services. We offer no accreditation requirements, so anyone can be a business owner.",
+        "Shopify Automation is ideal for aspiring entrepreneurs, existing business owners, or investors looking for a scalable and controlled e-commerce venture. It suits those who want full ownership of their brand, a customizable online store, and the ability to automate sales and marketing processes.",
     },
     {
-      title: "What do I need to start?",
+      title: "What do I need to get started with Shopify Automation?",
       content:
-        "To start, you will need a minimum investment of $20k in credit or cash. We will take care of everything else, from setting up your Amazon FBA partnership store to managing inventory and logistics.",
+        "To start with Shopify Automation, you primarily need a product idea or niche. Our team then takes over the entire process, including Shopify store setup, product integration, app configuration, marketing automation, order fulfillment setup, and ongoing management, ensuring a truly passive income stream.",
     },
   ];
+
   return (
     <>
       <Navbar />
@@ -65,22 +65,23 @@ const AutomationServices = () => {
               <h1 className="text-white font-semibold leading-tight text-left text-shadow-lg/40 text-[40px] sm:text-[60px] md:text-[75px] lg:text-[87px]">
                 Automate Your
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
-                  Store for
+                  Shopify Store
                 </span>{" "}
-                Maximum
+                <br className="hidden md:inline" />
+                for Unrivaled
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
                   Profit
                 </span>{" "}
               </h1>
               <p className="mt-4 text-[#cdd8dd] font-medium text-left text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-relaxed max-w-full ">
-                Are you looking to invest in a profitable opportunity that can
-                help you maximize your returns in just 12 months? Look no
-                further than FBA Automation by Ecom Hyped! Our automated Amazon
-                store solutions are designed to help investors like you achieve
-                maximum profitability with minimum effort. With our expert team
-                of Amazon FBA partners, we can help you launch and manage a
-                successful Amazon store that generates consistent revenue month
-                after month.
+                Are you ready to launch a powerful online store that runs
+                itself, freeing you to focus on growth? Discover Shopify
+                Automation by Ecom Hyped! Our tailored solutions empower
+                entrepreneurs and investors like you to build a robust, scalable
+                e-commerce presence with maximum efficiency. Our expert team
+                specializes in optimizing your Shopify store for exceptional
+                performance and consistent sales, allowing you to enjoy
+                substantial profits and true business ownership.
               </p>
               <motion.div
                 className="flex justify-center lg:justify-start"
@@ -188,18 +189,19 @@ const AutomationServices = () => {
               ABOUT US
             </h2>
             <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug mb-4 text-center lg:text-left">
-              How Amazon FBA Automation Works?
+              How Shopify Automation Works?
             </p>
-            <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] mb-6 text-center lg:text-left">
-              Our team of Amazon FBA experts will work with you to identify the
-              best products to sell on Amazon, source them from trusted
-              suppliers, and launch them on your Amazon store. We will then use
-              our advanced marketing and optimization strategies to increase
-              your stores visibility and sales, ensuring consistent revenue
-              month after month. Our real-time reporting, analytics, and risk
-              monitoring tools will give you complete transparency into your
-              investment, allowing you to make informed decisions about your
-              Amazon store.
+            <p className="text-[#45565F] text-[16px] font-medium sm:text-[17px] md:text-[18px] mb-6 text-center lg:text-left">
+              Our team of Shopify automation specialists will collaborate closely
+              with you to identify unique product opportunities, source them
+              ethically from trusted artisans or suppliers, and expertly launch
+              them on your shopify store. We then leverage our advanced
+              marketing and optimization strategies to enhance your store&apos;s
+              visibility and boost sales, ensuring a steady stream of revenue.
+              Our transparent reporting, analytics, and quality control tools
+              will give you complete peace of mind, allowing you to focus on
+              your creative vision or simply enjoy the passive income from your
+              Shopify store.
             </p>
             <motion.div
               className="flex justify-center lg:justify-start"
@@ -281,27 +283,25 @@ const AutomationServices = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
-              Triumph Tales:
+              Success Chronicles:
             </h2>
-
             <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-6">
-              Stories of Investors Who Maximized Profits with Our FBA Automation
+              Real Stories of Shopify Sellers Thriving with Our Automation
               Services
             </p>
-
             <p className="text-[#45565F] text-[18px] font-medium sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-              At EcomHyped, we believe in transparency and reliability, and
-              thats why we are proud to share our triumph tales with you. Our
-              success stories highlight real investors who trusted us to help
-              them maximize profits with FBA automation. We provide real-time
-              reporting, analytics, and risk monitoring to ensure the success of
-              our clients. With our gold and elite packages, we partner with you
-              to establish an Amazon FBA store and work tirelessly to make sure
-              your store generates a monthly ROI of 15% to 18%. Our goal is to
-              help you achieve financial success and we are dedicated to being a
-              trusted partner in your journey.
+              At EcomHyped, our commitment is reflected in the success of our
+              Shopify partners. We champion transparency, and our success
+              stories vividly showcase how entrepreneurs and investors have
+              revolutionized their online businesses with our automation
+              solutions. From building a robust, customizable store and
+              integrating powerful apps to implementing scalable marketing
+              strategies and optimizing for conversions, we provide end-to-end
+              support. Our detailed reporting, analytics, and streamlined
+              operations offer complete peace of mind, empowering you to focus
+              on brand growth and enjoy the significant profits from your
+              flourishing Shopify store.
             </p>
-
             <motion.div
               className=""
               initial={{ opacity: 0, y: 20 }}
@@ -339,7 +339,7 @@ const AutomationServices = () => {
               viewport={{ once: true }}
               className="text-white text-[46px] sm:text-[40px] lg:text-[46px] font-semibold leading-tight md:max-w-[65%]"
             >
-              Why Choose EcomHyped for Your Amazon Automation Services?
+              Why Choose EcomHyped for Your ETSY Automation Services?
             </motion.p>
           </div>
 
@@ -383,15 +383,15 @@ const AutomationServices = () => {
             </button>
           </Link>
         </div>
-
         <div className="my-[80px]">
           <StatsHeroSection
             heading={
-              "Revolutionize Your Amazon Business with FBA Automation: Benefits You Can't Afford to Miss!"
+              "Unleash Your Creativity, Automate Your Sales: Discover Shopify Automation by Ecom Hyped!"
             }
-            description={
-              "At Ecom Hyped, we offer the most affordable and reliable FBA automation services in the market. With our gold and elite packages, we provide a range of benefits that you can't afford to miss. With our FBA automation services, we revolutionize your Amazon business and help you achieve financial success. You can trust us to be a transparent and reliable partner in your journey."
-            }
+            description={`At Ecom Hyped, we bring you the most efficient and reliable Shopify automation services, designed to transform your craft, vintage,
+               or unique product vision into a thriving online business. Our tailored solutions allow you to enjoy the passive income and creative
+                freedom you desire, while we handle the complexities of daily Shopify operations. Partner with us to achieve remarkable success and
+                 financial freedom on the Shopify marketplace.`}
           />
         </div>
 

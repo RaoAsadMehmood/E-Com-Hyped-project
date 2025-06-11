@@ -8,7 +8,6 @@ import Link from "next/link";
 import { StatsHeroSection } from "../components/StatsSection";
 import Navbar from "../components/Navbar";
 
-
 const About = () => {
   return (
     <>
@@ -364,8 +363,8 @@ const About = () => {
               Authentic Experiences, Real Success Stories
             </p>
             <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mt-4 max-w-3xl">
-              Our partners share how <b>EcomHyped</b>  has helped them achieve their
-              Amazon business goals and maximize profitability.
+              Our partners share how <b>EcomHyped</b> has helped them achieve
+              their Amazon business goals and maximize profitability.
             </p>
           </div>
 

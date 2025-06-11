@@ -4,12 +4,11 @@ import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import TestimonialSlider from "../components/TestimonialSlider";
-import Navbar from "../components/Navbar";
-// import FeatureCard from "../components/FeatureCard";
-import AnimatedStats from "../components/AnimatedStats";
-import Accordion from "../components/Accordion";
-import { StatsHeroSection } from "../components/StatsSection";
+import TestimonialSlider from "../../components/TestimonialSlider";
+import Navbar from "../../components/Navbar";
+import AnimatedStats from "../../components/AnimatedStats";
+import Accordion from "../../components/Accordion";
+import { StatsHeroSection } from "../../components/StatsSection";
 
 const AutomationServices = () => {
   const statsData = [
@@ -21,26 +20,27 @@ const AutomationServices = () => {
 
   const accordionItems = [
     {
-      title: "How much can I Invest?",
+      title: "How much investment is needed for YouTube Automation?",
       content:
-        "At Ecom Hyped, we require a minimum investment of $20k for both our FBA Gold and FBA Elite packages. You can also invest more based on your business goals and financial capacity.",
+        "The initial investment for YouTube Automation typically covers content creation (scripting, voiceovers, video editing), channel setup, and initial marketing/promotion. Costs vary based on content complexity and desired upload frequency. We'll help you define a budget tailored to your niche and growth aspirations.",
     },
     {
-      title: "How much money can I make?",
+      title: "What are the potential earnings with YouTube Automation?",
       content:
-        "Our FBA automation services offer a monthly ROI of 15% to 18% based on gross sales. However, profits may vary depending on various factors such as inventory, sales, and market trends.",
+        "YouTube Automation offers significant earning potential through AdSense revenue, affiliate marketing, sponsorships, and direct product sales. Earnings are directly tied to viewership, engagement, and niche profitability. Our automation aims to maximize views and monetization opportunities for sustainable passive income.",
     },
     {
-      title: "Who can Invest?",
+      title: "Who is YouTube Automation suitable for?",
       content:
-        "Anyone who meets the capital requirements of $20k or more in credit or cash can invest in our FBA automation services. We offer no accreditation requirements, so anyone can be a business owner.",
+        "YouTube Automation is ideal for individuals or investors interested in building passive income streams through content without being on camera. It suits those who want to leverage the power of video content and YouTube's vast audience for various niches, from educational content to entertainment, entirely hands-off.",
     },
     {
-      title: "What do I need to start?",
+      title: "What do I need to get started with YouTube Automation?",
       content:
-        "To start, you will need a minimum investment of $20k in credit or cash. We will take care of everything else, from setting up your Amazon FBA partnership store to managing inventory and logistics.",
+        "To begin with YouTube Automation, you'll need a chosen niche or content idea (we can assist with this). Our team then handles the entire video production process from script to final edit, channel optimization, consistent uploading, and monetization strategies, allowing you to earn passively from your automated YouTube channel.",
     },
   ];
+
   return (
     <>
       <Navbar />
@@ -63,25 +63,27 @@ const AutomationServices = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h1 className="text-white font-semibold leading-tight text-left text-shadow-lg/40 text-[40px] sm:text-[60px] md:text-[75px] lg:text-[87px]">
-                Automate Your
+                Automate Your{" "}
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
-                  Store for
+                  YouTube Channel
                 </span>{" "}
-                Maximum
+                <br className="hidden md:inline" />
+                for Passive{" "}
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
-                  Profit
+                  Income
                 </span>{" "}
               </h1>
               <p className="mt-4 text-[#cdd8dd] font-medium text-left text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-relaxed max-w-full ">
-                Are you looking to invest in a profitable opportunity that can
-                help you maximize your returns in just 12 months? Look no
-                further than FBA Automation by Ecom Hyped! Our automated Amazon
-                store solutions are designed to help investors like you achieve
-                maximum profitability with minimum effort. With our expert team
-                of Amazon FBA partners, we can help you launch and manage a
-                successful Amazon store that generates consistent revenue month
-                after month.
+                Dreaming of earning passive income through video content without
+                being on camera? Discover YouTube Automation by Ecom Hyped! Our
+                specialized solutions empower individuals and investors to build
+                a profitable YouTube presence effortlessly. Our expert team
+                handles everything from content creation and SEO optimization to
+                consistent uploading and monetization strategies, allowing you
+                to achieve consistent revenue and a truly hands-off income
+                stream from the world&apos;s largest video platform.
               </p>
+
               <motion.div
                 className="flex justify-center lg:justify-start"
                 initial={{ opacity: 0, y: 20 }}
@@ -185,21 +187,22 @@ const AutomationServices = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4 text-center lg:text-left">
-              ABOUT US
+              ABOUT OUR SERVICE
             </h2>
             <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug mb-4 text-center lg:text-left">
-              How Amazon FBA Automation Works?
+              How YouTube Automation Works?
             </p>
-            <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] mb-6 text-center lg:text-left">
-              Our team of Amazon FBA experts will work with you to identify the
-              best products to sell on Amazon, source them from trusted
-              suppliers, and launch them on your Amazon store. We will then use
-              our advanced marketing and optimization strategies to increase
-              your stores visibility and sales, ensuring consistent revenue
-              month after month. Our real-time reporting, analytics, and risk
-              monitoring tools will give you complete transparency into your
-              investment, allowing you to make informed decisions about your
-              Amazon store.
+            <p className="text-[#45565F] text-[16px] font-medium sm:text-[17px] md:text-[18px] leading-relaxed mb-6 text-center lg:text-left">
+              Our team of YouTube automation specialists will collaborate
+              closely with you to identify high-demand content niches, create
+              compelling video scripts, and produce professional-quality videos.
+              We then leverage our advanced SEO and promotion strategies to
+              enhance your channel&apos;s visibility and boost viewership, ensuring a
+              steady stream of ad revenue, affiliate income, and other
+              monetization opportunities. Our transparent reporting, analytics,
+              and content performance monitoring will give you complete peace of
+              mind, allowing you to focus on strategic growth or simply enjoy
+              the passive income from your automated YouTube channel.
             </p>
             <motion.div
               className="flex justify-center lg:justify-start"
@@ -280,26 +283,24 @@ const AutomationServices = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
-              Triumph Tales:
+            <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4 text-center lg:text-left">
+              Channel Triumphs:
             </h2>
-
-            <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-6">
-              Stories of Investors Who Maximized Profits with Our FBA Automation
-              Services
+            <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-6 text-center lg:text-left">
+              Real Stories of Investors & Creators Thriving with Our YouTube
+              Automation
             </p>
-
-            <p className="text-[#45565F] text-[18px] font-medium sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-              At EcomHyped, we believe in transparency and reliability, and
-              thats why we are proud to share our triumph tales with you. Our
-              success stories highlight real investors who trusted us to help
-              them maximize profits with FBA automation. We provide real-time
-              reporting, analytics, and risk monitoring to ensure the success of
-              our clients. With our gold and elite packages, we partner with you
-              to establish an Amazon FBA store and work tirelessly to make sure
-              your store generates a monthly ROI of 15% to 18%. Our goal is to
-              help you achieve financial success and we are dedicated to being a
-              trusted partner in your journey.
+            <p className="text-[#45565F] text-[16px] font-medium sm:text-[17px] md:text-[18px] leading-relaxed mb-6 text-center lg:text-left">
+              At EcomHyped, our dedication is evident in the remarkable success
+              of our YouTube partners. We champion transparency, and our success
+              stories vividly showcase how individuals and investors have
+              achieved consistent passive income by leveraging our YouTube
+              automation solutions. From identifying profitable niches and
+              creating engaging video content to optimizing for SEO and driving
+              massive viewership, we provide end-to-end support. Our detailed
+              reporting, analytics, and continuous content performance
+              monitoring offer complete peace of mind, empowering you to build a
+              thriving, automated YouTube channel that generates steady revenue.
             </p>
 
             <motion.div
@@ -339,7 +340,7 @@ const AutomationServices = () => {
               viewport={{ once: true }}
               className="text-white text-[46px] sm:text-[40px] lg:text-[46px] font-semibold leading-tight md:max-w-[65%]"
             >
-              Why Choose EcomHyped for Your Amazon Automation Services?
+              Why Choose EcomHyped for Your YouTube Automation Services?
             </motion.p>
           </div>
 
@@ -383,15 +384,15 @@ const AutomationServices = () => {
             </button>
           </Link>
         </div>
-
         <div className="my-[80px]">
           <StatsHeroSection
             heading={
-              "Revolutionize Your Amazon Business with FBA Automation: Benefits You Can't Afford to Miss!"
+              "Build Passive Income: Automate Your YouTube Channel with Ecom Hyped!"
             }
-            description={
-              "At Ecom Hyped, we offer the most affordable and reliable FBA automation services in the market. With our gold and elite packages, we provide a range of benefits that you can't afford to miss. With our FBA automation services, we revolutionize your Amazon business and help you achieve financial success. You can trust us to be a transparent and reliable partner in your journey."
-            }
+            description={`At Ecom Hyped, we provide cutting-edge YouTube automation services, meticulously designed to transform your content ideas into
+       a profitable, hands-off income stream. Our tailored solutions allow you to tap into YouTube's vast audience potential with minimal effort,
+        freeing you from daily content creation and management. Partner with us to achieve consistent viewership, maximize monetization, and unlock
+         true passive income from the world's largest video platform.`}
           />
         </div>
 

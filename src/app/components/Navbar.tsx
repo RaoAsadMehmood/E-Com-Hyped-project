@@ -6,18 +6,27 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
+  const [activeDesktopDropdown, setActiveDesktopDropdown] = useState<
+    string | null
+  >(null); // Controls which desktop dropdown is open (for hover)
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState<
+    string | null
+  >(null); // Controls which mobile dropdown is open (for click)
+
   const pathname = usePathname();
 
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const toggleServicesMenu = () => setIsServicesOpen(!isServicesOpen);
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setActiveMobileDropdown(null); 
+  };
 
+  // Nav links data with new Automation Services sub-links
   const navLinks = [
     { name: "Home", href: "/home" },
     {
       name: "Services",
-      href: "/servicespage",
+      href: "/servicespage", // Parent link for Services
       subLinks: [
         { name: "FBA Wholesale", href: "/servicespage/amazon-fba-wholesale" },
         {
@@ -40,7 +49,33 @@ const Navbar: React.FC = () => {
         { name: "PPC Optimization", href: "/servicespage/ppc-optimization" },
       ],
     },
-    { name: "Automation Services", href: "/automationservices" },
+    {
+      name: "Automation Services",
+      href: "/automationservices", // Parent link for Automation Services
+      subLinks: [
+        
+        {
+          name: "Walmart Automation",
+          href: "/automationservices/walmart-automation",
+        },
+        {
+          name: "TikTok Automation",
+          href: "/automationservices/tiktok-automation",
+        },
+        {
+          name: "Shopify Automation",
+          href: "/automationservices/shopify-automation",
+        },
+        {
+          name: "Youtube Automation",
+          href: "/automationservices/youtube-automation",
+        },
+        {
+          name: "Etsy Automation",
+          href: "/automationservices/etsy-automation",
+        },
+      ],
+    },
     { name: "Our Story", href: "/ourstory" },
     { name: "About Us", href: "/about" },
   ];
@@ -63,8 +98,9 @@ const Navbar: React.FC = () => {
         {/* Hamburger */}
         <div className="absolute right-4 md:hidden flex items-center">
           <button
-            onClick={toggleMenu}
+            onClick={toggleMobileMenu}
             className="text-white focus:outline-none"
+            aria-label="Toggle mobile menu"
           >
             <svg
               className="w-8 h-8"
@@ -77,20 +113,29 @@ const Navbar: React.FC = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                d={
+                  isMobileMenuOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16M4 18h16"
+                }
               />
             </svg>
           </button>
         </div>
 
         {/* Left nav (desktop only) */}
-        <div className="hidden md:flex flex-row  gap-10">
+        <div className="hidden md:flex flex-row gap-10">
+          {/* Iterating through first 3 links: Home, Services, Automation Services */}
           {navLinks.slice(0, 3).map((link) => (
             <div
               key={link.name}
               className="relative"
-              onMouseEnter={() => link.subLinks && setIsServicesOpen(true)}
-              onMouseLeave={() => link.subLinks && setIsServicesOpen(false)}
+              onMouseEnter={() =>
+                link.subLinks && setActiveDesktopDropdown(link.name)
+              }
+              onMouseLeave={() =>
+                link.subLinks && setActiveDesktopDropdown(null)
+              }
             >
               <Link
                 href={link.href}
@@ -100,7 +145,7 @@ const Navbar: React.FC = () => {
               >
                 {link.name}
               </Link>
-              {link.subLinks && isServicesOpen && (
+              {link.subLinks && activeDesktopDropdown === link.name && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -132,14 +177,17 @@ const Navbar: React.FC = () => {
           transition={{ delay: 0.4, duration: 0.5, type: "spring" }}
           className="flex gap-6 order-first md:order-none"
         >
-            <Link href = "/contact">
-          <Image
-            src={"/images/ecomhyped-logo.png"}
-            alt={"Ecom Hyped-logo"}
-            width={80}
-            height={65}
-            className="w-[70px] h-[52px] md:w-[80px] md:h-[65px]"
-          /></Link>
+          <Link href="/contact">
+            {" "}
+            {/* Assuming this is the logo link to contact */}
+            <Image
+              src={"/images/ecomhyped-logo.png"}
+              alt={"Ecom Hyped-logo"}
+              width={80}
+              height={65}
+              className="w-[70px] h-[52px] md:w-[80px] md:h-[65px]"
+            />
+          </Link>
         </motion.div>
 
         {/* Right nav (desktop only) */}
@@ -162,15 +210,15 @@ const Navbar: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               className="py-2 px-6 border border-white text-white text-lg font-light rounded hover:bg-white hover:text-teal-600 transition"
             >
-              Contact
+              Contact Us
             </motion.button>
           </Link>
         </div>
       </motion.nav>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Dropdown Menu */}
       <AnimatePresence>
-        {isOpen && (
+        {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -180,39 +228,81 @@ const Navbar: React.FC = () => {
           >
             {navLinks.map((link) => (
               <div key={link.name}>
-                <Link
-                  href={link.href}
-                  className={`text-white text-lg font-light hover:text-gray-200 ${
-                    isActive(link.href) ? "border-b-2 border-white pb-1" : ""
-                  }`}
-                  onClick={() => {
-                    if (!link.subLinks) setIsOpen(false);
-                    if (link.subLinks) toggleServicesMenu();
-                  }}
-                >
-                  {link.name}
-                </Link>
-                {link.subLinks && isServicesOpen && (
-                  <div className="flex flex-col gap-2 pl-4 mt-2">
-                    {link.subLinks.map((subLink) => (
-                      <Link
-                        key={subLink.name}
-                        href={subLink.href}
-                        className={`text-white text-base font-light hover:text-gray-200 ${
-                          isActive(subLink.href)
-                            ? "border-b-2 border-white pb-1"
-                            : ""
+                {link.subLinks ? (
+                  <>
+                    {/* Parent link in mobile dropdown */}
+                    <button
+                      onClick={() =>
+                        setActiveMobileDropdown(
+                          activeMobileDropdown === link.name ? null : link.name
+                        )
+                      }
+                      className={`text-white text-lg font-light hover:text-gray-200 w-full text-left focus:outline-none ${
+                        isActive(link.href)
+                          ? "border-b-2 border-white pb-1"
+                          : ""
+                      }`}
+                    >
+                      {link.name}
+                      {/* Dropdown indicator icon */}
+                      <svg
+                        className={`w-4 h-4 inline-block ml-2 transform transition-transform duration-200 ${
+                          activeMobileDropdown === link.name ? "rotate-180" : ""
                         }`}
-                        onClick={() => setIsOpen(false)}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
                       >
-                        {subLink.name}
-                      </Link>
-                    ))}
-                  </div>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {/* Sub-links for mobile dropdown */}
+                    <AnimatePresence>
+                      {activeMobileDropdown === link.name && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="flex flex-col gap-2 pl-4 mt-2 overflow-hidden"
+                        >
+                          {link.subLinks.map((subLink) => (
+                            <Link
+                              key={subLink.name}
+                              href={subLink.href}
+                              className={`text-white text-base font-light hover:bg-[#F7A51E] hover:text-white block px-4 py-2 rounded ${
+                                isActive(subLink.href) ? "bg-[#F7A51E]" : ""
+                              }`}
+                              onClick={() => setIsMobileMenuOpen(false)} // Close main menu on sub-link click
+                            >
+                              {subLink.name}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </>
+                ) : (
+                  // Regular link in mobile dropdown
+                  <Link
+                    href={link.href}
+                    className={`text-white text-lg font-light hover:text-gray-200 ${
+                      isActive(link.href) ? "border-b-2 border-white pb-1" : ""
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)} // Close main menu on click
+                  >
+                    {link.name}
+                  </Link>
                 )}
               </div>
             ))}
-            <Link href="/contact" onClick={() => setIsOpen(false)}>
+            <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -229,3 +319,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+// This code defines a responsive Navbar component with both desktop and mobile views.
