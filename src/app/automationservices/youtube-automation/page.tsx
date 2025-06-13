@@ -64,12 +64,12 @@ const AutomationServices = () => {
             >
               <h1 className="text-white font-semibold leading-tight text-left text-shadow-lg/40 text-[40px] sm:text-[60px] md:text-[75px] lg:text-[87px]">
                 Automate Your{" "}
-                <span className="text-[#f7a51e] inline-block relative z-10 px-2">
+                <span className="text-[#f7a51e] inline-block relative z-10"> {/* Removed px-2 */}
                   YouTube Channel
                 </span>{" "}
-                <br className="hidden md:inline" />
+                {/* Removed <br className="hidden md:inline" /> */}
                 for Passive{" "}
-                <span className="text-[#f7a51e] inline-block relative z-10 px-2">
+                <span className="text-[#f7a51e] inline-block relative z-10"> {/* Removed px-2 */}
                   Income
                 </span>{" "}
               </h1>
@@ -83,6 +83,7 @@ const AutomationServices = () => {
                 to achieve consistent revenue and a truly hands-off income
                 stream from the world&apos;s largest video platform.
               </p>
+
 
               <motion.div
                 className="flex justify-center lg:justify-start"

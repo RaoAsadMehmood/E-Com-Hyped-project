@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar: React.FC = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDesktopDropdown, setActiveDesktopDropdown] = useState<
     string | null
   >(null); // Controls which desktop dropdown is open (for hover)
@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-    setActiveMobileDropdown(null); 
+    setActiveMobileDropdown(null);
   };
 
   // Nav links data with new Automation Services sub-links
@@ -47,13 +47,24 @@ const Navbar: React.FC = () => {
           href: "/servicespage/amazon-listing-optimization",
         },
         { name: "PPC Optimization", href: "/servicespage/ppc-optimization" },
-      ],
-    },
+        {
+          name: "Build a Brand on Amazon",
+          href: "/servicespage/build-a-brand-on-amazon",
+        },
+        {
+          name: "Amazon A+ Content",
+          href: "/servicespage/amazon-a-content",
+        },
+        {
+          name: "Amazon PPC Advertising",
+          href: "/servicespage/amazon-ppc-advertising",
+        },
+      ], // End of Services sub-links
+    }, 
     {
       name: "Automation Services",
       href: "/automationservices", // Parent link for Automation Services
       subLinks: [
-        
         {
           name: "Walmart Automation",
           href: "/automationservices/walmart-automation",

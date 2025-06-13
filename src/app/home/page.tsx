@@ -24,36 +24,45 @@ const Home = () => {
       id: 1,
       imageSrc: "/images/amazon-fba-automation.png",
       title: "Amazon FBA Automation",
+      href: "/automationservices", // Added link
     },
     {
       id: 2,
       imageSrc: "/images/walmart-automation.png",
       title: "Walmart Automation",
+      href: "/automationservices/walmart-automation", // Added link
     },
     {
       id: 3,
       imageSrc: "/images/tiktok-automation.png",
       title: "TikTok Automation",
+      href: "/automationservices/tiktok-automation", // Added link
     },
     {
       id: 4,
       imageSrc: "/images/shopify-automation.png",
       title: "Shopify Automation",
+      href: "/automationservices/shopify-automation", // Added link
     },
     {
       id: 5,
       imageSrc: "/images/youtube-automation.png",
       title: "YouTube Automation",
+      href: "/automationservices/youtube-automation", // Added link
     },
     {
       id: 6,
       imageSrc: "/images/etsy-automation.png",
       title: "Etsy Automation",
+      href: "/automationservices/etsy-automation", // Added link
     },
+    // Note: "Amazon Automation" seems to be a general category,
+    // ensure it has a valid page or remove if redundant with FBA Automation.
     {
       id: 7,
       imageSrc: "/images/amazon-automation.png",
       title: "Amazon Automation",
+      href: "/automationservices/", // Added link (ensure this page exists)
     },
   ];
 

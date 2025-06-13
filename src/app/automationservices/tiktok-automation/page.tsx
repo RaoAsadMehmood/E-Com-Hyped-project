@@ -64,12 +64,12 @@ const AutomationServices = () => {
             >
               <h1 className="text-white font-semibold leading-tight text-left text-shadow-lg/40 text-[40px] sm:text-[60px] md:text-[75px] lg:text-[87px]">
                 Go Viral & Automate{" "}
-                <span className="text-[#f7a51e] inline-block relative z-10 px-2">
+                <span className="text-[#f7a51e] inline-block relative z-10"> {/* Removed px-2 */}
                   Your TikTok
                 </span>{" "}
-                <br className="hidden md:inline" />
+                {/* Removed <br className="hidden md:inline" /> */}
                 for Explosive{" "}
-                <span className="text-[#f7a51e] inline-block relative z-10 px-2">
+                <span className="text-[#f7a51e] inline-block relative z-10"> {/* Removed px-2 */}
                   Growth
                 </span>{" "}
               </h1>

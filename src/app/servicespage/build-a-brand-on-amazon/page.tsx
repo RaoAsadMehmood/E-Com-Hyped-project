@@ -9,7 +9,7 @@ import { StatsHeroSection } from "../../components/StatsSection";
 import Accordion from "../../components/Accordion";
 import { StatsHero } from "../../components/StatsBG";
 
-const PPCOptimization = () => {
+const BuildBrandOnAmazon = () => {
   // Animated stats data
   const statsData = [
     { endValue: 1430, label: "Happy Clients", suffix: "+" },
@@ -20,29 +20,30 @@ const PPCOptimization = () => {
 
   const accordionItems = [
     {
-      title: "What is Amazon PPC Optimization?",
+      title: "What does 'Build Brand on Amazon' entail?",
       content:
-        "Amazon PPC (Pay-Per-Click) Optimization involves continuously refining your advertising campaigns on Amazon to maximize their effectiveness. This includes adjusting bids, targeting, keywords, and ad copy to improve ad visibility, reduce ACoS (Advertising Cost of Sale), and increase sales efficiently.",
+        "Building a brand on Amazon involves a holistic strategy to establish your brand's presence, enhance its credibility, and foster customer loyalty beyond individual product sales. This includes leveraging Amazon's Brand Registry, creating compelling A+ Content, developing a unique Storefront, strategic advertising, and consistent brand messaging to stand out in the marketplace.",
     },
     {
-      title: "Why is PPC optimization essential for Amazon sellers?",
+      title: "Why is brand building crucial for Amazon sellers?",
       content:
-        "PPC optimization is critical for driving targeted traffic and sales, especially for new products or competitive niches. It ensures your ad spend is efficient, helps you gain market share, improves product ranking, and ultimately contributes significantly to your overall profitability on Amazon.",
+        "Effective brand building on Amazon transforms your business from a mere product seller into a recognized entity. It helps you differentiate from competitors, protect your intellectual property, build trust with customers, command higher prices, and ultimately drive repeat purchases and sustainable long-term growth.",
     },
     {
-      title: "How do you identify the best keywords for PPC campaigns?",
+      title: "How do you help us build our brand on Amazon?",
       content:
-        "We employ a multi-faceted approach, combining advanced keyword research tools, competitor analysis, and search term reports from existing campaigns. This allows us to discover high-converting keywords, identify negative keywords to reduce wasted spend, and continuously refine targeting for optimal performance.",
+        "We provide end-to-end brand building services, starting with comprehensive brand strategy development. This includes securing Brand Registry, designing visually appealing A+ Content and Storefronts, optimizing product listings with brand-centric messaging, implementing targeted brand-focused advertising campaigns, and continuously monitoring brand health and performance.",
     },
     {
-      title: "What types of Amazon ad campaigns do you manage?",
+      title: "What elements of brand building do you focus on?",
       content:
-        "We manage a full spectrum of Amazon ad types, including Sponsored Products (for individual product visibility), Sponsored Brands (to promote your brand and product portfolio), and Sponsored Display (for reaching audiences on and off Amazon). Our strategy is tailored to your specific goals and budget.",
+        "Our focus encompasses several key areas: Brand Registry enrollment and utilization, crafting impactful A+ Content for enhanced product pages, designing an immersive Amazon Storefront, developing a strong brand voice and messaging, managing customer reviews and reputation, and executing Sponsored Brands and Sponsored Display campaigns to amplify brand awareness and consideration.",
     },
     {
-      title: "How quickly can I expect to see results from PPC optimization?",
+      title:
+        "How long does it take to see results from brand building efforts?",
       content:
-        "While initial adjustments can show improvements within days, significant and sustainable results from PPC optimization typically become evident within 4-8 weeks. This timeframe allows for data accumulation, strategic adjustments, and Amazon's algorithm to fully recognize the optimized campaigns.",
+        "Brand building is a continuous process, but you can typically start seeing initial positive impacts within 2-4 months, such as increased brand search queries, improved listing conversion rates, and stronger customer engagement. Sustainable brand growth and loyalty are achieved through consistent, long-term strategic efforts over 6-12 months and beyond.",
     },
   ];
 
@@ -69,23 +70,24 @@ const PPCOptimization = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h1 className="text-white font-semibold leading-tight text-left text-shadow-lg/40 text-[40px] sm:text-[60px] md:text-[70px] lg:text-[87px]">
-                Maximize Your Amazon ROI: Drive Sales with{" "}
+                Forge Your{" "}
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
-                  Expert PPC
+                  Amazon Brand
                 </span>{" "}
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
-                  Optimization
+                  Legacy
                 </span>{" "}
               </h1>
               <p className="mt-4 text-[#cdd8dd] font-medium text-left text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-relaxed max-w-full">
-                Are your Amazon advertising campaigns draining your budget
-                without delivering the sales you expect? Our Amazon PPC
-                Optimization services are meticulously designed to transform
-                your ad spend into profitable revenue. We craft highly effective
-                campaigns, optimize bids, and refine targeting to ensure your
-                products reach the right customers at the right time,
-                significantly boosting your visibility and conversion rates on
-                Amazon.
+                Ready to transform your products into a recognizable and trusted
+                brand on Amazon? Our comprehensive Build Brand on Amazon
+                services are meticulously designed to establish your unique
+                identity, enhance credibility, and cultivate lasting customer
+                loyalty. We go beyond basic sales, crafting compelling brand
+                stories, optimizing visuals, and implementing strategic
+                campaigns to ensure your brand not only stands out but thrives
+                in the competitive Amazon marketplace, driving sustained growth
+                and repeat business.
               </p>
 
               <Link href="/contact">
@@ -113,35 +115,32 @@ const PPCOptimization = () => {
           >
             {/* Left Section */}
             <div className="flex flex-col items-start w-full lg:w-5/12">
-              {" "}
-              {/* Changed max-w-full lg:max-w-[400px] to w-full lg:w-5/12 */}
               <h2 className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-3 sm:mb-4">
                 ABOUT OUR SERVICE
               </h2>
               <p className="text-[#334047] text-[26px] sm:text-[30px] md:text-[36px] lg:text-[44px] font-semibold leading-snug">
-                Strategic Amazon PPC Campaign Optimization
+                Comprehensive Amazon Brand Building
               </p>
             </div>
 
             {/* Right Section */}
             <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed w-full lg:w-7/12 text-left">
-              {" "}
-              {/* Changed max-w-full lg:max-w-[700px] to w-full lg:w-7/12 */}
-              Our Amazon PPC Optimization service maximizes your advertising ROI
-              through data-driven campaign management, strategic keyword
-              targeting, and continuous bid optimization. We analyze your
-              advertising performance, identify profitable opportunities, and
-              eliminate wasteful spending to ensure every dollar invested drives
-              qualified traffic and converts into profitable sales, helping you
-              dominate your market while maintaining optimal ACoS and TACoS.
+              Our Amazon Brand Building service focuses on establishing a
+              strong, recognizable brand presence. We handle Brand Registry,
+              create compelling A+ Content and Storefronts, and implement
+              targeted brand-focused advertising. Our goal is to enhance your
+              brand&apos;s authority and visibility, driving customer loyalty and
+              sustainable growth in the Amazon marketplace.
             </p>
           </motion.div>
         </div>
 
         {/* About Us Section */}
-        <section className="my-[80px]">
+        <section className="my-[80px] +">
           <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-            <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+            <div className="flex flex-col-reverse lg:flex-row items-stretch justify-between gap-12">
+              {" "}
+              {/* Using items-stretch for equal height columns */}
               {/* Left Text Content */}
               <motion.div
                 className="max-w-xl lg:max-w-[588px] w-full"
@@ -150,49 +149,47 @@ const PPCOptimization = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
-                  Maximize Your Amazon Advertising ROI
+                <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4 text-center lg:text-left">
+                  ESTABLISH YOUR LEGACY
                 </h2>
-                <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug mb-4">
-                  Master Amazon PPC: Drive Targeted Traffic & Boost Your Sales!
+                <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug mb-4 text-center lg:text-left">
+                  Build a Lasting Brand on Amazon: Beyond Just Sales!
                 </p>
-                <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-                  At Ecom Hyped, we transform your Amazon PPC campaigns into
-                  profit-generating machines. Our data-driven approach combines
-                  strategic keyword targeting, optimized bid management, and
-                  continuous performance monitoring to ensure every advertising
-                  dollar works harder for your business. Let us fine-tune your
-                  campaigns to reduce wasted spend while dramatically increasing
-                  your return on ad spend (ROAS).
+                <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6 text-center lg:text-left">
+                  At Ecom Hyped, we help you transform your products into a
+                  powerful, recognizable brand on Amazon. Our strategic approach
+                  focuses on creating a unique brand identity, building customer
+                  trust, and fostering loyalty. We go beyond immediate sales to
+                  establish a sustainable presence that resonates with your
+                  audience and stands strong in the competitive marketplace.
                 </p>
                 <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
                   <li>
-                    <b>Strategic Keyword Targeting:</b> Identify high-converting
-                    keywords while eliminating wasteful spend.
+                    <b>Brand Registry & Protection:</b> Secure your intellectual
+                    property and control your brand&apos;s presence.
                   </li>
                   <li>
-                    <b>Smart Bid Management:</b> Optimize bids for maximum
-                    profitability and improved ad placement.
+                    <b>A+ Content & Storefront Design:</b> Create immersive,
+                    high-converting product pages and a compelling brand hub.
                   </li>
                   <li>
-                    <b>Campaign Structure Optimization:</b> Build efficient
-                    campaign architecture for better performance tracking.
+                    <b>Consistent Brand Messaging:</b> Develop a cohesive voice
+                    and visual identity across all touchpoints.
                   </li>
                   <li>
-                    <b>Negative Keyword Mining:</b> Continuously refine
-                    targeting to prevent irrelevant clicks and boost conversion
-                    rates.
+                    <b>Targeted Brand Advertising:</b> Utilize Amazon Ads to
+                    increase brand awareness and customer engagement.
                   </li>
                   <li>
-                    <b>Performance Analytics & Reporting:</b> Detailed insights
-                    and regular optimization based on real-time data.
+                    <b>Reputation Management:</b> Build and maintain a strong
+                    positive brand image through reviews and customer
+                    interaction.
                   </li>
                 </ul>
               </motion.div>
-
               {/* Right Image */}
               <motion.div
-                className="w-full max-w-[588px] h-auto"
+                className="w-full max-w-[588px] h-full"
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -200,10 +197,10 @@ const PPCOptimization = () => {
               >
                 <Image
                   src="/images/portfolio-illustration.png"
-                  alt="Amazon PPC Optimization Illustration"
+                  alt="Brand Building Illustration" // Updated alt text to match new content
                   width={588}
                   height={607}
-                  className="w-full h-auto"
+                  className="w-full h-auto object-contain"
                 />
               </motion.div>
             </div>
@@ -303,45 +300,44 @@ const PPCOptimization = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-6">
-                  Benefits of Using Our PPC Optimization Services
+                  Unlock the Power of a Strong Amazon Brand
                 </p>
 
                 <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-                  Our Amazon PPC Optimization Services are engineered to
-                  transform your advertising campaigns into powerful revenue
-                  generators. We combine advanced keyword strategies,
-                  intelligent bid management, and data-driven optimizations to
-                  maximize your return on ad spend while minimizing wasted
-                  budget. Partner with us to unlock the full potential of your
-                  Amazon advertising and achieve sustainable, profitable growth.
+                  Our Build Brand on Amazon services are meticulously designed
+                  to transform your product offering into a recognizable and
+                  trusted brand. We go beyond simple listings to craft a
+                  compelling brand narrative, enhance visual appeal, and
+                  cultivate genuine customer loyalty. Partner with us to
+                  establish a strong foundation for sustainable growth and
+                  outshine the competition in the vast Amazon marketplace.
                 </p>
 
                 <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
                   <li>
-                    <b>Improved ROAS:</b> Maximize return on ad spend through
-                    strategic keyword targeting and intelligent bid
-                    optimization, ensuring every dollar generates maximum
-                    profit.
+                    <b>Enhanced Brand Authority:</b> Establish trust and
+                    credibility with a professional brand image and consistent
+                    messaging.
                   </li>
                   <li>
-                    <b>Reduced Advertising Costs:</b> Eliminate wasteful spend
-                    with precise negative keyword management and targeted
-                    campaign structure, lowering your ACoS significantly.
+                    <b>Increased Customer Loyalty:</b> Foster repeat purchases
+                    and create a dedicated customer base through strong brand
+                    recognition.
                   </li>
                   <li>
-                    <b>Enhanced Campaign Performance:</b> Boost click-through
-                    rates and conversion rates with optimized ad copy, strategic
-                    placement, and continuous A/B testing.
+                    <b>Competitive Differentiation:</b> Stand out in crowded
+                    niches by showcasing your unique brand story and value
+                    proposition.
                   </li>
                   <li>
-                    <b>Scalable Growth:</b> Build sustainable advertising
-                    systems that grow with your business, maintaining
-                    profitability as you expand your product portfolio.
+                    <b>Improved Conversion Rates:</b> Captivate shoppers with
+                    premium A+ Content, engaging Storefronts, and a cohesive
+                    brand experience.
                   </li>
                   <li>
-                    <b>Data-Driven Insights:</b> Receive comprehensive analytics
-                    and actionable recommendations to make informed decisions
-                    and stay ahead of market trends.
+                    <b>Long-Term Value:</b> Build a sustainable asset that
+                    continues to grow and generate revenue beyond individual
+                    product sales.
                   </li>
                 </ul>
               </motion.div>
@@ -397,48 +393,46 @@ const PPCOptimization = () => {
                 <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
                   OUR PROCESS
                 </h2>
-
                 <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-6">
-                  How Our Amazon PPC Optimization Works for You
+                  Our Blueprint for Building Your Amazon Brand
                 </p>
-
                 <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-                  Our Amazon PPC Optimization process is a systematic,
-                  data-driven approach designed to maximize your advertising
-                  performance. We begin with comprehensive campaign audits,
-                  conduct strategic keyword research, implement intelligent bid
-                  strategies, and continuously optimize based on real-time data.
-                  Our ongoing performance monitoring ensures your campaigns
-                  consistently deliver profitable results and scale efficiently.
+                  Our Amazon Brand Building process is a structured journey
+                  designed to systematically establish and grow your brand&apos;s
+                  presence. We combine strategic planning with meticulous
+                  execution, ensuring every aspect from identity creation to
+                  market expansion is handled with precision. Our goal is to
+                  transform your products into a recognizable and trusted brand,
+                  fostering deep customer connections and driving sustainable
+                  growth.
                 </p>
-
-                <ul className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
+                <ul className="list-disc list-outside text-[#45565F] pl-4 text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
                   <li>
-                    <b>Campaign Audit & Analysis:</b> Comprehensive evaluation
-                    of current PPC performance, identifying optimization
-                    opportunities and budget inefficiencies.
+                    <b>Brand Strategy & Foundation:</b> Defining your brand&apos;s
+                    unique value proposition, target audience, and competitive
+                    positioning on Amazon.
                   </li>
                   <li>
-                    <b>Strategic Keyword Research:</b> Deep dive into
-                    high-converting keywords while building extensive negative
-                    keyword lists to eliminate wasteful spend.
+                    <b>Brand Registry & IP Protection:</b> Securing your brand&apos;s
+                    intellectual property and leveraging Amazon&apos;s tools to
+                    safeguard your presence.
                   </li>
                   <li>
-                    <b>Campaign Structure Optimization:</b> Building organized,
-                    scalable campaign architecture with proper ad groups and
-                    targeting strategies for maximum control.
+                    <b>A+ Content & Storefront Development:</b> Crafting
+                    visually stunning and conversion-optimized product pages and
+                    a compelling brand destination.
                   </li>
                   <li>
-                    <b>Bid Management & Automation:</b> Implementing smart
-                    bidding strategies and automated rules to optimize bids
-                    based on performance metrics and profitability goals.
+                    <b>Brand-Centric Advertising:</b> Implementing targeted ad
+                    campaigns (Sponsored Brands, Sponsored Display) to build
+                    brand awareness and drive engagement.
                   </li>
                   <li>
-                    <b>Continuous Performance Monitoring:</b> Ongoing analysis,
-                    A/B testing, and data-driven adjustments to maintain optimal
-                    ROAS and campaign growth.
+                    <b>Continuous Brand Evolution:</b> Monitoring brand health,
+                    market trends, and competitor activities to adapt and scale
+                    your brand&apos;s long-term growth.
                   </li>
-                </ul>
+                </ul>{" "}
               </motion.div>
             </div>
           </div>
@@ -448,10 +442,11 @@ const PPCOptimization = () => {
         <div className="my-[80px]">
           <StatsHeroSection
             heading={
-              "Maximize Your Ad Spend: Drive Unrivaled ROI with Expert Amazon PPC Optimization!"
+                "Ready to Build a Dominant Brand on Amazon? Connect with Ecom Hyped!"
+
             }
             description={
-              "At Ecom Hyped, we specialize in transforming your Amazon advertising budget into highly profitable campaigns. Our expert PPC optimization services are meticulously designed to increase your product visibility, drive qualified traffic, and significantly boost your sales while maintaining optimal ACoS. Partner with us to achieve peak advertising performance and unlock sustainable growth on Amazon."
+                "Is your brand truly shining on Amazon? Ecom Hyped is ready to help you establish a powerful and lasting brand legacy. Our Amazon Brand Building experts are standing by to discuss your brand vision, analyze market opportunities, and develop a tailored strategy to boost your presence, trust, and long-term profitability. Contact us today and let's build your brand's future!"
             }
           />
         </div>
@@ -472,7 +467,7 @@ const PPCOptimization = () => {
                     GOT QUESTIONS?
                   </h2>
                   <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-4">
-                    Frequently Asked Questions About Amazon Listing Optimization
+                    Frequently Asked Questions 
                   </p>
                 </motion.div>
               </div>
@@ -495,13 +490,13 @@ const PPCOptimization = () => {
 
         {/* Final CTA */}
         <StatsHero
-          heading={
-            "Ready to Maximize Your Ad Spend? Connect with Ecom Hyped for PPC Optimization!"
-          }
-          description={
-            "Are your Amazon ad campaigns delivering the best possible ROI? Ecom Hyped is here to transform your advertising strategy. Our Amazon PPC Optimization experts are ready to analyze your campaigns, identify growth opportunities, and develop a tailored strategy to boost your sales and profitability. Contact us today and let's make your ads perform!"
-          }
-        />
+  heading={
+    "Ready to Build a Dominant Brand on Amazon? Connect with Ecom Hyped!"
+  }
+  description={
+    "Is your brand truly shining on Amazon? Ecom Hyped is ready to help you establish a powerful and lasting brand legacy. Our Amazon Brand Building experts are standing by to discuss your brand vision, analyze market opportunities, and develop a tailored strategy to boost your presence, trust, and long-term profitability. Contact us today and let's build your brand's future!"
+  }
+/>
 
         {/* Company Logos */}
         <div className="bg-[#ecf9f9]">
@@ -542,4 +537,4 @@ const PPCOptimization = () => {
   );
 };
 
-export default PPCOptimization;
+export default BuildBrandOnAmazon;

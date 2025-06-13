@@ -30,6 +30,18 @@ const ContactNavbar: React.FC = () => {
         { name: "Brand Management", href: "/servicespage/brand-management" },
         { name: "Amazon Listing Optimization", href: "/servicespage/amazon-listing-optimization" },
         { name: "PPC Optimization", href: "/servicespage/ppc-optimization" },
+        {
+          name: "Build a Brand on Amazon",
+          href: "/servicespage/build-a-brand-on-amazon",
+        },
+        {
+          name: "Amazon A+ Content",
+          href: "/servicespage/amazon-a-content",
+        },
+        {
+          name: "Amazon PPC Advertising",
+          href: "/servicespage/amazon-ppc-advertising",
+        },
       ],
     },
     {
@@ -94,9 +106,8 @@ const ContactNavbar: React.FC = () => {
             >
               <Link
                 href={link.href}
-                className={`text-teal-600 text-lg font-light hover:text-teal-800 ${
-                  isActive(link.href) ? "border-b-2 border-teal-600 pb-1" : ""
-                }`}
+                className={`text-teal-600 text-lg font-light hover:text-teal-800 ${isActive(link.href) ? "border-b-2 border-teal-600 pb-1" : ""
+                  }`}
               >
                 {link.name}
               </Link>
@@ -114,7 +125,7 @@ const ContactNavbar: React.FC = () => {
                       href={subLink.href}
                       className={`block px-4 py-2 text-teal-600 text-lg font-light hover:bg-[#026F72] hover:text-white ${ // Styled for ContactNavbar
                         isActive(subLink.href) ? "bg-gray-100 text-teal-800" : "" // Styled for ContactNavbar
-                      }`}
+                        }`}
                     >
                       {subLink.name}
                     </Link>
@@ -132,15 +143,15 @@ const ContactNavbar: React.FC = () => {
           transition={{ delay: 0.4, duration: 0.5, type: "spring" }}
           className="flex gap-6 order-first md:order-none"
         >
-            <Link href ="/contact"> {/* Logo links to Contact */}
-              <Image
-                src={"/images/ecomhyped-logo.png"}
-                alt={"Ecom Hyped-logo"}
-                width={80}
-                height={65}
-                className="w-[70px] h-[52px] md:w-[80px] md:h-[65px]"
-              />
-            </Link>
+          <Link href="/contact"> {/* Logo links to Contact */}
+            <Image
+              src={"/images/ecomhyped-logo.png"}
+              alt={"Ecom Hyped-logo"}
+              width={80}
+              height={65}
+              className="w-[70px] h-[52px] md:w-[80px] md:h-[65px]"
+            />
+          </Link>
         </motion.div>
 
         {/* Right nav (desktop only) */}
@@ -149,9 +160,8 @@ const ContactNavbar: React.FC = () => {
             <Link
               key={link.name}
               href={link.href}
-              className={`text-teal-600 text-lg font-light hover:text-teal-800 flex items-center h-[40px] ${
-                isActive(link.href) ? "border-b-2 border-teal-600 pb-1" : ""
-              }`}
+              className={`text-teal-600 text-lg font-light hover:text-teal-800 flex items-center h-[40px] ${isActive(link.href) ? "border-b-2 border-teal-600 pb-1" : ""
+                }`}
             >
               {link.name}
             </Link>
@@ -163,7 +173,7 @@ const ContactNavbar: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               className="py-2 px-6 border border-teal-600 text-teal-600 text-lg font-light rounded hover:bg-teal-600 hover:text-white transition"
             >
-              Contact
+              Contact Us
             </motion.button>
           </Link>
         </div>
@@ -187,14 +197,13 @@ const ContactNavbar: React.FC = () => {
                       onClick={() => setActiveMobileDropdown(activeMobileDropdown === link.name ? null : link.name)}
                       className={`text-teal-600 text-lg font-light hover:text-teal-800 w-full text-left focus:outline-none ${ // Styled for ContactNavbar
                         isActive(link.href) ? "border-b-2 border-teal-600 pb-1" : ""
-                      }`}
+                        }`}
                       aria-expanded={activeMobileDropdown === link.name}
                     >
                       {link.name}
                       <svg
-                        className={`w-4 h-4 inline-block ml-2 transform transition-transform duration-200 ${
-                          activeMobileDropdown === link.name ? "rotate-180" : ""
-                        }`}
+                        className={`w-4 h-4 inline-block ml-2 transform transition-transform duration-200 ${activeMobileDropdown === link.name ? "rotate-180" : ""
+                          }`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -218,7 +227,7 @@ const ContactNavbar: React.FC = () => {
                               href={subLink.href}
                               className={`text-teal-600 text-base font-light hover:bg-gray-100 hover:text-teal-800 block px-4 py-2 rounded ${ // Styled for ContactNavbar
                                 isActive(subLink.href) ? "bg-gray-100 text-teal-800" : "" // Styled for ContactNavbar
-                              }`}
+                                }`}
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
                               {subLink.name}
@@ -233,7 +242,7 @@ const ContactNavbar: React.FC = () => {
                     href={link.href}
                     className={`text-teal-600 text-lg font-light hover:text-teal-800 ${ // Styled for ContactNavbar
                       isActive(link.href) ? "border-b-2 border-teal-600 pb-1" : ""
-                    }`}
+                      }`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.name}

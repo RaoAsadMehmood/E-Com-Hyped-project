@@ -9,7 +9,7 @@ import { StatsHeroSection } from "../../components/StatsSection";
 import Accordion from "../../components/Accordion";
 import { StatsHero } from "../../components/StatsBG";
 
-const PPCOptimization = () => {
+const AmazonAContent = () => {
   // Animated stats data
   const statsData = [
     { endValue: 1430, label: "Happy Clients", suffix: "+" },
@@ -20,31 +20,32 @@ const PPCOptimization = () => {
 
   const accordionItems = [
     {
-      title: "What is Amazon PPC Optimization?",
+      title: "What is Amazon A+ Content (Enhanced Brand Content)?",
       content:
-        "Amazon PPC (Pay-Per-Click) Optimization involves continuously refining your advertising campaigns on Amazon to maximize their effectiveness. This includes adjusting bids, targeting, keywords, and ad copy to improve ad visibility, reduce ACoS (Advertising Cost of Sale), and increase sales efficiently.",
+        "Amazon A+ Content, also known as Enhanced Brand Content, allows brand-registered sellers to go beyond standard product descriptions. It enables you to add rich media, comparison charts, high-quality images, and compelling text modules to your product detail pages, significantly enhancing the customer shopping experience.",
     },
     {
-      title: "Why is PPC optimization essential for Amazon sellers?",
+      title: "Why is A+ Content crucial for Amazon sellers?",
       content:
-        "PPC optimization is critical for driving targeted traffic and sales, especially for new products or competitive niches. It ensures your ad spend is efficient, helps you gain market share, improves product ranking, and ultimately contributes significantly to your overall profitability on Amazon.",
+        "A+ Content is vital for boosting conversion rates, reducing returns, and building brand trust. It helps your products stand out by visually engaging shoppers, clearly communicating product benefits, and addressing common questions, leading to more informed purchasing decisions and stronger brand recognition.",
     },
     {
-      title: "How do you identify the best keywords for PPC campaigns?",
+      title: "How does A+ Content help with conversions?",
       content:
-        "We employ a multi-faceted approach, combining advanced keyword research tools, competitor analysis, and search term reports from existing campaigns. This allows us to discover high-converting keywords, identify negative keywords to reduce wasted spend, and continuously refine targeting for optimal performance.",
+        "A+ Content improves conversions by providing a more immersive and persuasive shopping experience. High-quality visuals and detailed information help overcome buyer skepticism, highlight key features, and answer potential questions upfront, turning passive browsers into confident buyers. It also reduces bounce rates and increases time on page.",
     },
     {
-      title: "What types of Amazon ad campaigns do you manage?",
+      title: "Can A+ Content improve my product's ranking?",
       content:
-        "We manage a full spectrum of Amazon ad types, including Sponsored Products (for individual product visibility), Sponsored Brands (to promote your brand and product portfolio), and Sponsored Display (for reaching audiences on and off Amazon). Our strategy is tailored to your specific goals and budget.",
+        "While A+ Content doesn't directly impact Amazon search rankings through keywords like standard listings, it indirectly boosts ranking by significantly improving conversion rates. Higher conversions signal to Amazon's algorithm that your listing is highly relevant and valuable, which can lead to better organic visibility over time.",
     },
     {
-      title: "How quickly can I expect to see results from PPC optimization?",
+      title: "What is the process for creating A+ Content?",
       content:
-        "While initial adjustments can show improvements within days, significant and sustainable results from PPC optimization typically become evident within 4-8 weeks. This timeframe allows for data accumulation, strategic adjustments, and Amazon's algorithm to fully recognize the optimized campaigns.",
+        "Our process includes: in-depth product analysis and competitor research, strategizing content modules that best highlight your product's unique selling points, professional copywriting for engaging descriptions, high-quality graphic design for visuals, and seamless implementation within Amazon Seller Central. We ensure your A+ Content is optimized for both aesthetics and conversion.",
     },
   ];
+
 
   return (
     <>
@@ -69,24 +70,26 @@ const PPCOptimization = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h1 className="text-white font-semibold leading-tight text-left text-shadow-lg/40 text-[40px] sm:text-[60px] md:text-[70px] lg:text-[87px]">
-                Maximize Your Amazon ROI: Drive Sales with{" "}
-                <span className="text-[#f7a51e] inline-block relative z-10 px-2">
-                  Expert PPC
+                Elevate Your{" "}
+                <span className="text-[#f7a51e] inline-block relative z-10 pr-2">
+                  Amazon Listings
                 </span>{" "}
+                <br className="md:hidden lg:block" />{" "}
+                {/* Adjust breakpoint for line break */}
+                with Stunning{" "}
                 <span className="text-[#f7a51e] inline-block relative z-10 px-2">
-                  Optimization
+                  A+ Content
                 </span>{" "}
               </h1>
               <p className="mt-4 text-[#cdd8dd] font-medium text-left text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-relaxed max-w-full">
-                Are your Amazon advertising campaigns draining your budget
-                without delivering the sales you expect? Our Amazon PPC
-                Optimization services are meticulously designed to transform
-                your ad spend into profitable revenue. We craft highly effective
-                campaigns, optimize bids, and refine targeting to ensure your
-                products reach the right customers at the right time,
-                significantly boosting your visibility and conversion rates on
-                Amazon.
+                Are your Amazon product pages failing to captivate and convert? Our
+                specialized Amazon A+ Content services are meticulously designed to transform
+                your listings into immersive, high-converting showcases. We combine expert
+                copywriting with stunning graphic design to highlight your product&apos;s unique
+                benefits, build brand trust, and significantly boost your conversion rates,
+                ensuring your products truly shine in the competitive marketplace.
               </p>
+
 
               <Link href="/contact">
                 <button
@@ -119,21 +122,19 @@ const PPCOptimization = () => {
                 ABOUT OUR SERVICE
               </h2>
               <p className="text-[#334047] text-[26px] sm:text-[30px] md:text-[36px] lg:text-[44px] font-semibold leading-snug">
-                Strategic Amazon PPC Campaign Optimization
+                Expert Amazon A+ Content Creation
               </p>
+
             </div>
 
             {/* Right Section */}
             <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed w-full lg:w-7/12 text-left">
-              {" "}
-              {/* Changed max-w-full lg:max-w-[700px] to w-full lg:w-7/12 */}
-              Our Amazon PPC Optimization service maximizes your advertising ROI
-              through data-driven campaign management, strategic keyword
-              targeting, and continuous bid optimization. We analyze your
-              advertising performance, identify profitable opportunities, and
-              eliminate wasteful spending to ensure every dollar invested drives
-              qualified traffic and converts into profitable sales, helping you
-              dominate your market while maintaining optimal ACoS and TACoS.
+              Our Amazon A+ Content service transforms standard product listings into
+              immersive brand experiences. We craft engaging narratives, design stunning
+              visuals, and integrate comparison charts to highlight your product&apos;s unique
+              features. This optimization not only captivates shoppers and builds trust but
+              also significantly boosts conversion rates, ensuring your products stand out
+              and perform exceptionally on Amazon.
             </p>
           </motion.div>
         </div>
@@ -151,41 +152,39 @@ const PPCOptimization = () => {
                 viewport={{ once: true }}
               >
                 <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
-                  Maximize Your Amazon Advertising ROI
+                  TRANSFORM YOUR LISTINGS
                 </h2>
                 <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug mb-4">
-                  Master Amazon PPC: Drive Targeted Traffic & Boost Your Sales!
+                  Captivate Shoppers with Premium Amazon A+ Content!
                 </p>
                 <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-                  At Ecom Hyped, we transform your Amazon PPC campaigns into
-                  profit-generating machines. Our data-driven approach combines
-                  strategic keyword targeting, optimized bid management, and
-                  continuous performance monitoring to ensure every advertising
-                  dollar works harder for your business. Let us fine-tune your
-                  campaigns to reduce wasted spend while dramatically increasing
-                  your return on ad spend (ROAS).
+                  At Ecom Hyped, we specialize in crafting exceptional Amazon A+ Content
+                  that elevates your product detail pages. We combine compelling storytelling
+                  with stunning visuals to create an immersive shopping experience. Our
+                  expertise ensures your products not only stand out but also build immense
+                  brand trust, leading to significantly higher conversion rates and a stronger
+                  presence on Amazon.
                 </p>
                 <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
                   <li>
-                    <b>Strategic Keyword Targeting:</b> Identify high-converting
-                    keywords while eliminating wasteful spend.
+                    <b>Strategic Module Design:</b> Custom layouts and modules tailored to
+                    showcase your product&apos;s unique features and benefits.
                   </li>
                   <li>
-                    <b>Smart Bid Management:</b> Optimize bids for maximum
-                    profitability and improved ad placement.
+                    <b>High-Converting Copywriting:</b> Engaging narratives that resonate with
+                    your audience and drive purchasing decisions.
                   </li>
                   <li>
-                    <b>Campaign Structure Optimization:</b> Build efficient
-                    campaign architecture for better performance tracking.
+                    <b>Professional Visuals:</b> Integration of stunning imagery, comparison charts,
+                    and lifestyle photos to captivate shoppers.
                   </li>
                   <li>
-                    <b>Negative Keyword Mining:</b> Continuously refine
-                    targeting to prevent irrelevant clicks and boost conversion
-                    rates.
+                    <b>Brand Storytelling:</b> Convey your brand&apos;s unique identity and values
+                    to build deeper connections with customers.
                   </li>
                   <li>
-                    <b>Performance Analytics & Reporting:</b> Detailed insights
-                    and regular optimization based on real-time data.
+                    <b>Enhanced Customer Experience:</b> Provide comprehensive product information
+                    that reduces buyer skepticism and increases confidence.
                   </li>
                 </ul>
               </motion.div>
@@ -303,45 +302,42 @@ const PPCOptimization = () => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-6">
-                  Benefits of Using Our PPC Optimization Services
+                  Benefits of Using Our Amazon A+ Content Services
                 </p>
 
                 <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-                  Our Amazon PPC Optimization Services are engineered to
-                  transform your advertising campaigns into powerful revenue
-                  generators. We combine advanced keyword strategies,
-                  intelligent bid management, and data-driven optimizations to
-                  maximize your return on ad spend while minimizing wasted
-                  budget. Partner with us to unlock the full potential of your
-                  Amazon advertising and achieve sustainable, profitable growth.
+                  Our Amazon A+ Content services are designed to maximize your product page&apos;s
+                  potential, turning browsers into buyers. By integrating compelling visuals and
+                  rich descriptions, we enhance customer engagement and build strong brand
+                  trust. This strategic approach ensures your products not only capture
+                  attention but also drive higher conversion rates and establish a premium
+                  presence in the Amazon marketplace.
                 </p>
 
-                <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
+                <ul className="list-disc list-outside pl-4 text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
                   <li>
-                    <b>Improved ROAS:</b> Maximize return on ad spend through
-                    strategic keyword targeting and intelligent bid
-                    optimization, ensuring every dollar generates maximum
-                    profit.
+                    <b>Higher Conversion Rates:</b> Captivate shoppers with rich media and
+                    detailed product stories, turning visits into sales.
                   </li>
                   <li>
-                    <b>Reduced Advertising Costs:</b> Eliminate wasteful spend
-                    with precise negative keyword management and targeted
-                    campaign structure, lowering your ACoS significantly.
+                    <b>Increased Brand Trust:</b> Professional and immersive content builds
+                    credibility and fosters deeper customer loyalty.
                   </li>
                   <li>
-                    <b>Enhanced Campaign Performance:</b> Boost click-through
-                    rates and conversion rates with optimized ad copy, strategic
-                    placement, and continuous A/B testing.
+                    <b>Reduced Returns:</b> Clearer product information and visuals help set
+                    accurate customer expectations, minimizing post-purchase issues.
                   </li>
                   <li>
-                    <b>Scalable Growth:</b> Build sustainable advertising
-                    systems that grow with your business, maintaining
-                    profitability as you expand your product portfolio.
+                    <b>Enhanced Product Visibility:</b> Stand out from competitors with
+                    visually striking and informative product detail pages.
                   </li>
                   <li>
-                    <b>Data-Driven Insights:</b> Receive comprehensive analytics
-                    and actionable recommendations to make informed decisions
-                    and stay ahead of market trends.
+                    <b>Improved SEO (Indirect):</b> Higher engagement and conversions signal
+                    relevance to Amazon&apos;s algorithm, potentially boosting organic rank.
+                  </li>
+                  <li>
+                    <b>Mobile Optimization:</b> A+ Content is designed to look great on all
+                    devices, providing a seamless shopping experience for mobile users.
                   </li>
                 </ul>
               </motion.div>
@@ -399,44 +395,37 @@ const PPCOptimization = () => {
                 </h2>
 
                 <p className="text-[#334047] text-[28px] sm:text-[32px] md:text-[38px] lg:text-[44px] font-semibold leading-snug mb-6">
-                  How Our Amazon PPC Optimization Works for You
+                  Crafting Your Perfect Amazon A+ Content
                 </p>
 
                 <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-                  Our Amazon PPC Optimization process is a systematic,
-                  data-driven approach designed to maximize your advertising
-                  performance. We begin with comprehensive campaign audits,
-                  conduct strategic keyword research, implement intelligent bid
-                  strategies, and continuously optimize based on real-time data.
-                  Our ongoing performance monitoring ensures your campaigns
-                  consistently deliver profitable results and scale efficiently.
+                  Our Amazon A+ Content creation process is a comprehensive journey designed to
+                  transform your product detail pages into captivating showcases. We combine in-depth
+                  product understanding with creative design and persuasive copywriting,
+                  ensuring your A+ Content not only looks stunning but also effectively
+                  communicates value, builds trust, and drives conversions.
                 </p>
 
-                <ul className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-2 mb-6">
+                <ul className="list-disc list-outside pl-4 text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
                   <li>
-                    <b>Campaign Audit & Analysis:</b> Comprehensive evaluation
-                    of current PPC performance, identifying optimization
-                    opportunities and budget inefficiencies.
+                    <b>Strategic Content Planning:</b> We analyze your product, target audience,
+                    and competitors to define the most impactful A+ modules and messaging.
                   </li>
                   <li>
-                    <b>Strategic Keyword Research:</b> Deep dive into
-                    high-converting keywords while building extensive negative
-                    keyword lists to eliminate wasteful spend.
+                    <b>Professional Copywriting:</b> Crafting engaging, benefit-driven text that
+                    tells your brand story and persuades customers.
                   </li>
                   <li>
-                    <b>Campaign Structure Optimization:</b> Building organized,
-                    scalable campaign architecture with proper ad groups and
-                    targeting strategies for maximum control.
+                    <b>Stunning Graphic Design:</b> Creating high-quality visuals, lifestyle imagery,
+                    and comparison charts that align with your brand identity.
                   </li>
                   <li>
-                    <b>Bid Management & Automation:</b> Implementing smart
-                    bidding strategies and automated rules to optimize bids
-                    based on performance metrics and profitability goals.
+                    <b>Module Assembly & Optimization:</b> Expertly assembling A+ modules for
+                    seamless flow and mobile responsiveness, ensuring a flawless user experience.
                   </li>
                   <li>
-                    <b>Continuous Performance Monitoring:</b> Ongoing analysis,
-                    A/B testing, and data-driven adjustments to maintain optimal
-                    ROAS and campaign growth.
+                    <b>Review & Refinement:</b> Collaborating with you to ensure the A+ Content
+                    perfectly reflects your brand and meets your strategic goals.
                   </li>
                 </ul>
               </motion.div>
@@ -448,10 +437,10 @@ const PPCOptimization = () => {
         <div className="my-[80px]">
           <StatsHeroSection
             heading={
-              "Maximize Your Ad Spend: Drive Unrivaled ROI with Expert Amazon PPC Optimization!"
+              "Transform Your Product Pages: Drive Unrivaled Conversions with Amazon A+ Content!"
             }
             description={
-              "At Ecom Hyped, we specialize in transforming your Amazon advertising budget into highly profitable campaigns. Our expert PPC optimization services are meticulously designed to increase your product visibility, drive qualified traffic, and significantly boost your sales while maintaining optimal ACoS. Partner with us to achieve peak advertising performance and unlock sustainable growth on Amazon."
+              "At Ecom Hyped, we specialize in transforming standard Amazon listings into compelling, high-converting product showcases. Our expert Amazon A+ Content services are meticulously designed to captivate shoppers, build profound brand trust, and significantly boost your conversion rates. Partner with us to achieve a premium brand presence and unlock substantial sales growth on Amazon."
             }
           />
         </div>
@@ -496,10 +485,10 @@ const PPCOptimization = () => {
         {/* Final CTA */}
         <StatsHero
           heading={
-            "Ready to Maximize Your Ad Spend? Connect with Ecom Hyped for PPC Optimization!"
+            "Ready to Transform Your Listings? Connect with Ecom Hyped for A+ Content!"
           }
           description={
-            "Are your Amazon ad campaigns delivering the best possible ROI? Ecom Hyped is here to transform your advertising strategy. Our Amazon PPC Optimization experts are ready to analyze your campaigns, identify growth opportunities, and develop a tailored strategy to boost your sales and profitability. Contact us today and let's make your ads perform!"
+            "Are your Amazon product pages converting as effectively as they could be? Ecom Hyped is here to elevate your listings with stunning A+ Content. Our Amazon A+ Content experts are ready to analyze your products, identify visual and messaging opportunities, and develop a tailored strategy to captivate shoppers and significantly boost your conversion rates. Contact us today and let's make your products shine!"
           }
         />
 
@@ -542,4 +531,4 @@ const PPCOptimization = () => {
   );
 };
 
-export default PPCOptimization;
+export default AmazonAContent;

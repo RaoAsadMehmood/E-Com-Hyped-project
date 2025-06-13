@@ -1,11 +1,13 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
+import Link from 'next/link'; // Import Link from next/link
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 
 interface SlideItem {
   id: number;
   imageSrc: string;
   title: string;
+  href: string; // Added href property
 }
 
 interface AutomationSliderProps {
@@ -65,6 +67,7 @@ const AutomationSlider = ({
 
   const getOrderedSlides = () => {
     return [...Array(slides.length)].map((_, i) => {
+      // Calculate the correct index for the ordered slide based on currentIndex
       const slideIndex = (currentIndex - i + slides.length) % slides.length;
       return slides[slideIndex];
     });
@@ -106,56 +109,56 @@ const AutomationSlider = ({
             const isActive = index === 0;
 
             return (
-              <div
-                key={`${slide.id}-${index}`}
-                className="transition-all duration-500 flex-shrink-0 flex flex-col items-start cursor-pointer"
-                style={{
-                  opacity: isActive ? 1 : 0.4,
-                  transform: `scale(${isActive ? 1 : 0.9})`,
-                }}
-                onClick={() =>
-                  !isActive &&
-                  goToSlide((currentIndex - index + slides.length) % slides.length)
-                }
-              >
-                <div className="relative w-[clamp(140px,60vw,270px)] h-[clamp(100px,45vw,219px)] sm:w-[clamp(160px,30vw,270px)]
-                 sm:h-[clamp(120px,24vw,219px)] overflow-hidden rounded-t-[100px] sm:rounded-t-[160px]">
-                  <Image
-                    src={slide.imageSrc}
-                    alt={slide.title}
-                    fill
-                    className="object-cover transition-opacity duration-500"
-                    priority={index === 0}
-                    onError={(e) => {
-                      console.error(`Failed to load image: ${slide.imageSrc}`);
-                      e.currentTarget.src = '/images/placeholder.png';
-                    }}
-                  />
-                </div>
-                <div className="mt-2 text-left w-full px-1">
-                  <h3 className="text-[20px] sm:text-[26px] text-[#334047] font-semibold leading-snug">
-                    {slide.title.split(' ').map((word, i) =>
-                      i === 0 ? (
-                        <span key={i}>
-                          {word}
-                          <br />
-                        </span>
-                      ) : (
-                        <span key={i}> {word}</span>
-                      )
-                    )}
-                  </h3>
-                  <div className="w-[28px] sm:w-[33px] border-[1.5px] border-[#334047] my-2"></div>
-                  <div className="flex items-center mt-1">
-                    <span className="text-[16px] sm:text-[18px] text-[#45565F] font-medium">
-                      More for this
-                    </span>
-                    <div className="ml-2 w-6 h-6 flex items-center justify-center rounded-sm border-2 border-amber-400 text-[#F7A51E]">
-                      <FaArrowUpRightFromSquare size={16} />
+              <Link key={`${slide.id}-${index}`} href={slide.href} passHref> {/* Wrapped the entire slide with Link */}
+                <div
+                  className="transition-all duration-500 flex-shrink-0 flex flex-col items-start cursor-pointer"
+                  style={{
+                    opacity: isActive ? 1 : 0.4,
+                    transform: `scale(${isActive ? 1 : 0.9})`,
+                  }}
+                  // Click handler for non-active slides to navigate
+                  onClick={(e) => {
+                    // Prevent default Link behavior if not active, and handle navigation manually
+                    if (!isActive) {
+                      e.preventDefault(); // Stop Link from navigating immediately
+                      goToSlide((currentIndex - index + slides.length) % slides.length);
+                      // You might want to programmatically navigate after animation here if needed,
+                      // or simply let the Link handle it if clicked while active.
+                    }
+                    // If isActive, the Link will handle navigation directly on click.
+                  }}
+                >
+                  <div className="relative w-[clamp(140px,60vw,270px)] h-[clamp(100px,45vw,219px)] sm:w-[clamp(160px,30vw,270px)]
+                    sm:h-[clamp(120px,24vw,219px)] overflow-hidden rounded-t-[100px] sm:rounded-t-[160px]">
+                    <Image
+                      src={slide.imageSrc}
+                      alt={slide.title}
+                      fill
+                      className="object-cover transition-opacity duration-500"
+                      priority={index === 0}
+                      onError={(e) => {
+                        console.error(`Failed to load image: ${slide.imageSrc}`);
+                        e.currentTarget.src = '/images/placeholder.png';
+                      }}
+                    />
+                  </div>
+                  <div className="mt-2 text-left w-full px-1">
+                    <h3 className="text-[20px] sm:text-[26px] text-[#334047] font-semibold leading-snug">
+                      {/* Removed split and map for simplicity; assume titles are single line or managed by CSS */}
+                      {slide.title}
+                    </h3>
+                    <div className="w-[28px] sm:w-[33px] border-[1.5px] border-[#334047] my-2"></div>
+                    <div className="flex items-center mt-1">
+                      <span className="text-[16px] sm:text-[18px] text-[#45565F] font-medium">
+                        More for this
+                      </span>
+                      <div className="ml-2 w-6 h-6 flex items-center justify-center rounded-sm border-2 border-amber-400 text-[#F7A51E]">
+                        <FaArrowUpRightFromSquare size={16} />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

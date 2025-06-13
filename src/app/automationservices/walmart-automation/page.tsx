@@ -64,12 +64,11 @@ const AutomationServices = () => {
             >
               <h1 className="text-white font-semibold leading-tight text-left text-shadow-lg/40 text-[40px] sm:text-[60px] md:text-[75px] lg:text-[87px]">
                 Automate Your{" "}
-                <span className="text-[#f7a51e] inline-block relative z-10 px-2">
+                <span className="text-[#f7a51e] inline-block relative z-10">
                   Walmart Store
                 </span>{" "}
-                <br className="hidden md:inline" />
                 for Diversified{" "}
-                <span className="text-[#f7a51e] inline-block relative z-10 px-2">
+                <span className="text-[#f7a51e] inline-block relative z-10">
                   Profit
                 </span>{" "}
               </h1>
@@ -78,12 +77,14 @@ const AutomationServices = () => {
                 new customer base? Discover Walmart Automation by Ecom Hyped!
                 Our specialized solutions empower entrepreneurs and investors to
                 build a profitable presence on the Walmart Marketplace
+                efforts to build a profitable presence on the Walmart Marketplace
                 effortlessly. Our expert team handles everything from product
                 listing and inventory management to order fulfillment and
                 customer service, allowing you to achieve consistent revenue and
                 a truly hands-off income stream from one of the world&apos;s largest
                 retailers.
               </p>
+
 
               <motion.div
                 className="flex justify-center lg:justify-start"
