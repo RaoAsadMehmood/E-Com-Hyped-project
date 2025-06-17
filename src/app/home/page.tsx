@@ -14,8 +14,8 @@ import Navbar from "../components/Navbar";
 const Home = () => {
   //    { animated stats data}
   const statsData = [
-    { endValue: 1430, label: "Happy Clients", suffix: "+" },
-    { endValue: 250, label: "Revenue", suffix: "M" },
+    { endValue: 257, label: "Happy Clients", suffix: "+" },
+    { endValue: 1.7, label: "Revenue", suffix: "M" },
     { endValue: 1810, label: "Reviews ", suffix: "+" },
     { endValue: 10253, label: "Brands Catalog", suffix: "+" },
   ];
@@ -329,7 +329,7 @@ const Home = () => {
               <p className="text-[#45565F] text-[16px] sm:text-[18px] font-semibold leading-relaxed">
                 We present many films from various main categories, lets
                 <br className="hidden sm:block" />
-                choose and
+                choose and see how can we help your business to grow.
               </p>
             </motion.div>
           </div>

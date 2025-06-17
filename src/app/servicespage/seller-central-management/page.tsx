@@ -12,8 +12,8 @@ import { StatsHero } from "../../components/StatsBG";
 const SellerCentralManagement = () => {
   // 	{ animated stats data}
   const statsData = [
-    { endValue: 1430, label: "Happy Clients", suffix: "+" },
-    { endValue: 250, label: "Revenue Generated", suffix: "M" }, // Adjusted label for Seller Central
+    { endValue: 257, label: "Success Stories", suffix: "+" },
+    { endValue: 1.7, label: "Revenue Generated", suffix: "M" }, // Adjusted label for Seller Central
     { endValue: 1810, label: "Successful Campaigns", suffix: "+" }, // Adjusted label for Seller Central
     { endValue: 10253, label: "Products Managed", suffix: "+" }, // Adjusted label for Seller Central
   ];

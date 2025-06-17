@@ -12,8 +12,8 @@ import { StatsHero } from "../../components/StatsBG";
 const SupplierDirectory = () => {
   //    { animated stats data}
   const statsData = [
-    { endValue: 1430, label: "Happy Clients", suffix: "+" },
-    { endValue: 250, label: "Revenue", suffix: "M" },
+    { endValue: 257, label: "Success Stories", suffix: "+" },
+    { endValue: 1.7, label: "Revenue", suffix: "M" },
     { endValue: 1810, label: "Reviews", suffix: "+" },
     { endValue: 10253, label: "Brands Catalog", suffix: "+" },
   ];
@@ -287,27 +287,27 @@ const SupplierDirectory = () => {
             </p>
 
             <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
-  <li>
-    <b>Verified Suppliers:</b> Get access to a curated list of
-    trusted and thoroughly vetted suppliers.
-  </li>
-  <li>
-    <b>Global Reach:</b> Discover manufacturers and wholesalers from
-    key markets around the world.
-  </li>
-  <li>
-    <b>Faster Sourcing:</b> Quickly find and contact suppliers with
-    clear details and sourcing support.
-  </li>
-  <li>
-    <b>Risk Reduction:</b> Avoid scams, delays, and poor-quality
-    products through our trusted network.
-  </li>
-  <li>
-    <b>Business Growth:</b> Source with confidence and scale your
-    brand with reliable partnerships.
-  </li>
-</ul>
+              <li>
+                <b>Verified Suppliers:</b> Get access to a curated list of
+                trusted and thoroughly vetted suppliers.
+              </li>
+              <li>
+                <b>Global Reach:</b> Discover manufacturers and wholesalers from
+                key markets around the world.
+              </li>
+              <li>
+                <b>Faster Sourcing:</b> Quickly find and contact suppliers with
+                clear details and sourcing support.
+              </li>
+              <li>
+                <b>Risk Reduction:</b> Avoid scams, delays, and poor-quality
+                products through our trusted network.
+              </li>
+              <li>
+                <b>Business Growth:</b> Source with confidence and scale your
+                brand with reliable partnerships.
+              </li>
+            </ul>
           </motion.div>
         </div>
 

@@ -8,12 +8,13 @@ import AnimatedStats from "../../components/AnimatedStats";
 import { StatsHeroSection } from "../../components/StatsSection";
 import Accordion from "../../components/Accordion";
 import { StatsHero } from "../../components/StatsBG";
+import { ul } from "framer-motion/client";
 
 const AmazonAContent = () => {
   // Animated stats data
   const statsData = [
-    { endValue: 1430, label: "Happy Clients", suffix: "+" },
-    { endValue: 250, label: "Revenue", suffix: "M" },
+    { endValue: 257, label: "Success Stories", suffix: "+" },
+    { endValue: 1.7, label: "Revenue", suffix: "M" },
     { endValue: 1810, label: "Reviews", suffix: "+" },
     { endValue: 10253, label: "Brands Catalog", suffix: "+" },
   ];

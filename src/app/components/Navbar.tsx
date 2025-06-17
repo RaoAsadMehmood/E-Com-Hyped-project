@@ -188,7 +188,7 @@ const Navbar: React.FC = () => {
           transition={{ delay: 0.4, duration: 0.5, type: "spring" }}
           className="flex gap-6 order-first md:order-none"
         >
-          <Link href="/contact">
+          <Link href="/home">
             {" "}
             {/* Assuming this is the logo link to contact */}
             <Image

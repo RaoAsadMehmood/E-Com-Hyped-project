@@ -13,9 +13,9 @@ import { StatsHeroSection } from "../components/StatsSection";
 
 const AutomationServices = () => {
   const statsData = [
-    { endValue: 19, label: "Successful Stores", suffix: "+" },
+    { endValue: 257, label: "Successful Stores", suffix: "+" },
     { endValue: 10000, label: "Brands Resell", suffix: "+" },
-    { endValue: 1, label: "Total Revenue ", suffix: " Million" },
+    { endValue: 1.7, label: "Total Revenue ", suffix: " Million" },
     { endValue: 100, label: "Profit Distributed", suffix: "K +" },
   ];
 
