@@ -8,7 +8,7 @@ import AnimatedStats from "../../components/AnimatedStats";
 import { StatsHeroSection } from "../../components/StatsSection";
 import Accordion from "../../components/Accordion";
 import { StatsHero } from "../../components/StatsBG";
-import { ul } from "framer-motion/client";
+// import { ul } from "framer-motion/client";
 
 const AmazonAContent = () => {
   // Animated stats data
