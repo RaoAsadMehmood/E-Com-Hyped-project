@@ -1,10 +1,9 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import { Poppins, Sora } from "next/font/google";
 import './globals.css';
 import Footer from "./components/Footer";
-import WhatsAppButton from './components/WhatsAppButton'; // Tumhara WhatsAppButton import
-import Script from 'next/script'; // **Naya Import:** Next.js se Script component import kiya
+import WhatsAppButton from './components/WhatsAppButton';
+import Script from 'next/script'; 
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -31,17 +30,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* **Naya Code:** Calendly ki CSS file yahan add ki hai */}
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
       </head>
-      <body>
-        {children} {/* Tumhari poori website ka content yahan render hota hai */}
+      <body
+        
+        className={`${poppins.variable} ${sora.variable} antialiased`}
+      >
+        {children}
         <Footer />
-        {/* Tumhara WhatsApp Button */}
         <WhatsAppButton phoneNumber="923001234567" message="Hello Ecom Hyped team! I'd like to know more about your services." />
 
-        {/* **Naya Code:** Calendly ki JavaScript file yahan add ki hai */}
-        {/* 'lazyOnload' ka matlab hai ke ye script thoda der baad load hoga, jisse website tez khulegi. */}
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"
           type="text/javascript"
@@ -52,7 +50,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-
-// {/* NEW: WhatsApp Button integrated */}
-// <WhatsAppButton phoneNumber="923001234567" message="Hello Ecom Hyped team! I'd like to know more about your services." />
