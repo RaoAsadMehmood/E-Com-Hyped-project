@@ -8,6 +8,7 @@ import AnimatedStats from "../../components/AnimatedStats";
 import { StatsHeroSection } from "../../components/StatsSection";
 import Accordion from "../../components/Accordion";
 import { StatsHero } from "../../components/StatsBG";
+import MeetingButton from "@/app/components/MeetingButton";
 
 const AmazonFbaWholesale = () => {
   //    { animated stats data}
@@ -79,16 +80,9 @@ const AmazonFbaWholesale = () => {
                 we have the expertise and resources needed to help you
                 streamline your operations and maximize your success.
               </p>
-              <Link href="/contact">
-                <button
-                  className="mt-[20px] px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
-        hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
-        active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
-        transition-all duration-300 ease-out"
-                >
-                  Schedule a Call
-                </button>
-              </Link>
+
+              <MeetingButton />
+
             </motion.div>
           </div>
         </div>
@@ -101,10 +95,10 @@ const AmazonFbaWholesale = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="max-w-[1200px] w-full mx-auto flex flex-col lg:flex-row justify-between items-start gap-8 sm:gap-10"
+            className=" w-full mx-auto flex flex-col lg:flex-row items-center gap-8 sm:gap-10"
           >
             {/* Left Section */}
-            <div className="flex flex-col items-start max-w-full lg:max-w-[400px]">
+            <div className="flex flex-col items-start  w-full lg:w-5/12 "> 
               <h2 className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-3 sm:mb-4">
                 ABOUT US
               </h2>
@@ -114,7 +108,7 @@ const AmazonFbaWholesale = () => {
             </div>
 
             {/* Right Section */}
-            <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed max-w-full lg:max-w-[700px] text-left">
+            <p className="text-[#45565F] text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-relaxed w-full lg:w-7/12 text-left"> 
               Our Amazon FBA wholesales service includes a wide range of
               features designed to help you run your business more efficiently.
               This includes product sourcing, inventory management, order
@@ -427,16 +421,8 @@ const AmazonFbaWholesale = () => {
 
           <Accordion accordionItems={accordionItems} />
 
-          <Link href="/contact">
-            <button
-              className="my-7 px-12 py-[14px] sm:px-14 sm:py-4 border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md
-        hover:bg-[#F7A51E] hover:text-white hover:shadow-lg
-        active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2
-        transition-all duration-300 ease-out"
-            >
-              Schedule a Call
-            </button>
-          </Link>
+          <MeetingButton />
+
         </div>
 
         <StatsHero

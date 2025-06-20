@@ -1,6 +1,7 @@
 // components/StatsHeroSection.tsx
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import MeetingButton from './MeetingButton';
 
 interface StatsProps {
     heading: string;
@@ -52,16 +53,8 @@ export const StatsHero = ({
                         transition={{ delay: 0.6, duration: 0.6, ease: 'easeOut' }}
                         viewport={{ once: true }}
                     >
-                        <Link href="/contact" passHref> {/* Changed href to /contact and added passHref */}
-                            <button
-                                className="px-12 py-[14px] sm:px-14 sm:py-4 border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md
-                                hover:bg-[#F7A51E] hover:text-white hover:shadow-lg
-                                active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2
-                                transition-all duration-300 ease-out"
-                            >
-                                Schedule a Call
-                            </button>
-                        </Link>
+                        <MeetingButton />
+                        
                     </motion.div>
                 </div>
 

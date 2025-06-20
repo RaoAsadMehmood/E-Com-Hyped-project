@@ -11,6 +11,7 @@ import AmazonCarousel from "../components/AmazonCarousel";
 import Link from "next/link";
 import TestimonialSlider from "../components/TestimonialSlider";
 import Navbar from "../components/Navbar";
+import MeetingButton from "../components/MeetingButton";
 const Home = () => {
   //    { animated stats data}
   const statsData = [
@@ -137,7 +138,22 @@ const Home = () => {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="md:ml-auto md:mt-auto relative"
               >
-                <Link href="/contact">
+                <Link
+                  href="/contact" // Fallback href agar Calendly load na ho
+                  passHref
+                  onClick={(e: React.MouseEvent<HTMLAnchorElement>) => { // Type as HTMLAnchorElement for Link's event
+                    e.preventDefault(); // Prevent default link navigation
+
+                    // Check karein ke Calendly widget load ho gaya hai ya nahi.
+                    if (typeof window.Calendly !== 'undefined') {
+                      window.Calendly.initPopupWidget({ url: 'https://calendly.com/ecommerce-automation-ecomhyped/30min' });
+                    } else {
+                      // Fallback: Agar Calendly script load nahi hua, toh user ko /contact page par redirect kare.
+                      console.warn("Calendly widget not loaded, navigating to contact page as a fallback.");
+                      window.location.href = '/contact';
+                    }
+                  }}
+                >
                   <div className="relative flex flex-col items-center">
                     <div className="px-1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-full flex justify-center items-center">
                       <span className="flex justify-center items-center text-lg sm:text-xl md:text-2xl text-black font-semibold">
@@ -491,16 +507,7 @@ const Home = () => {
               transition={{ delay: 1.2, duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Link href="/contact">
-                <button
-                  className="px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
-          hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
-          active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
-          transition-all duration-300 ease-out"
-                >
-                  Schedule a Call
-                </button>
-              </Link>
+              <MeetingButton />
             </motion.div>
           </div>
         </motion.div>
@@ -547,16 +554,7 @@ const Home = () => {
               transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Link href="/contact">
-                <button
-                  className="px-[48px] py-[14px] sm:px-[56px] mt-[20px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
-        hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
-        active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
-        transition-all duration-300 ease-out"
-                >
-                  Schedule a Call
-                </button>
-              </Link>
+              <MeetingButton />
             </motion.div>
           </motion.div>
 
@@ -641,16 +639,8 @@ const Home = () => {
               transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Link href="/contact">
-                <button
-                  className="px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
-        hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
-        active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
-        transition-all duration-300 ease-out"
-                >
-                  Schedule a Call
-                </button>
-              </Link>
+              <MeetingButton />
+
             </motion.div>
           </motion.div>
         </motion.div>
@@ -772,16 +762,8 @@ const Home = () => {
                   transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
                   viewport={{ once: true }}
                 >
-                  <Link href="/contact">
-                    <button
-                      className="px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
-              hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
-              active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
-              transition-all duration-300 ease-out"
-                    >
-                      Schedule a Call
-                    </button>
-                  </Link>
+                  <MeetingButton />
+
                 </motion.div>
               </div>
             </div>

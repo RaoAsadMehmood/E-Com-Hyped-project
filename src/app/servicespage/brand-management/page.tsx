@@ -8,6 +8,7 @@ import AnimatedStats from "../../components/AnimatedStats";
 import { StatsHeroSection } from "../../components/StatsSection";
 import Accordion from "../../components/Accordion";
 import { StatsHero } from "../../components/StatsBG";
+import MeetingButton from "@/app/components/MeetingButton";
 
 const BrandManagment = () => {
   //    { animated stats data}
@@ -87,16 +88,9 @@ const BrandManagment = () => {
                 competitive marketplace, allowing you to focus on innovation and
                 expansion.
               </p>
-              <Link href="/contact">
-                <button
-                  className="mt-[20px] px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
-        hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
-        active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
-        transition-all duration-300 ease-out"
-                >
-                  Schedule a Call
-                </button>
-              </Link>
+
+              <MeetingButton />
+
             </motion.div>
           </div>
         </div>
@@ -107,7 +101,7 @@ const BrandManagment = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="max-w-[1200px] mx-auto flex flex-col lg:flex-row lg:items-center gap-10"
+            className=" mx-auto flex flex-col lg:flex-row lg:items-center gap-10"
           >
             {/* Left Section */}
             <div className="flex-shrink-0 w-full lg:w-[40%]">
@@ -158,7 +152,7 @@ const BrandManagment = () => {
               growth in the competitive Amazon marketplace, allowing you to
               concentrate on your product and vision.
             </p>
-            <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
+            <ul className="px-4 list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
               <li>
                 Strategic brand development and positioning on the Amazon
                 platform
@@ -299,7 +293,7 @@ const BrandManagment = () => {
               transform your Amazon channel into a powerful asset.
             </p>
 
-            <ul className="list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
+            <ul className="px-4 list-disc list-outside text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] space-y-3 mb-6">
               <li>
                 <b>Strategic Brand Fortification:</b> Establish an unshakeable
                 brand foundation, safeguarding your intellectual property and
@@ -445,16 +439,8 @@ const BrandManagment = () => {
 
           <Accordion accordionItems={accordionItems} />
 
-          <Link href="/contact">
-            <button
-              className="my-7 px-12 py-[14px] sm:px-14 sm:py-4 border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md
-        hover:bg-[#F7A51E] hover:text-white hover:shadow-lg
-        active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2
-        transition-all duration-300 ease-out"
-            >
-              Schedule a Call
-            </button>
-          </Link>
+          <MeetingButton />
+
         </div>
         <StatsHero
           heading={"Lets Connect - Get in Touch Ecom Hyped!"}

@@ -8,6 +8,7 @@ import AnimatedStats from "../components/AnimatedStats";
 import { StatsHeroSection } from "../components/StatsSection";
 import Accordion from "../components/Accordion";
 import { StatsHero } from "../components/StatsBG";
+import MeetingButton from "../components/MeetingButton";
 
 const Services = () => {
   //    { animated stats data}
@@ -82,16 +83,9 @@ const Services = () => {
                 (FBA) online arbitrage service to store and ship the products to
                 customers.
               </p>
-              <Link href="/contact">
-                <button
-                  className="mt-[20px] px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
-        hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
-        active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
-        transition-all duration-300 ease-out"
-                >
-                  Schedule a Call
-                </button>
-              </Link>
+              
+             <MeetingButton />
+
             </motion.div>
           </div>
         </div>
@@ -433,16 +427,9 @@ const Services = () => {
 
           <Accordion accordionItems={accordionItems} />
 
-          <Link href="/contact">
-            <button
-              className="my-7 px-12 py-[14px] sm:px-14 sm:py-4 border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md
-        hover:bg-[#F7A51E] hover:text-white hover:shadow-lg
-        active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2
-        transition-all duration-300 ease-out"
-            >
-              Schedule a Call
-            </button>
-          </Link>
+          <MeetingButton />
+
+          
         </div>
 
         <StatsHero

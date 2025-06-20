@@ -10,6 +10,7 @@ import Navbar from "../components/Navbar";
 import AnimatedStats from "../components/AnimatedStats";
 import Accordion from "../components/Accordion";
 import { StatsHeroSection } from "../components/StatsSection";
+import MeetingButton from "../components/MeetingButton";
 
 const AutomationServices = () => {
   const statsData = [
@@ -89,16 +90,8 @@ const AutomationServices = () => {
                 transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
                 viewport={{ once: true }}
               >
-                <Link href="/contact">
-                  <button
-                    className="px-[48px] mt-8 py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
-        hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
-        active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
-        transition-all duration-300 ease-out"
-                  >
-                    Schedule a Call
-                  </button>
-                </Link>
+                <MeetingButton />
+                
               </motion.div>
             </motion.div>
           </div>
@@ -208,16 +201,8 @@ const AutomationServices = () => {
               transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Link href="/contact">
-                <button
-                  className="px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
-        hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
-        active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
-        transition-all duration-300 ease-out"
-                >
-                  Schedule a Call
-                </button>
-              </Link>
+              <MeetingButton />
+
             </motion.div>
           </motion.div>
 
@@ -309,16 +294,8 @@ const AutomationServices = () => {
               transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
               viewport={{ once: true }}
             >
-              <Link href="/contact">
-                <button
-                  className="px-[48px] py-[14px] sm:px-[56px] mt-[10px] sm:py-[16px] border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md 
-                      hover:bg-[#F7A51E] hover:text-white hover:shadow-lg 
-                      active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2 
-                      transition-all duration-300 ease-out"
-                >
-                  Schedule a Call
-                </button>
-              </Link>
+              <MeetingButton />
+
             </motion.div>
           </motion.div>
         </div>
@@ -372,16 +349,8 @@ const AutomationServices = () => {
 
           <Accordion accordionItems={accordionItems} />
 
-          <Link href="/contact">
-            <button
-              className="my-7 px-12 py-[14px] sm:px-14 sm:py-4 border border-[#F7A51E] text-[16px] sm:text-[18px] text-[#F7A51E] font-semibold rounded-md
-        hover:bg-[#F7A51E] hover:text-white hover:shadow-lg
-        active:scale-95 active:ring-2 active:ring-[#F7A51E] active:ring-offset-2
-        transition-all duration-300 ease-out"
-            >
-              Schedule a Call
-            </button>
-          </Link>
+          <MeetingButton />
+          
         </div>
 
         <div className="my-[80px]">
