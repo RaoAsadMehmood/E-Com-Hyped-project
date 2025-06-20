@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import TestimonialSlider from "../../components/TestimonialSlider";
 import Navbar from "../../components/Navbar";
 import AnimatedStats from "../../components/AnimatedStats";
@@ -351,7 +350,7 @@ const AutomationServices = () => {
           <Accordion accordionItems={accordionItems} />
 
           <MeetingButton />
-          
+
         </div>
         <div className="my-[80px]">
           <StatsHeroSection

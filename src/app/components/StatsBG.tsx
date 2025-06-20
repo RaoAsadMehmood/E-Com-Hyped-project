@@ -1,6 +1,5 @@
 // components/StatsHeroSection.tsx
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import MeetingButton from './MeetingButton';
 
 interface StatsProps {

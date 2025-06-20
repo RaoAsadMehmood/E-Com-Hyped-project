@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link';
 import TestimonialSlider from '../components/TestimonialSlider';
 import Navbar from '../components/Navbar';
 import MeetingButton from '../components/MeetingButton';
@@ -122,7 +121,7 @@ const OurStory = () => {
               transition={{ delay: 0.6, duration: 0.4, ease: 'easeOut' }}
               viewport={{ once: true }}
             >
-              
+
              <MeetingButton />
              
             </motion.div>

@@ -3,10 +3,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import TestimonialSlider from "../components/TestimonialSlider";
 import Navbar from "../components/Navbar";
-// import FeatureCard from "../components/FeatureCard";
 import AnimatedStats from "../components/AnimatedStats";
 import Accordion from "../components/Accordion";
 import { StatsHeroSection } from "../components/StatsSection";
@@ -350,7 +348,7 @@ const AutomationServices = () => {
           <Accordion accordionItems={accordionItems} />
 
           <MeetingButton />
-          
+
         </div>
 
         <div className="my-[80px]">

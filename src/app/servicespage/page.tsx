@@ -2,7 +2,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
 import AnimatedStats from "../components/AnimatedStats";
 import { StatsHeroSection } from "../components/StatsSection";

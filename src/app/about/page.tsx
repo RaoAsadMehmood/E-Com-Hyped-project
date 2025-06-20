@@ -4,7 +4,6 @@ import Image from "next/image";
 import React from "react";
 import ImageCarousel from "../components/ImageCarousel";
 import FeatureCard from "../components/FeatureCard";
-// import Link from "next/link";
 import { StatsHeroSection } from "../components/StatsSection";
 import Navbar from "../components/Navbar";
 import MeetingButton from "../components/MeetingButton";
