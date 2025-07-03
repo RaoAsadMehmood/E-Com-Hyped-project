@@ -17,7 +17,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ phoneNumber, message })
   return (
     <Link href={whatsappLink} target="_blank" rel="noopener noreferrer" passHref>
       <div
-        className="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg flex items-center justify-center cursor-pointer z-50
+        className="fixed bottom-32 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg flex items-center justify-center cursor-pointer z-50
                    hover:scale-110 hover:shadow-xl transition-all duration-300 ease-in-out"
         aria-label="Chat on WhatsApp"
       >

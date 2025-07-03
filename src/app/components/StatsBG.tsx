@@ -1,6 +1,6 @@
 // components/StatsHeroSection.tsx
 import { motion } from 'framer-motion';
-import MeetingButton from './MeetingButton';
+import MeetingButton from './MeetingButton'; // Assuming MeetingButton is in the same directory
 
 interface StatsProps {
     heading: string;
@@ -14,7 +14,7 @@ export const StatsHero = ({
     return (
         <section className="w-full mt-[80px]">
             <div
-                className="w-full min-h-[458px] py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-8 md:px-12 lg:px-20 flex flex-col justify-center items-center text-center relative overflow-hidden" // Added overflow-hidden and adjusted horizontal padding
+                className="w-full min-h-[458px] py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-8 md:px-12 lg:px-20 flex flex-col justify-center items-center text-center relative overflow-hidden"
                 style={{
                     backgroundImage: 'url("/images/stats-cover.png")',
                     backgroundSize: 'cover',
@@ -23,11 +23,11 @@ export const StatsHero = ({
                 }}
             >
                 {/* Overlay for better text readability */}
-                <div className="absolute inset-0 bg-black opacity-40"></div> 
+                <div className="absolute inset-0 bg-black opacity-40"></div>
 
-                <div className="max-w-5xl w-full mx-auto flex flex-col items-center gap-6 relative z-10"> {/* Increased max-w and added z-10 */}
+                <div className="max-w-5xl w-full mx-auto flex flex-col items-center gap-6 relative z-20"> {/* z-index increased for content */}
                     <motion.h1
-                        className="text-3xl sm:text-4xl lg:text-5xl text-white font-bold leading-tight sm:leading-tight lg:leading-tightest tracking-tight" // Adjusted font sizes, weight, and line height
+                        className="text-3xl sm:text-4xl lg:text-5xl text-white font-bold leading-tight sm:leading-tight lg:leading-tightest tracking-tight"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
@@ -37,7 +37,7 @@ export const StatsHero = ({
                     </motion.h1>
 
                     <motion.p
-                        className="text-base sm:text-lg md:text-xl text-white max-w-4xl leading-relaxed sm:leading-relaxed md:leading-relaxed-lg" // Adjusted max-w and line height
+                        className="text-base sm:text-lg md:text-xl text-white max-w-4xl leading-relaxed sm:leading-relaxed md:leading-relaxed-lg"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.6, ease: 'easeOut' }}
@@ -51,15 +51,15 @@ export const StatsHero = ({
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6, duration: 0.6, ease: 'easeOut' }}
                         viewport={{ once: true }}
+                        className="mt-6 mb-8" // Added margin-bottom for spacing below the button
                     >
                         <MeetingButton />
-                        
                     </motion.div>
                 </div>
 
-                {/* Decorative Stars - Adjusted positioning for better visual balance */}
+                {/* Decorative Stars - Positioning adjusted to be further away and more reliably in background */}
                 <motion.div
-                    className="absolute top-16 left-8 sm:top-24 sm:left-24 text-white opacity-70 z-10" // Added z-10 and responsive positioning
+                    className="absolute top-8 left-8 text-white opacity-70 z-0" // Adjusted positioning to fixed pixels from corner
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.8, duration: 0.6, ease: 'easeOut' }}
@@ -73,7 +73,7 @@ export const StatsHero = ({
                 </motion.div>
 
                 <motion.div
-                    className="absolute bottom-16 right-8 sm:bottom-24 sm:right-24 text-white opacity-70 z-10" // Added z-10 and responsive positioning
+                    className="absolute bottom-8 right-8 text-white opacity-70 z-0" // Adjusted positioning to fixed pixels from corner
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1, duration: 0.6, ease: 'easeOut' }}

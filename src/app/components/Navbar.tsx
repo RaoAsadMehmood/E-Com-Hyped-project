@@ -28,7 +28,8 @@ const Navbar: React.FC = () => {
       name: "Services",
       href: "/servicespage", // Parent link for Services
       subLinks: [
-        { name: "FBA Wholesale", href: "/servicespage/amazon-fba-wholesale" },
+        { name: "FBA Wholesale",
+          href: "/servicespage/amazon-fba-wholesale" },
         {
           name: "Supplier Directory",
           href: "/servicespage/supplier-directory",
@@ -41,7 +42,8 @@ const Navbar: React.FC = () => {
           name: "Seller Central Management",
           href: "/servicespage/seller-central-management",
         },
-        { name: "Brand Management", href: "/servicespage/brand-management" },
+        { name: "Brand Management", 
+          href: "/servicespage/brand-management" },
         {
           name: "Amazon Listing Optimization",
           href: "/servicespage/amazon-listing-optimization",

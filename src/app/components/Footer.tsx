@@ -22,31 +22,42 @@ const Footer = () => {
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {[
                         {
-                            title: 'Ecommerce',
+                            // Pehla Column: "Ecommerce" se "Services" mein badla
+                            title: 'Services',
                             links: [
-                                { href: '/automationservices', label: 'Automation Services' },
-                                { href: '/servicespage', label: 'Online Arbitrage' },
                                 { href: '/servicespage/amazon-fba-wholesale', label: 'FBA Wholesale' },
                                 { href: '/servicespage/supplier-directory', label: 'Supplier Directory' },
-                                { href: '/servicespage/product-research-sourcing', label: 'Product Research' },
+                                { href: '/servicespage/product-research-sourcing', label: 'Product Research/Sourcing' },
+                                { href: '/servicespage/seller-central-management', label: 'Seller Central Management' },
+                                { href: '/servicespage/brand-management', label: 'Brand Management' },
+                                { href: '/servicespage/amazon-listing-optimization', label: 'Amazon Listing Optimization' },
+                                { href: '/servicespage/ppc-optimization', label: 'PPC Optimization' },
+                                { href: '/servicespage/build-a-brand-on-amazon', label: 'Build a Brand on Amazon' },
+                                { href: '/servicespage/amazon-a-content', label: 'Amazon A+ Content' },
+                                { href: '/servicespage/amazon-ppc-advertising', label: 'Amazon PPC Advertising' },
                             ],
                         },
                         {
-                            title: 'Advertising',
+                            // Doosra Column: "Advertising" se "Automation Services" mein badla
+                            title: 'Automation Services',
                             links: [
-                                { href: '/servicespage/seller-central-management-', label: 'Seller Management' },
-                                { href: '/servicespage/ppc-optimization', label: 'PPC Advertising' },
-                                // { href: '#', label: 'Content Optimization' },
+                                { href: '/automationservices/amazon-fba-automation', label: 'Amazon FBA Automation' },
+                                { href: '/automationservices/walmart-automation', label: 'Walmart Automation' },
+                                { href: '/automationservices/tiktok-automation', label: 'TikTok Automation' },
+                                { href: '/automationservices/shopify-automation', label: 'Shopify Automation' },
+                                { href: '/automationservices/youtube-automation', label: 'Youtube Automation' },
+                                { href: '/automationservices/etsy-automation', label: 'Etsy Automation' },
                             ],
                         },
                         {
                             title: 'Company',
                             links: [
                                 { href: '/ourstory', label: 'Our Story' },
-                                // { href: '#', label: 'Results' },
                                 { href: '/about', label: 'About Us' },
-                                { href: '#', label: 'Terms & Use' },
+                                { href: '/disclaimer', label: 'Disclaimer' },
                                 { href: '/contact', label: 'Contact' },
+                                { href: '/privacy-policy', label: 'Privacy Policy' },
+
                             ],
                         },
                         {
@@ -85,7 +96,19 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Copyright Bar */}
+            {/* Disclaimer Section */}
+            <div className="bg-[#ecf9f9] py-6 px-4 md:px-8 lg:px-16 border-t border-gray-200">
+                <div className="container mx-auto max-w-5xl text-center text-[#45565F] text-[14px] leading-relaxed">
+                    <p>
+                        <b>Disclaimer</b>: Any testimonials published on this website are true statements from real customers, yet their full names & true identities may be withheld for privacy and confidentiality reasons. Results may vary based on individual experience.
+                    </p>
+                    <p className="mt-2">
+                        For our full disclaimer, please visit our <Link href="/disclaimer" className="text-[#026F72] hover:underline font-semibold">Disclaimer Page</Link>.
+                    </p>
+                </div>
+            </div>
+
+            {/* Copyright Bar & Social Icons */}
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
