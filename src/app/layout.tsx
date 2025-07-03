@@ -3,7 +3,8 @@ import { Poppins, Sora } from "next/font/google";
 import './globals.css';
 import Footer from "./components/Footer";
 import WhatsAppButton from './components/WhatsAppButton';
-import Script from 'next/script'; // next/script import karna
+import Script from 'next/script';
+import FixedMeetingButton from './components/FixedMeetingButton'; // NEW: FixedMeetingButton import kiya
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -38,6 +39,7 @@ export default function RootLayout({
       >
         {children}
         <Footer />
+        {/* WhatsApp Button ko Tawk.to se upar rakha hai */}
         <WhatsAppButton phoneNumber="923001234567" message="Hello Ecom Hyped team! I'd like to know more about your services." />
 
         {/* Calendly Widget ki JavaScript file */}
@@ -48,10 +50,10 @@ export default function RootLayout({
           strategy="lazyOnload"
         />
 
-        {/* NEW: Tawk.to Live Chat Widget Script Integrated */}
+        {/* Tawk.to Live Chat Widget Script Integrated */}
         <Script
-          id="tawkto-chat-widget" // Unique ID for the script
-          strategy="lazyOnload" // Load after page hydration for better performance
+          id="tawkto-chat-widget"
+          strategy="lazyOnload"
         >
           {`
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -65,6 +67,12 @@ export default function RootLayout({
             })();
           `}
         </Script>
+
+        {/* NEW: Fixed Schedule a Meeting Button */}
+        <FixedMeetingButton
+          calendlyUrl="https://calendly.com/ecommerce-automation-ecomhyped/30min" // Apni Calendly URL yahan daalna
+          fallbackHref="/contact" // Fallback page ka URL
+        />
       </body>
     </html>
   );
