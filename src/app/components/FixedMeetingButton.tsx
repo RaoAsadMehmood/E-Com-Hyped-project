@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion'; // motion import karna animations ke liye
-import { FaCalendarAlt } from 'react-icons/fa'; // NEW: Calendar icon import kiya
+import { FaCalendarAlt } from 'react-icons/fa'; // Calendar icon import kiya
 
 interface FixedMeetingButtonProps {
   calendlyUrl: string; // Tumhara Calendly meeting ka URL
@@ -12,27 +12,38 @@ interface FixedMeetingButtonProps {
 
 const FixedMeetingButton: React.FC<FixedMeetingButtonProps> = ({ calendlyUrl, fallbackHref }) => {
   const [isLoading, setIsLoading] = useState(false); // Loading state manage karne ke liye
-  const [isHovered, setIsHovered] = useState(false); // NEW: Hover state manage karne ke liye
+  const [isHovered, setIsHovered] = useState(false); // Hover state manage karne ke liye
+  const [isClicked, setIsClicked] = useState(false); // NEW: Clicked state manage karne ke liye for animation
 
   const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault(); // Default button behavior (agar Link ke andar ho) ko roko
     setIsLoading(true); // Loading state shuru karo
+    setIsClicked(true); // NEW: Clicked state true karo animation trigger karne ke liye
 
-    // Check karein ke Calendly widget browser mein load ho gaya hai ya nahi
+    // Calendly pop-up khulne ke baad animation reset ho jaye ya continue kare
+    // Boomerang effect ke liye, animation ko complete hone do phir Calendly kholo
+    // ya phir animation aur Calendly ko parallel chalao.
+    // Client ki requirement ke hisaab se, hum animation ko jaldi complete kar ke Calendly kholenge.
+
+    // Calendly load hone mein thoda time lagta hai, isliye isko setTimeout mein wrap kar sakte hain
+    // ya animation complete hone ka wait kar sakte hain.
+    // Simple approach: animation start ho, aur Calendly process ho.
     if (typeof window.Calendly !== 'undefined') {
       window.Calendly.initPopupWidget({ url: calendlyUrl });
-      setIsLoading(false); // Pop-up khul gaya, loading khatam
+      // Calendly pop-up khulne ke baad, animation state ko reset kar do thodi der baad
+      setTimeout(() => {
+        setIsLoading(false);
+        setIsClicked(false); // Animation complete hone ke baad reset
+      }, 500); // Animation duration ke hisaab se adjust karo
     } else {
-      // Agar Calendly script load nahi hua, toh fallback page par redirect karein
       console.warn("Calendly widget not loaded, navigating to fallback page.");
-      window.location.href = fallbackHref; // Directly page redirect karo
-      setIsLoading(false); // Loading khatam
+      window.location.href = fallbackHref;
+      setIsLoading(false);
+      setIsClicked(false); // Reset in fallback
     }
   };
 
   return (
-    // Button ko fixed position par rakha hai: bottom-6 (24px from bottom), left-6 (24px from left)
-    // Z-index 50 hai taake dusre elements ke upar nazar aaye
     <motion.button // motion.button use kiya animations ke liye
       onClick={handleClick}
       disabled={isLoading} // Jab loading ho toh button disable kar do
@@ -43,12 +54,20 @@ const FixedMeetingButton: React.FC<FixedMeetingButtonProps> = ({ calendlyUrl, fa
                  disabled:opacity-50 disabled:cursor-not-allowed"
       aria-label="Schedule a Meeting"
       // Framer Motion props for animation
-      initial={{ width: '56px', padding: '12px' }} // Default (minimized) state
+      initial={{ width: '56px', padding: '12px', scale: 1, rotate: 0 }} // Default (minimized) state
       animate={{
         width: isHovered || isLoading ? 'auto' : '56px', // Hover ya loading par width 'auto'
         padding: isHovered || isLoading ? '12px 24px' : '12px', // Hover ya loading par padding 'px-6'
+        // Boomerang animation on click
+        scale: isClicked ? [1, 1.2, 1] : 1, // Click par thoda bara ho kar wapas aaye
+        rotate: isClicked ? [0, 15, -15, 0] : 0, // Click par rotate ho kar wapas aaye
       }}
-      transition={{ type: 'spring', stiffness: 300, damping: 30 }} // Smooth spring animation
+      transition={{
+        width: { type: 'spring', stiffness: 300, damping: 30 },
+        padding: { type: 'spring', stiffness: 300, damping: 30 },
+        scale: { duration: isClicked ? 0.4 : 0, type: 'spring', stiffness: 300, damping: 10 }, // Scale animation fast
+        rotate: { duration: isClicked ? 0.4 : 0, type: 'spring', stiffness: 300, damping: 10 }, // Rotate animation fast
+      }}
     >
       {isLoading ? (
         // Loading state mein spinner aur text dikhao

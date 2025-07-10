@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
           name: "Seller Central Management",
           href: "/servicespage/seller-central-management",
         },
-        { name: "Brand Management", 
+        { name: "Brand Management",
           href: "/servicespage/brand-management" },
         {
           name: "Amazon Listing Optimization",
@@ -62,7 +62,7 @@ const Navbar: React.FC = () => {
           href: "/servicespage/amazon-ppc-advertising",
         },
       ], // End of Services sub-links
-    }, 
+    },
     {
       name: "Automation Services",
       href: "/automationservices", // Parent link for Automation Services
@@ -217,6 +217,38 @@ const Navbar: React.FC = () => {
             </Link>
           ))}
 
+          {/* Telephone Button (Desktop) - REFINED STYLING */}
+          <a
+            href="tel:+15128286650"
+            className="group flex items-center py-2 px-4 rounded-lg hover:bg-white/10 transition-all duration-300 focus:outline-none"
+            aria-label="Call us"
+          >
+            <span className="flex items-center justify-center w-8 h-8 rounded-full bg-transparent transition-all duration-300 group-hover:bg-[#F7A51E] group-hover:translate-x-2 group-hover:rotate-12">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className="w-5 h-5 text-white"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.515l.3 1.2a2 2 0 01-.45 1.95l-.7.7a16.001 16.001 0 006.586 6.586l.7-.7a2 2 0 011.95-.45l1.2.3A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C9.163 21 3 14.837 3 7V5z"
+                />
+              </svg>
+            </span>
+            <span className="flex flex-col items-start ml-2">
+              <span className="text-white text-base font-bold leading-tight">
+                +1 (512) 828 6650
+              </span>
+              <span className="text-white text-xs font-light opacity-80">
+                Get in Touch With Us
+              </span>
+            </span>
+          </a>
+
           <Link href="/contact">
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -255,6 +287,7 @@ const Navbar: React.FC = () => {
                           ? "border-b-2 border-white pb-1"
                           : ""
                       }`}
+                      aria-expanded={activeMobileDropdown === link.name}
                     >
                       {link.name}
                       {/* Dropdown indicator icon */}
@@ -321,9 +354,40 @@ const Navbar: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 className="mt-2 py-2 px-6 border border-white text-white text-lg font-light rounded hover:bg-white hover:text-teal-600 transition"
               >
-                Contact
+                Contact Us
               </motion.button>
             </Link>
+
+            {/* Telephone Button (Mobile) - REFINED STYLING */}
+            <a
+              href="tel:+15128286650"
+              className="group flex items-center gap-3 mt-2 py-2 px-4 rounded-lg bg-transparent hover:bg-white/10 transition-all duration-300 focus:outline-none"
+            >
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-transparent transition-all duration-300 group-hover:bg-[#F7A51E] group-hover:translate-x-2 group-hover:rotate-12">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="w-5 h-5 text-white"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 5a2 2 0 012-2h2.28a2 2 0 011.94 1.515l.3 1.2a2 2 0 01-.45 1.95l-.7.7a16.001 16.001 0 006.586 6.586l.7-.7a2 2 0 011.95-.45l1.2.3A2 2 0 0121 16.72V19a2 2 0 01-2 2h-1C9.163 21 3 14.837 3 7V5z"
+                  />
+                </svg>
+              </span>
+              <span className="flex flex-col items-start ml-2">
+                <span className="text-white text-base font-bold leading-tight">
+                  +1 (512) 828 6650
+                </span>
+                <span className="text-white text-xs font-light opacity-80">
+                  Get in Touch With Us
+                </span>
+              </span>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
@@ -332,4 +396,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-// This code defines a responsive Navbar component with both desktop and mobile views.

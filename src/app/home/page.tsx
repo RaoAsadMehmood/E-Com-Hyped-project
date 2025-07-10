@@ -7,11 +7,11 @@ import FeatureCard from "../components/FeatureCard";
 import { motion } from "framer-motion";
 import AutomationSlider from "../components/AutomationSlider";
 import AnimatedStats from "../components/AnimatedStats";
-import AmazonCarousel from "../components/AmazonCarousel";
 import Link from "next/link";
 import TestimonialSlider from "../components/TestimonialSlider";
 import Navbar from "../components/Navbar";
 import MeetingButton from "../components/MeetingButton";
+import VideoTestimonial from "../components/VideoTestimonial";
 const Home = () => {
   //    { animated stats data}
   const statsData = [
@@ -415,236 +415,6 @@ const Home = () => {
 
         {/* Animated Stats Ended */}
 
-        {/* Amazon Carousel section started */}
-        <motion.div
-          className="flex flex-col lg:flex-row items-start gap-8 max-w-6xl mx-auto px-6 py-14"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <AmazonCarousel />
-
-          <div className="flex-1 w-full max-w-[600px]">
-            <motion.h2
-              className="text-[20px] sm:text-[22px] md:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-[16px]"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              WHAT YOU CAN EXPECT FROM
-            </motion.h2>
-
-            <motion.h3
-              className="text-[46px] sm:text-[32px] md:text-[36px] font-bold text-[#334047] mt-2 mb-6"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              Ecom Hyped
-            </motion.h3>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-6">
-              {[...Array(4)].map((_, index) => {
-                const cardContent = [
-                  {
-                    img: "/images/frame-29.png",
-                    title: "Account Creation and Listing Setup",
-                    desc: "Simplify Amazon setup for new sellers with our account and listing creation services. Create listings successfully.",
-                  },
-                  {
-                    img: "/images/frame-30.png",
-                    title: "Store Launch and Amazon Wholesale",
-                    desc: "Simplify Amazon setup for new sellers with our account and listing creation services. Create listings successfully.",
-                  },
-                  {
-                    img: "/images/frame-31.png",
-                    title: "Brand Management and PPC Advertising",
-                    desc: "Boost Amazon presence with Brand Management and PPC Services. Optimize Listings, Reach Target Audience, Stand Out.",
-                  },
-                  {
-                    img: "/images/frame-29.png",
-                    title: "Content and Listing Optimization",
-                    desc: "Optimize content and listings for FBA success. Rank higher, increase visibility, and drive sales.",
-                  },
-                ];
-
-                const { img, title, desc } = cardContent[index];
-
-                return (
-                  <motion.div
-                    key={index}
-                    className="p-2"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{
-                      delay: 0.4 + index * 0.2,
-                      duration: 0.5,
-                      ease: "easeOut",
-                    }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="w-[74px] h-[74px] flex items-center justify-center rounded-md bg-[#F7A51E] overflow-hidden mb-3">
-                      <Image src={img} alt={title} width={74} height={74} />
-                    </div>
-                    <h4 className="text-[24px] font-semibold text-[#334047] leading-tight mb-2">
-                      {title}
-                    </h4>
-                    <p className="text-[18px] text-[#45565F] leading-normal">
-                      {desc}
-                    </p>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-            <motion.div
-              className="mt-6 flex justify-center lg:justify-start"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.5, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <MeetingButton />
-            </motion.div>
-          </div>
-        </motion.div>
-
-        {/* Amazon Carousel section ended */}
-
-        <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-10 px-4 py-12">
-          {/* Text Section */}
-          <motion.div
-            className=""
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4 text-center lg:text-left">
-              PORTFOLIO
-            </h2>
-
-            <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug mb-4 text-center lg:text-left">
-              Start Selling Today
-            </p>
-
-            <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] mb-3 text-center lg:text-left">
-              Starting to sell on Amazon can be overwhelming, especially for{" "}
-              <br className="hidden lg:block" />
-              new sellers. That is why we offer Amazon FBA services to help you{" "}
-              <br className="hidden lg:block" />
-              get started.
-            </p>
-
-            <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] text-center lg:text-left">
-              Our team will assist you in setting up your wholesale account,{" "}
-              <br className="hidden lg:block" />
-              negotiating pricing, and managing your inventory, so you can start{" "}
-              <br className="hidden lg:block" />
-              selling your products on Amazon in no time.
-            </p>
-
-            <motion.div
-              className="flex justify-center lg:justify-start"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <MeetingButton />
-            </motion.div>
-          </motion.div>
-
-          {/* Image Section */}
-          <motion.div
-            className="w-full lg:w-1/2 flex justify-center"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          >
-            <Image
-              src="/images/illustration.png"
-              alt="Illustration"
-              width={588}
-              height={607}
-              className="w-full max-w-[400px] sm:max-w-[500px] md:max-w-[550px] lg:max-w-[588px] h-auto"
-            />
-          </motion.div>
-        </div>
-
-        <motion.div
-          className="my-[160px] px-4 lg:px-[120px] flex flex-col lg:flex-row justify-between items-center gap-12"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          {/* Image with entry animation */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            <Image
-              src={"/images/marketing-illustration.png"}
-              alt={"Marketing Illustration"}
-              width={588}
-              height={532}
-              className="w-full max-w-[588px] h-auto"
-            />
-          </motion.div>
-
-          {/* Text content block */}
-          <motion.div
-            className="max-w-[700px] text-center lg:text-left"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
-              PORTFOLIO
-            </h2>
-
-            <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug mb-4">
-              Maximize Your Investment with Our Automation Services
-            </p>
-
-            <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-4">
-              At Ecom Hyped, we understand the importance of maximizing your
-              investment and achieving the highest possible return on
-              investment. That is why we offer cutting-edge automation solutions
-              designed to streamline your FBA operations, boost your sales, and
-              increase your profitability.
-            </p>
-
-            <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mb-6">
-              Our team of experts will work with you to create a tailored
-              automation strategy that aligns with your business goals and helps
-              you stay ahead of the competition. From inventory management to
-              order fulfillment, we have got you covered. Choose our services
-              today and take the first step towards achieving your business
-              goals.
-            </p>
-
-            <motion.div
-              className="flex justify-center lg:justify-start"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.4, ease: "easeOut" }}
-              viewport={{ once: true }}
-            >
-              <MeetingButton />
-
-            </motion.div>
-          </motion.div>
-        </motion.div>
-
         {/* Testimonials Section Started */}
         <section
           className="w-full min-h-screen px-6 py-10 lg:py-20"
@@ -713,6 +483,7 @@ const Home = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
+            <VideoTestimonial />
             <TestimonialSlider />
           </motion.div>
         </section>

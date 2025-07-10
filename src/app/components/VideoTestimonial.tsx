@@ -1,99 +1,97 @@
-// components/ClientVideoGrid.jsx
-"use client"; // Agar Next.js App Router use kar rahe ho
+// components/ClientVideoSlider.jsx
+"use client";
 
 import React, { useState, useRef, useCallback, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-// Agar Image ya Link ki zaroorat ho toh yahan import kar lena
-// import Image from "next/image";
-// import Link from "next/link";
+import { motion,  } from "framer-motion";
 
-// Individual Video Item Component (Slider version)
+// Individual Video Item Component (Adapted for Multi-Item Slider)
+// Now includes name and title for display
 const ClientVideoCard: React.FC<{
   src: string;
+  name: string; // Added name prop
+  title: string; // Added title prop
   delay?: number;
-  isActive: boolean;
-}> = ({ src, delay = 0, isActive }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  // isActive is not strictly needed for the video play/pause logic now,
+  // as each card will manage its own play state on click.
+  // But we can keep it if you want to highlight the "central" card visually.
+  isActive?: boolean; // Optional, for visual highlighting if needed
+  isPlaying: boolean; // NEW: controlled by parent
+  onPlay: () => void; // NEW: callback to parent
+}> = ({ src, title, delay = 0, isActive, isPlaying, onPlay }) => {
+  // const [isPlaying, setIsPlaying] = useState(false); // REMOVE local state
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
 
-  // Play/pause logic (unchanged)
-  const togglePlay = useCallback(async () => {
+  // Play/pause video based on isPlaying prop
+  useEffect(() => {
     if (videoRef.current) {
       if (isPlaying) {
-        videoRef.current.pause();
+        videoRef.current.muted = false;
+        setIsMuted(false);
+        videoRef.current.play().catch(() => {});
       } else {
-        try {
-          await videoRef.current.play();
-          setIsPlaying(true);
-        } catch (error) {
-          console.error(`Error playing video ${src}:`, error);
-          setIsPlaying(false);
-        }
+        videoRef.current.pause();
+        setIsMuted(true);
       }
     }
-  }, [isPlaying, src]);
+  }, [isPlaying]);
 
-  // Cleanup: Pause video on unmount
+  // Pause on unmount
   useEffect(() => {
-    const currentVideoElement = videoRef.current;
-    if (currentVideoElement) {
-      const handlePlayEvent = () => setIsPlaying(true);
-      const handlePauseEvent = () => setIsPlaying(false);
-      const handleErrorEvent = (e: Event) => console.error(`Video error for ${src}:`, e);
-      currentVideoElement.addEventListener('play', handlePlayEvent);
-      currentVideoElement.addEventListener('pause', handlePauseEvent);
-      currentVideoElement.addEventListener('error', handleErrorEvent);
-      return () => {
-        currentVideoElement.removeEventListener('play', handlePlayEvent);
-        currentVideoElement.removeEventListener('pause', handlePauseEvent);
-        currentVideoElement.removeEventListener('error', handleErrorEvent);
-        if (currentVideoElement) {
-          currentVideoElement.pause();
-          setIsPlaying(false);
-        }
-      };
-    }
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.pause();
+        setIsMuted(true);
+      }
+    };
   }, [src]);
+
+  // Only notify parent to play if not already playing
+  const handlePlayClick = useCallback(() => {
+    if (!isPlaying) {
+      onPlay();
+    }
+  }, [isPlaying, onPlay]);
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9, y: 50 }}
-      animate={{
-        opacity: 1,
-        scale: isActive ? 1.08 : 0.9,
-        y: isActive ? 0 : 30,
-        zIndex: isActive ? 2 : 1,
-      }}
-      exit={{ opacity: 0, scale: 0.9, y: 50 }}
-      transition={{ duration: 0.6, ease: "easeOut", delay: delay }}
-      className={`relative flex flex-col justify-end items-start rounded-lg p-4 sm:p-6 cursor-pointer overflow-hidden border-4`}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut", delay: delay }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="relative flex-shrink-0 rounded-lg p-4 sm:p-6 cursor-pointer overflow-hidden flex flex-col justify-end items-start"
       style={{
-        borderImage: 'linear-gradient(90deg, #F7A51E, #499799) 1',
+        // Fixed width for each card to allow multiple in view
+        width: '800px', // Further increased width
+        height: '600px', // Further increased height
         background: 'linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(50, 50, 50, 0.9))',
-        boxShadow: isActive ? '0 8px 32px rgba(0,0,0,0.25)' : '0 4px 15px rgba(0,0,0,0.15)',
-        aspectRatio: '16/9',
-        width: isActive ? '600px' : '500px',
-        height: isActive ? '340px' : '280px',
-        maxWidth: '90vw',
-        maxHeight: '60vw',
-        margin: '0 auto',
-        pointerEvents: isActive ? 'auto' : 'none',
+        boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+        border: isActive ? '4px solid #F7A51E' : 'none', // Optional: Highlight active card
+        transform: isActive ? 'scale(1.05)' : 'scale(1)', // Optional: Scale active card
+        transition: 'transform 0.3s ease-out, border 0.3s ease-out', // Smooth transition for scale/border
       }}
-      onClick={togglePlay}
+      onClick={handlePlayClick}
     >
+      {/* Video element as background/thumbnail */}
       <video
         ref={videoRef}
         src={src}
         playsInline
         preload="metadata"
+        muted={isMuted} // Control mute state
         controls
         className="absolute inset-0 w-full h-full object-cover z-0 opacity-50"
       >
         Your browser does not support the video tag.
       </video>
-      <div className="relative z-10 text-white text-left p-2">
-        <span className="text-2xl sm:text-3xl font-bold">Testimonial</span>
+
+      {/* Content Overlay - Name and Testimonial text */}
+      <div className="absolute top-0 left-0 z-10 text-white text-left p-4">
+        {/* <h3 className="text-3xl sm:text-4xl font-bold mb-1">{name}</h3> */}
+        <p className="text-lg sm:text-xl opacity-80">{title}</p>
       </div>
+
+      {/* Play Button Overlay */}
       {!isPlaying && (
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 transition-opacity duration-300 z-20">
           <svg
@@ -110,38 +108,128 @@ const ClientVideoCard: React.FC<{
   );
 };
 
-// Main Slider Component
+// Main Slider Component (ClientVideoSlider)
 const ClientVideoSlider: React.FC = () => {
   const videoTestimonials = [
-    { src: "/Videos/testimonial-1.mp4", delay: 0.1 },
-    { src: "/Videos/testimonial-2.mp4", delay: 0.2 },
-    { src: "/Videos/testimonial-3.mp4", delay: 0.3 },
+    { src: "/Videos/testimonial-1.mp4", name: "Bill", title: "Testimonial", delay: 0.1 },
+    { src: "/Videos/testimonial-2.mp4", name: "Henesen", title: "Testimonial", delay: 0.2 },
+    { src: "/Videos/testimonial-3.mp4", name: "Henrick", title: "Testimonial", delay: 0.3 },
   ];
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const touchStartX = useRef<number | null>(null);
 
+  const [currentIndex, setCurrentIndex] = useState(0); // This will track the "center" or "active" video for navigation
+  const [playingIndex, setPlayingIndex] = useState<number | null>(null); // NEW: which video is playing
+  const sliderTrackRef = useRef<HTMLDivElement>(null); // Ref for the inner div that holds all cards
+  const [isDragging, setIsDragging] = useState(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+  // const autoSwipeRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Function to scroll to a specific index
+  const scrollTo = useCallback((index: number) => {
+    if (sliderTrackRef.current) {
+      const cardWidth = sliderTrackRef.current.children[0]?.clientWidth + (parseInt(getComputedStyle(sliderTrackRef.current).gap) || 0);
+      sliderTrackRef.current.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setCurrentIndex(index);
+    }
+  }, []);
+
+  // Navigation functions
   const goToNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % videoTestimonials.length);
-  }, [videoTestimonials.length]);
+    scrollTo((currentIndex + 1) % videoTestimonials.length);
+    // resetAutoSwipe();
+  }, [currentIndex, videoTestimonials.length, scrollTo]);
 
   const goToPrevious = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + videoTestimonials.length) % videoTestimonials.length);
-  }, [videoTestimonials.length]);
+    scrollTo((currentIndex - 1 + videoTestimonials.length) % videoTestimonials.length);
+    // resetAutoSwipe();
+  }, [currentIndex, videoTestimonials.length, scrollTo]);
 
-  // Swipe handlers
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
+  // Auto swipe effect
+  // useEffect(() => {
+  //   startAutoSwipe();
+  //   return () => stopAutoSwipe();
+  // }, [currentIndex]);
+
+  // const startAutoSwipe = () => {
+  //   stopAutoSwipe();
+  //   autoSwipeRef.current = setTimeout(() => {
+  //     setCurrentIndex((prev) => (prev + 1) % videoTestimonials.length);
+  //     scrollTo((currentIndex + 1) % videoTestimonials.length);
+  //   }, 4000); // 4 seconds
+  // };
+
+  // const stopAutoSwipe = () => {
+  //   if (autoSwipeRef.current) {
+  //     clearTimeout(autoSwipeRef.current);
+  //     autoSwipeRef.current = null;
+  //   }
+  // };
+
+  // const resetAutoSwipe = () => {
+  //   stopAutoSwipe();
+  //   startAutoSwipe();
+  // };
+
+  // Mouse/Touch Dragging for horizontal scroll
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    startX.current = e.pageX - (sliderTrackRef.current?.offsetLeft || 0);
+    scrollLeft.current = sliderTrackRef.current?.scrollLeft || 0;
+    // resetAutoSwipe();
   };
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
-    if (deltaX > 60) {
-      goToPrevious();
-    } else if (deltaX < -60) {
-      goToNext();
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - (sliderTrackRef.current?.offsetLeft || 0);
+    const walk = (x - startX.current) * 2; // The speed of the scroll
+    if (sliderTrackRef.current) {
+      sliderTrackRef.current.scrollLeft = scrollLeft.current - walk;
     }
-    touchStartX.current = null;
   };
+
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    startX.current = e.touches[0].clientX;
+    scrollLeft.current = sliderTrackRef.current?.scrollLeft || 0;
+    // resetAutoSwipe();
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    const x = e.touches[0].clientX;
+    const walk = (x - startX.current) * 2;
+    if (sliderTrackRef.current) {
+      sliderTrackRef.current.scrollLeft = scrollLeft.current - walk;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    // Optional: Snap to nearest slide after drag ends
+    if (sliderTrackRef.current) {
+      const cardWidth = sliderTrackRef.current.children[0]?.clientWidth + (parseInt(getComputedStyle(sliderTrackRef.current).gap) || 0);
+      const scrolled = sliderTrackRef.current.scrollLeft;
+      const nearestIndex = Math.round(scrolled / cardWidth);
+      scrollTo(nearestIndex);
+      // resetAutoSwipe();
+    }
+  };
+
 
   return (
     <section className="my-[80px] px-4 sm:px-6 md:px-10 lg:px-[120px] max-w-7xl mx-auto">
@@ -156,51 +244,64 @@ const ClientVideoSlider: React.FC = () => {
           These are authentic stories from individuals and businesses who have experienced remarkable success partnering with EcomHyped.
         </p>
       </div>
-      <div className="relative flex items-center justify-center w-full max-w-3xl mx-auto" style={{ minHeight: 380 }}>
-        {/* Left Arrow */}
-        <button
-          onClick={goToPrevious}
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#F7A51E] text-white p-2 rounded-full z-20 shadow-lg hover:bg-[#499799] transition-colors"
-          aria-label="Previous Slide"
-        >
-          &#10094;
-        </button>
-        {/* Slider */}
+
+      {/* Slider Wrapper */}
+      <div className="relative w-full mx-auto">
+        {/* Slider Track - Horizontal Scroll */}
         <div
-          className="flex w-full items-center justify-center"
+          ref={sliderTrackRef}
+          className="flex gap-8 overflow-x-scroll no-scrollbar py-4 px-2 hide-scrollbar" // Added hide-scrollbar for custom hiding
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
           onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          style={{ scrollSnapType: 'x mandatory' }} // For smooth snapping
         >
-          <AnimatePresence initial={false} mode="wait">
-            <ClientVideoCard
-              key={currentIndex}
-              src={videoTestimonials[currentIndex].src}
-              delay={videoTestimonials[currentIndex].delay}
-              isActive={true}
-            />
-          </AnimatePresence>
+          {videoTestimonials.map((video, index) => (
+            <div key={index} style={{ scrollSnapAlign: 'start' }}> {/* For smooth snapping */}
+              <ClientVideoCard
+                src={video.src}
+                name={video.name}
+                title={video.title}
+                delay={video.delay}
+                isActive={index === currentIndex} // Pass isActive for visual highlight
+                isPlaying={playingIndex === index} // NEW
+                onPlay={() => setPlayingIndex(index)} // NEW
+              />
+            </div>
+          ))}
         </div>
-        {/* Right Arrow */}
-        <button
-          onClick={goToNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#F7A51E] text-white p-2 rounded-full z-20 shadow-lg hover:bg-[#499799] transition-colors"
-          aria-label="Next Slide"
-        >
-          &#10095;
-        </button>
-      </div>
-      {/* Dots */}
-      <div className="flex justify-center mt-6 gap-2">
-        {videoTestimonials.map((_, idx) => (
+
+        {/* Navigation Arrows and Progress Bar (below the slider) */}
+        <div className="flex items-center justify-center w-full mt-6 gap-4">
           <button
-            key={idx}
-            onClick={() => setCurrentIndex(idx)}
-            className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-              currentIndex === idx ? "bg-[#F7A51E]" : "bg-gray-300"
-            }`}
-            aria-label={`Go to slide ${idx + 1}`}
-          ></button>
-        ))}
+            onClick={goToPrevious}
+            className="bg-[#F7A51E] text-white p-3 rounded-md shadow-lg hover:bg-[#499799] transition-colors"
+            aria-label="Previous Slide"
+          >
+            &#8592;
+          </button>
+          <div className="flex-1 mx-2">
+            <div className="w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-[#F7A51E] transition-all duration-500"
+                style={{
+                  width: `${((currentIndex + 1) / videoTestimonials.length) * 100}%`
+                }}
+              ></div>
+            </div>
+          </div>
+          <button
+            onClick={goToNext}
+            className="bg-[#F7A51E] text-white p-3 rounded-md shadow-lg hover:bg-[#499799] transition-colors"
+            aria-label="Next Slide"
+          >
+            &#8594;
+          </button>
+        </div>
       </div>
     </section>
   );
