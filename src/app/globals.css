@@ -12,3 +12,17 @@
   }
 
   
+
+  /* Tawk.to Bouncing Animation */
+@keyframes tawkToBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Thoda upar uthega */
+  }
+}
+iframe[title="tawk.to chat"] { /* Most common way to target Tawk.to iframe */
+  animation: tawkToBounce 2s infinite ease-in-out; /* 2 seconds duration, infinite loop */
+  animation-delay: 7s; /* Page load ke 7 seconds baad shuru hoga */
+}

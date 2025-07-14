@@ -59,16 +59,15 @@ const ClientVideoCard: React.FC<{
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut", delay: delay }}
       viewport={{ once: true, amount: 0.3 }}
-      className="relative flex-shrink-0 rounded-lg p-4 sm:p-6 cursor-pointer overflow-hidden flex flex-col justify-end items-start"
+      className="relative flex-shrink-0 rounded-2xl p-8 cursor-pointer overflow-hidden flex flex-col justify-end items-start shadow-2xl border-4 border-gray-900"
       style={{
-        // Fixed width for each card to allow multiple in view
-        width: '800px', // Further increased width
-        height: '600px', // Further increased height
-        background: 'linear-gradient(135deg, rgba(30, 30, 30, 0.9), rgba(50, 50, 50, 0.9))',
-        boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
-        border: isActive ? '4px solid #F7A51E' : 'none', // Optional: Highlight active card
-        transform: isActive ? 'scale(1.05)' : 'scale(1)', // Optional: Scale active card
-        transition: 'transform 0.3s ease-out, border 0.3s ease-out', // Smooth transition for scale/border
+        width: '950px', // Larger width
+        height: '620px', // Larger height
+        background: 'linear-gradient(135deg, rgba(30, 30, 30, 0.97), rgba(50, 50, 50, 0.97))',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.45)',
+        border: isActive ? '6px solid #F7A51E' : '4px solid #232323',
+        transform: isActive ? 'scale(1.07)' : 'scale(1)',
+        transition: 'transform 0.3s cubic-bezier(0.4,0,0.2,1), border 0.3s cubic-bezier(0.4,0,0.2,1)',
       }}
       onClick={handlePlayClick}
     >
@@ -80,22 +79,21 @@ const ClientVideoCard: React.FC<{
         preload="metadata"
         muted={isMuted} // Control mute state
         controls
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-50"
+        className="absolute inset-0 w-full h-full object-cover z-0 border border-black opacity-60 rounded-2xl"
       >
         Your browser does not support the video tag.
       </video>
 
       {/* Content Overlay - Name and Testimonial text */}
-      <div className="absolute top-0 left-0 z-10 text-white text-left p-4">
-        {/* <h3 className="text-3xl sm:text-4xl font-bold mb-1">{name}</h3> */}
-        <p className="text-lg sm:text-xl opacity-80">{title}</p>
+      <div className="absolute top-0 left-0 z-10 text-white text-left p-6">
+        <p className="text-2xl sm:text-3xl font-bold mb-2 drop-shadow-lg">{title}</p>
       </div>
 
       {/* Play Button Overlay */}
       {!isPlaying && (
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 transition-opacity duration-300 z-20">
           <svg
-            className="w-16 h-16 sm:w-20 sm:h-20 text-[#F7A51E]"
+            className="w-24 h-24 text-[#F7A51E] drop-shadow-2xl"
             fill="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -232,15 +230,15 @@ const ClientVideoSlider: React.FC = () => {
 
 
   return (
-    <section className="my-[80px] px-4 sm:px-6 md:px-10 lg:px-[120px] max-w-7xl mx-auto">
-      <div className="flex flex-col items-center text-center mb-12">
-        <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide mb-4">
+    <section className="my-[80px] px-[60px] w-full max-w-none" style={{ boxSizing: 'border-box' }}>
+      <div className="flex flex-col items-center text-center mb-8">
+        <h2 className="text-[20px] sm:text-[22px] md:text-[24px] bg-gradient-to-b from-[#3CB5CF] via-[#42DEA6] to-[#37A5C8] bg-clip-text text-transparent font-semibold tracking-wide">
           CLIENT SHOWCASE
         </h2>
-        <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-tight max-w-4xl">
+        <p className="text-[#334047] text-[32px] sm:text-[36px] md:text-[42px] lg:text-[46px] font-semibold leading-snug">
           Hear Directly From Our Valued Clients
         </p>
-        <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] leading-relaxed mt-4 max-w-3xl">
+        <p className="text-[#45565F] text-[16px] sm:text-[17px] md:text-[18px] mb-6 text-center lg:text-left">
           These are authentic stories from individuals and businesses who have experienced remarkable success partnering with EcomHyped.
         </p>
       </div>
@@ -250,7 +248,7 @@ const ClientVideoSlider: React.FC = () => {
         {/* Slider Track - Horizontal Scroll */}
         <div
           ref={sliderTrackRef}
-          className="flex gap-8 overflow-x-scroll no-scrollbar py-4 px-2 hide-scrollbar" // Added hide-scrollbar for custom hiding
+          className="flex gap-14 overflow-x-scroll no-scrollbar py-10 px-0 hide-scrollbar"
           onMouseDown={handleMouseDown}
           onMouseLeave={handleMouseLeave}
           onMouseUp={handleMouseUp}
@@ -279,7 +277,7 @@ const ClientVideoSlider: React.FC = () => {
         <div className="flex items-center justify-center w-full mt-6 gap-4">
           <button
             onClick={goToPrevious}
-            className="bg-[#F7A51E] text-white p-3 rounded-md shadow-lg hover:bg-[#499799] transition-colors"
+            className="bg-[#F7A51E] text-white p-3 rounded-lg shadow-lg hover:bg-[#499799] transition-colors text-lg font-bold"
             aria-label="Previous Slide"
           >
             &#8592;
@@ -296,7 +294,7 @@ const ClientVideoSlider: React.FC = () => {
           </div>
           <button
             onClick={goToNext}
-            className="bg-[#F7A51E] text-white p-3 rounded-md shadow-lg hover:bg-[#499799] transition-colors"
+            className="bg-[#F7A51E] text-white p-3 rounded-lg shadow-lg hover:bg-[#499799] transition-colors text-lg font-bold"
             aria-label="Next Slide"
           >
             &#8594;

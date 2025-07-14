@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import Link from 'next/link';
 
 const formVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -22,6 +23,9 @@ const initialErrors = {
   date: '',
   message: '',
   agree: '',
+  // NEW: Errors for new checkboxes
+  agreePromotional: '',
+  agreeSMS: '',
 };
 
 const customStyles = `
@@ -68,12 +72,14 @@ const ContactForm: React.FC = () => {
     date: '',
     message: '',
     agree: false,
+    // NEW: States for new checkboxes
+    agreePromotional: false,
+    agreeSMS: false,
   });
 
   const [errors, setErrors] = useState(initialErrors);
   const [isFormValid, setIsFormValid] = useState(false);
 
-  // Define validateForm inside useEffect to avoid the unused variable warning
   useEffect(() => {
     const validateForm = () => {
       const newErrors = { ...initialErrors };
@@ -107,7 +113,17 @@ const ContactForm: React.FC = () => {
       }
 
       if (!formData.agree) {
-        newErrors.agree = 'You must agree before submitting.';
+        newErrors.agree = 'You must agree to the terms & conditions.'; // More specific error message
+        valid = false;
+      }
+
+      // NEW: Validation for new checkboxes (optional, if you want them required)
+      if (!formData.agreePromotional) {
+        newErrors.agreePromotional = 'You must agree to receive promotional calls.';
+        valid = false;
+      }
+      if (!formData.agreeSMS) {
+        newErrors.agreeSMS = 'You must consent to receive SMS notifications.';
         valid = false;
       }
 
@@ -138,8 +154,31 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!isFormValid) return;
+    // Re-validate just before submission to catch any last-minute changes
+    const newErrors = { ...initialErrors };
+    let valid = true;
+
+    if (!formData.name.trim()) { newErrors.name = 'Name is required.'; valid = false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) { newErrors.email = 'Enter a valid email.'; valid = false; }
+    const phoneValue = formData.phone.replace(/\D/g, '');
+    if (!phoneValue || phoneValue.length < 7 || phoneValue.length > 15) { newErrors.phone = 'Enter a valid phone number.'; valid = false; }
+    if (!formData.service) { newErrors.service = 'Please select a service.'; valid = false; }
+    const today = new Date().toISOString().split('T')[0];
+    if (!formData.date || formData.date < today) { newErrors.date = 'Select a valid future date.'; valid = false; }
+    if (!formData.agree) { newErrors.agree = 'You must agree to the terms & conditions.'; valid = false; }
+    // Add validation for new checkboxes if they are required
+    if (!formData.agreePromotional) { newErrors.agreePromotional = 'You must agree to receive promotional calls.'; valid = false; }
+    if (!formData.agreeSMS) { newErrors.agreeSMS = 'You must consent to receive SMS notifications.'; valid = false; }
+
+    setErrors(newErrors);
+    if (!valid) {
+        setIsFormValid(false);
+        return;
+    }
+
     console.log('Form submitted:', formData);
+    // Here you would typically send formData to your backend or API
+    // e.g., fetch('/api/submit-contact', { method: 'POST', body: JSON.stringify(formData) });
   };
 
   return (
@@ -192,7 +231,6 @@ const ContactForm: React.FC = () => {
               <option value="seller-central-managment">Seller Central Managment</option>
               <option value="amazon-listing-optimization">Amazon Listing Optimization</option>
               <option value="ppc-optimization">PPC Optimization</option>
-
             </select>
             {errors.service && <p className="text-sm text-red-600 mt-1">{errors.service}</p>}
           </div>
@@ -265,18 +303,54 @@ const ContactForm: React.FC = () => {
 
         {/* Checkbox + Submit */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div>
-            <label className="flex items-center text-sm text-gray-600">
-              <input
-                type="checkbox"
-                name="agree"
-                checked={formData.agree}
-                onChange={handleInputChange}
-                className="mr-2 accent-[#F7A51E]"
-              />
-              I agree to the terms & conditions
-            </label>
-            {errors.agree && <p className="text-sm text-red-600 mt-1">{errors.agree}</p>}
+          <div className="flex flex-col space-y-3"> {/* Use flex-col and space-y for vertical stacking of checkboxes */}
+            {/* Original Checkbox */}
+            <div className="mb-2"> {/* Added margin-bottom for spacing */}
+              <label className="flex items-center text-sm text-gray-600">
+                <input
+                  type="checkbox"
+                  name="agree"
+                  checked={formData.agree}
+                  onChange={handleInputChange}
+                  className="mr-2 accent-[#F7A51E]"
+                />
+                I agree to
+                <Link className="underline ml-1" href={'/terms-page'}>
+                  terms & conditions
+                </Link>
+              </label>
+              {errors.agree && <p className="text-sm text-red-600 mt-1">{errors.agree}</p>}
+            </div>
+
+            {/* NEW Checkbox 1 */}
+            <div>
+              <label className="flex items-center text-sm text-gray-600">
+                <input
+                  type="checkbox"
+                  name="agreePromotional"
+                  checked={formData.agreePromotional}
+                  onChange={handleInputChange}
+                  className="mr-2 accent-[#F7A51E]"
+                />
+                I agree to receive promotional calls or messages via phone/WhatsApp from End to End Digitals LLC. Opt-out anytime.
+              </label>
+              {errors.agreePromotional && <p className="text-sm text-red-600 mt-1">{errors.agreePromotional}</p>}
+            </div>
+
+            {/* NEW Checkbox 2 */}
+            <div>
+              <label className="flex items-center text-sm text-gray-600">
+                <input
+                  type="checkbox"
+                  name="agreeSMS"
+                  checked={formData.agreeSMS}
+                  onChange={handleInputChange}
+                  className="mr-2 accent-[#F7A51E]"
+                />
+                I Consent to Receive SMS Notifications, Alerts & Occasional Marketing Communication from company. Message frequency varies. Message & data rates may apply. Text HELP to (XXX) XXX-XXXX for assistance. You can reply STOP to unsubscribe at any time.
+              </label>
+              {errors.agreeSMS && <p className="text-sm text-red-600 mt-1">{errors.agreeSMS}</p>}
+            </div>
           </div>
 
           <motion.button
