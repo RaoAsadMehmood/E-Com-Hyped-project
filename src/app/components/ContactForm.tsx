@@ -172,8 +172,8 @@ const ContactForm: React.FC = () => {
 
     setErrors(newErrors);
     if (!valid) {
-        setIsFormValid(false);
-        return;
+      setIsFormValid(false);
+      return;
     }
 
     console.log('Form submitted:', formData);
@@ -332,8 +332,8 @@ const ContactForm: React.FC = () => {
                   onChange={handleInputChange}
                   className="mr-2 accent-[#F7A51E]"
                 />
-                I agree to receive promotional calls or messages via phone/WhatsApp from End to End Digitals LLC. Opt-out anytime.
-              </label>
+                I agree to receive promotional calls or messages via phone/WhatsApp from Cartup Inn LLC. Opt-out anytime.
+                </label>
               {errors.agreePromotional && <p className="text-sm text-red-600 mt-1">{errors.agreePromotional}</p>}
             </div>
 
@@ -358,11 +358,10 @@ const ContactForm: React.FC = () => {
             whileTap={{ scale: 0.98 }}
             type="submit"
             disabled={!isFormValid}
-            className={`w-full sm:w-auto px-[48px] py-[14px] sm:px-[56px] sm:py-[16px] border ${
-              isFormValid
+            className={`w-full sm:w-auto px-[48px] py-[10px] sm:px-[56px] sm:py-[16px] border ${isFormValid
                 ? 'border-[#F7A51E] text-[#F7A51E] hover:bg-[#F7A51E] hover:text-white'
                 : 'border-gray-300 text-gray-400 cursor-not-allowed'
-            } text-[16px] sm:text-[18px] font-semibold rounded-md transition-all duration-300 ease-out`}
+              } text-[16px] sm:text-[18px] font-semibold rounded-md transition-all duration-300 ease-out`}
           >
             Send Message
           </motion.button>
